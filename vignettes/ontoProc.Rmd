@@ -189,7 +189,9 @@ component has a synonym for which an HGNC symbol is provided, that
 symbol is retrieved by `CLfeats`.  Here we obtain the listing
 for a mature CD1a-positive dermal dendritic cell.
 ```{r lkfa}
+suppressMessages({
 kable(CLfeats(cl, "CL:0002531"))
+})
 ```
 
 The `ctmarks` function starts a shiny app that generates

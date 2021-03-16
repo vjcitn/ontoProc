@@ -78,7 +78,7 @@ format-version: 1.2, 2 data-version: releases/2018-07-07."
    onto_plot2(cl, setdiff(anc,drp))
    })
   output$picks = DT::renderDataTable({
-    curtag = (clCL %>% filter(text == input$CLclasses))[["tag"]]
+    curtag = (clCL %>% dplyr::filter(text == input$CLclasses))[["tag"]]
     ans = CLfeats(cl, curtag)
     cumu <<- rbind(cumu, ans)
     ans
