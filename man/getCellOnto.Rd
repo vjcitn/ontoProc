@@ -14,6 +14,7 @@
 \alias{getHCAOnto}
 \alias{getPROnto}
 \alias{getPATOnto}
+\alias{getMondoOnto}
 \title{load ontologies that may include non-ascii strings and therefore cannot be in data folder}
 \usage{
 getCellOnto(
@@ -46,6 +47,8 @@ getHCAOnto()
 getPROnto()
 
 getPATOnto()
+
+getMondoOnto()
 }
 \arguments{
 \item{useNew}{logical(1) only for getCellOnto if TRUE return ontology_index instance of cell ontology 2.1 of May 21 2020, defaults to TRUE}
