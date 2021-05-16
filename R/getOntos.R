@@ -129,3 +129,9 @@ getPATOnto = function() get(load(system.file(
 #' @export
 getMondoOnto = function() get(load(system.file(
       "ontoRda/mondo_2021_04_07.rda", package="ontoProc")))
+
+#' @rdname getCellOnto
+#' @aliases getSIOOnto
+#' @export
+getSIOOnto = function() get(load(system.file(
+      "ontoRda/sio_rel_2021_04_26.rda", package="ontoProc")))
