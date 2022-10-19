@@ -17,7 +17,7 @@ test_that("cellTypeToGenes yields genes", {
   data(allGOterms)
   library(org.Hs.eg.db)
   cc = cellTypeToGenes("GABAergic neuron", allGOterms, org.Hs.eg.db)
-  expect_true(nrow(cc)==2)
+  expect_true(nrow(cc)>=2)  # can change as annotations do
 })
 
 test_that("children_TAG works", {
@@ -55,6 +55,6 @@ test_that("concatenation works", {
   efoOnto = getEFOOnto()
   defsibs = siblings_TAG("EFO:1001209", efoOnto)
   conc = c(defsibs, defsibs)
-  expect_true(length(conc@ontoTags)==8)
+  expect_true(length(conc@ontoTags)==60)
 })
 
