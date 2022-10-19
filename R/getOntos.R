@@ -1,3 +1,62 @@
+# October 2022 information in AnnotationHub for Bioc 3.16
+# opd =query(ah, "ontoProcData")
+# meta = mcols(opd)
+# meta |> as.data.frame() |> filter(grepl("2022", rdatadateadded)) |> select(title, description)
+#                          title              description
+#AH107268        caro_2022.02.18 common anatomy reference
+#AH107269   cellLineOnto_2.1.178               cell lines
+#AH107270    cellOnto_2022.08.16                    cells
+#AH107271     cellosaurusOnto_40               cell lines
+#AH107272         chebi_full_212 large chemicals ontology
+#AH107273         chebi_lite_212  short chemical ontology
+#AH107274 diseaseOnto_2022.07.27                 diseases
+#AH107275         efoOnto_3.45.0      experimental factor
+#AH107276      goOnto_2022.07.01            Gene ontology
+#AH107277    hcaoOnto_2022.07.19         human cell atlas
+#AH107278       mondo_2022.08.01                  disease
+#AH107279    patoOnto_2022.08.10      phenotype and trait
+#AH107280              PROnto_67                  protein
+#AH107281      uberon_2022.06.30                  anatomy
+
+#' give a vector of valid 'names' of ontoProc ontologies
+#' @examples
+#' head(valid_ontonames())
+#' @export
+valid_ontonames = function() {
+c("caro", "cellLineOnto", "cellOnto", "cellosaurusOnto", "chebi_full", 
+"chebi_lite", "diseaseOnto", "efoOnto", "goOnto", "hcaoOnto", "mondo", 
+"patoOnto", "PROnto", "uberon")
+}
+
+#' get the ontology based on a short tag and year
+#' @param ontoname character(1) must be an element in `valid_ontonames()`
+#' @param year_added character(1) refers to `rdatadateadded` in AnnotationHub metadata
+#' @note This queries AnnotationHub for "ontoProcData" and then filters to find
+#' the AnnotationHub accession number and retrieves the ontologyIndex serialization
+#' of the associated OBO representation of the ontology.
+#' @examples
+#' co = getOnto()
+#' tail(co$name[1000:1500])
+#' @export
+getOnto = function( ontoname="cellOnto", year_added = "2022" ) {
+ stopifnot(ontoname %in% valid_ontonames())
+ ah = AnnotationHub::AnnotationHub()
+ opd = AnnotationHub::query(ah, "ontoProcData")
+ meta = mcols(opd)
+ tmp = meta |> as.data.frame() |> filter(grepl(year_added, rdatadateadded)) |> select(title, description)
+ if (year_added == "2022") {
+    ontoname = paste0(ontoname, "_")
+    stopifnot(length(grep(ontoname, tmp$title))==1)
+    }
+ else if (year_added == "2021") {
+    stopifnot(length(grep(paste0("^", ontoname, "$"), tmp$title))==1)
+    }
+ tmp = tmp |> filter(grepl(ontoname, title))
+ tag = rownames(tmp)
+ stopifnot(length(tag)==1)
+ ah[[tag]]
+}
+
 
 #This is the October 2021 result of querying AnnotationHub in Bioc 3.14 for ontoProcData
 #AH97934             caro           NA    <NA>         NA   <NA>
@@ -65,9 +124,9 @@ add_cache_cl_simple = function(cache = BiocFileCache::BiocFileCache(),
 #' @return instance of ontology_index (S3) from ontologyIndex
 #' @note Provenance information is kept in the form
 #' of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`
-#' @export
 getCellOnto = function(useNew=TRUE, newest=FALSE, cache=BiocFileCache::BiocFileCache(),
     use0718=FALSE)  {
+    .Deprecated("getOnto", msg="getCellOnto is deprecated: getOnto('cellOnto') should be used for versioned access")
     if (newest) {
      qu = BiocFileCache::bfcquery(cache, "cl-simple")
      if (nrow(qu) == 0) {
