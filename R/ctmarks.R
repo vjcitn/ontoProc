@@ -1,5 +1,7 @@
 #' app to review molecular properties of cell types via cell ontology
 #' @param cl an import of a Cell Ontology (or extended Cell Ontology) in ontology_index form
+#' @param pr an import of a Protein Ontology in ontology_index form
+#' @param go an import of a Gene Ontology in ontology_index form
 #' @note Prototype of harvesting of cell ontology by searching
 #' has_part, has_plasma_membrane_part, intersection_of and allied
 #' ontology relationships.  Uses shiny.  Can perform better if getPROnto() and getGeneOnto() values
@@ -8,21 +10,15 @@
 #' @importFrom dplyr filter transmute left_join select
 #' @importFrom DT renderDataTable dataTableOutput
 #' @return a data.frame with features for selected cell types
+#' @examples
+#' if (interactive()) {
+#'    co = getOnto("cellOnto", year_added="2021")  # has plasma membrane relations
+#'    go = getOnto("goOnto", "2021")
+#'    pr = getOnto("Pronto", "2021") # peculiar tag used in legacy, would be PROnto with 2022
+#'    ctmarks(co, go, pr)
+#' }
 #' @export
-ctmarks = function(cl) {
-# cumu <- NULL
-# require(shiny)
-# require(dplyr)
-# require(magrittr)
-# require(ontoProc)
- if (!exists("pr")) {
-  message("acquiring protein ontology")
-  pr <<- getOnto("PROnto")
-  }
- if (!exists("go")) {
-  message("acquiring GO")
-  go <<- getOnto("goOnto")
-  }
+ctmarks = function(cl, pr, go) {
  rp = recognizedPredicates()
  lens = lapply(rp, function(x) which(sapply(cl[[x]],length)>0))
  kp = unique(unlist(lapply(lens,names)))
@@ -58,10 +54,20 @@ tag and the 'intersection_of', 'has/lacks_plasma_membrane_part',
 the associated ontology annotation.  When these elements involve
 PR: or GO: references, these are retrieved and reported.  This
 process iterates over all the CL: references in the
-intersection_of element for the input cell type.
-The Cell Ontology content was taken from the OBO foundry,
-format-version: 1.2, 2 data-version: releases/2018-07-07."
-   ))
+intersection_of element for the input cell type."), 
+      helpText("Current ontology versions in use in this app call:"),
+      helpText("Cell Ontology:"),
+      verbatimTextOutput("co_vers"),
+      helpText("Gene Ontology:"),
+      verbatimTextOutput("go_vers"),
+      helpText("Protein Ontology:"),
+      verbatimTextOutput("pr_vers"),
+      helpText(" "),
+      helpText("Ontologies available for use in this package, 2022 versions:"),
+      DT::dataTableOutput("desc2022"),
+      helpText("Ontologies available for use in this package, 2021 versions:"),
+      DT::dataTableOutput("desc2021")
+      )
      )
    )
   )
@@ -78,12 +84,29 @@ format-version: 1.2, 2 data-version: releases/2018-07-07."
    onto_plot2(cl, setdiff(anc,drp))
    })
   output$picks = DT::renderDataTable({
-#    text <- NULL
+    cumu <- NULL
     curtag = (clCL %>% dplyr::filter(text == input$CLclasses))[["tag"]]
-    ans = CLfeats(cl, curtag)
+    ans = CLfeats(cl, curtag, pr=pr, go=go)
     cumu <<- rbind(cumu, ans)
     ans
   })
+  output$desc2022 = DT::renderDataTable({
+    data(packDesc2022)
+    packDesc2022
+    })
+  output$desc2021 = DT::renderDataTable({
+    data(packDesc2021)
+    packDesc2021
+    })
+  output$co_vers = renderPrint({
+     attributes(cl)$version[1:2]
+     })
+  output$go_vers = renderPrint({
+     attributes(go)$version[1:2]
+     })
+  output$pr_vers = renderPrint({
+     attributes(pr)$version[1:2]
+     })
   observe({
             if(input$btnSend > 0)
                isolate({

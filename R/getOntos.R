@@ -25,7 +25,7 @@
 valid_ontonames = function() {
 c("caro", "cellLineOnto", "cellOnto", "cellosaurusOnto", "chebi_full", 
 "chebi_lite", "diseaseOnto", "efoOnto", "goOnto", "hcaoOnto", "mondo", 
-"patoOnto", "PROnto", "uberon")
+"patoOnto", "PROnto", "uberon", "Pronto")   # only Pronto will get a 2021 PRO
 }
 
 #' get the ontology based on a short tag and year

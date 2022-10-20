@@ -4,12 +4,16 @@
 \alias{CLfeats}
 \title{produce a data.frame of features relevant to a Cell Ontology class}
 \usage{
-CLfeats(ont, tag = "CL:0001054")
+CLfeats(ont, tag = "CL:0001054", pr, go)
 }
 \arguments{
 \item{ont}{instance of ontologyIndex ontology}
 
 \item{tag}{character(1) a CL: class tag}
+
+\item{pr}{instance of ontologyIndex PRO protein ontology}
+
+\item{go}{instance of ontologyIndex GO gene ontology}
 }
 \value{
 a data.frame instance
@@ -20,11 +24,15 @@ produce a data.frame of features relevant to a Cell Ontology class
 \note{
 This function will look in the intersection_of and has_part,
 lacks_part components of the CL entry to find properties asserted
-of or inherited by the cell type identified in 'tag'
+of or inherited by the cell type identified in 'tag'.  As of 1.19,
+this function does not look in global environment for ontologies.
+We use 2021 versions in the examples because some changes in
+ontologies omit important relationships; revisions to package
+code after 1.19.4 will attempt to address these.
 }
 \examples{
-cl = getCellOnto()
-pr = getPROnto()
-go = getGeneOnto()
-CLfeats(cl, tag="CL:0001054")
+cl = getOnto("cellOnto", year_added="2021")
+pr = getOnto("Pronto", "2021")  # legacy tag, for 2022 would be PROnto
+go = getOnto("goOnto", "2021")
+CLfeats(cl, tag="CL:0001054", pr=pr, go=go)
 }
