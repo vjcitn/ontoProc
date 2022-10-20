@@ -18,7 +18,7 @@
 #' @import ontologyIndex
 #' @importFrom Biobase selectSome
 #' @importClassesFrom S4Vectors DataFrame
-#' @importFrom S4Vectors DataFrame
+#' @importFrom S4Vectors DataFrame mcols
 #' @importFrom methods show new as
 #' @return instance of TermSet
 #' @exportClass TermSet
@@ -112,7 +112,6 @@ children_TAG = function(Tagstring="EFO:1001209", ontology ) {
 
 #' utilities for approximate matching of cell type terms to GO categories and annotations
 #' @importFrom stats na.omit
-#' @importFrom AnnotationDbi select
 #' @param celltypeString character atom to be used to search GO terms using 
 #' @param orgDb instances of orgDb
 #' @param cols columns to be retrieved in select operation
@@ -123,8 +122,9 @@ children_TAG = function(Tagstring="EFO:1001209", ontology ) {
 #' @return data.frame
 #' @examples
 #' library(org.Hs.eg.db)
-#' head(cellTypeToGO("serotonergic neuron", ontoProc::allGOterms))
-#' head(cellTypeToGenes("serotonergic neuron", ontoProc::allGOterms, org.Hs.eg.db))
+#' data(allGOterms)
+#' head(cellTypeToGO("serotonergic neuron", allGOterms))
+#' head(cellTypeToGenes("serotonergic neuron", allGOterms, org.Hs.eg.db))
 #' @export
 cellTypeToGO = function(celltypeString, gotab,...) {
  gotab[agrep(celltypeString, gotab[,2],...),]

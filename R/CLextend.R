@@ -85,6 +85,7 @@ ldfToTerms = function(ldf, propmap, sigels,
 #pmap = c("hasExp"="has_expression_of", lacksExp="lacks_expression_of")
 
 ldfToTerm = function(ldf, propmap, ctype, gn, prologMaker) {
+ data(PROSYM)
  nty = length(unique(ldf$type))
  stopifnot(nty==1)
  lins = paste(propmap[ldf$cond], ": ", 
