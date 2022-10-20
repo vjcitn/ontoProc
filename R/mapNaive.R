@@ -5,7 +5,8 @@
 #' @param \dots passed to agrep if used
 #' @return if a match is found, the result of grep/agrep with value=TRUE is returned; otherwise a named NA_character_ is returned
 #' @examples
-#' co = ontoProc::getCellOnto()
+#' #co = ontoProc::getCellOnto()
+#' co = getOnto("cellOnto", year_added="2022")
 #' mapOneNaive("astrocyte", co)
 #' @return named vector, names are ontology identifiers, values are matched strings
 #' @export
@@ -31,7 +32,8 @@ mapOneNaive = function(naive, onto, useAgrep=FALSE, ...) {
 #' otherwise a similarly named data.frame is returned with
 #' contents from the selected elements of \code{namedvec}
 #' @examples
-#' co = ontoProc::getCellOnto()
+#' #co = ontoProc::getCellOnto()
+#' co = getOnto("cellOnto", year_added="2022")
 #' mast = mapOneNaive("astrocyte", co)
 #' selectFromMap(mast, 1)
 #' @export 
@@ -52,7 +54,8 @@ selectFromMap = function(namedvec, index) {
 #' @examples
 #' cands = c("astrocyte$", "oligodendrocyte", "oligodendrocyte precursor",
 #'    "neoplastic", "^neuron$", "^vascular", "badterm")
-#' co = ontoProc::getCellOnto()
+#' #co = ontoProc::getCellOnto()
+#' co = getOnto("cellOnto", year_added="2022")
 #' liberalMap(cands, co)
 #' @export
 liberalMap = function(terms, onto, useAgrep=FALSE, ...) {

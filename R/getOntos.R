@@ -43,7 +43,7 @@ getOnto = function( ontoname="cellOnto", year_added = "2022" ) {
  ah = AnnotationHub::AnnotationHub()
  opd = AnnotationHub::query(ah, "ontoProcData")
  meta = mcols(opd)
- tmp = meta |> as.data.frame() |> filter(grepl(year_added, rdatadateadded)) |> select(title, description)
+ tmp = meta |> as.data.frame() |> dplyr::filter(grepl(year_added, rdatadateadded)) |> dplyr::select(title, description)
  if (year_added == "2022") {
     ontoname = paste0(ontoname, "_")
     stopifnot(length(grep(ontoname, tmp$title))==1)
@@ -123,7 +123,10 @@ add_cache_cl_simple = function(cache = BiocFileCache::BiocFileCache(),
 #' length(efo$id)
 #' @return instance of ontology_index (S3) from ontologyIndex
 #' @note Provenance information is kept in the form
-#' of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`
+#' of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`.  This
+#' function is deprecated in Bioc 3.16.  Use getOnto("cellOnto") to get the latest version
+#' provided by AnnotationHub.
+#' @export
 getCellOnto = function(useNew=TRUE, newest=FALSE, cache=BiocFileCache::BiocFileCache(),
     use0718=FALSE)  {
     .Deprecated("getOnto", msg="getCellOnto is deprecated: getOnto('cellOnto') should be used for versioned access")
@@ -144,39 +147,53 @@ getCellOnto = function(useNew=TRUE, newest=FALSE, cache=BiocFileCache::BiocFileC
     }
 
 
- 
+dmsg = function(x) .Deprecated(x, msg = sprintf("%s is deprecated: getOnto('%s') should be used for versioned access.", x, x)) 
 
 
 #' @rdname getCellOnto
 #' @aliases getCellLineOnto
 #' @export
-getCellLineOnto = function() get_onto("cellLineOnto")
+getCellLineOnto = function() {
+ dmsg("cellLineOnto")
+ get_onto("cellLineOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getEFOOnto
 #' @export
-getEFOOnto = function() get_onto("efoOnto")
+getEFOOnto = function() {
+ dmsg("efoOnto")
+ get_onto("efoOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getChebiLite
 #' @export
-getChebiLite = function() get_onto("chebi_lite")
+getChebiLite = function() {
+ get_onto("chebi_lite")
+}
 
 #' @rdname getCellOnto
 #' @aliases getCellosaurusOnto
 #' @export
-getCellosaurusOnto = function() get_onto("cellosaurusOnto")
+getCellosaurusOnto = function() {
+ get_onto("cellosaurusOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getUBERON_NE
 #' @export
-getUBERON_NE = function() get_onto("uberon")
+getUBERON_NE = function() {
+ get_onto("uberon")
+}
 
 #' @rdname getCellOnto
 #' @aliases getChebiOnto
 #' @note getChebiOnto loads ontoRda/chebi_full.rda
 #' @export
-getChebiOnto = function() get_onto("chebi_full")
+getChebiOnto = function() {
+ get_onto("chebi_full")
+}
 
 
 #' @rdname getCellOnto
@@ -184,26 +201,34 @@ getChebiOnto = function() get_onto("chebi_full")
 #' @note getOncotreeOnto loads ontoRda/oncotree.rda
 #' @return instance of ontology_index (S3) from ontologyIndex
 #' @export
-getOncotreeOnto = function() get_onto("oncotree")
+getOncotreeOnto = function() {
+ get_onto("oncotree")
+}
 
 #' @rdname getCellOnto
 #' @aliases getDiseaseOnto
 #' @export
-getDiseaseOnto = function() get_onto("diseaseOnto")
+getDiseaseOnto = function() {
+ get_onto("diseaseOnto")
+}
 
 
 #' @rdname getCellOnto
 #' @aliases getGeneOnto
 #' @note getDiseaseOnto loads ontoRda/diseaseOnto.rda
 #' @export
-getGeneOnto = function() get_onto("goOnto")
+getGeneOnto = function() {
+ get_onto("goOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getHCAOnto
 #' @note getHCAOnto loads ontoRda/hcaOnto.rda produced from hcao.owl at https://github.com/HumanCellAtlas/ontology/releases/tag/1.0.6 2/11/2019,
 #' python pronto was used to convert OWL to OBO.
 #' @export
-getHCAOnto = function() get_onto("hcaOnto")
+getHCAOnto = function() {
+ get_onto("hcaOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getPROnto
@@ -211,22 +236,30 @@ getHCAOnto = function() get_onto("hcaOnto")
 #' In contrast to other ontologies, this is imported via get_OBO with
 #' `extract_tags='minimal'`.
 #' @export
-getPROnto = function() get_onto("PROonto")
+getPROnto = function() {
+ get_onto("PROonto")
+}
 
 
 #' @rdname getCellOnto
 #' @aliases getPATOnto
 #' @note getPATOnto loads ontoRda/patoOnto.rda, produced from https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo from OBO foundry, 02-08-2019.
 #' @export
-getPATOnto = function() get_onto("patoOnto")
+getPATOnto = function() {
+ get_onto("patoOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getMondoOnto
 #' @export
-getMondoOnto = function() get_onto("mondo_2021_04_07")
+getMondoOnto = function() {
+ get_onto("mondo_2021_04_07")
+}
 
 #' @rdname getCellOnto
 #' @aliases getSIOOnto
 #' @export
-getSIOOnto = function() get(load(system.file(
+getSIOOnto = function() {
+ get(load(system.file(
       "ontoRda/sio_rel_2021_04_26.rda", package="ontoProc")))
+}

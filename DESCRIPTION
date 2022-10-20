@@ -12,12 +12,12 @@ Description: Support harvesting of diverse bioinformatic ontologies,
 	analyze genome-scale experiments, particularly cell x compound 
         screens.  Another purpose is to strengthen development of 
 	compelling use cases for richer interfaces to emerging ontologies.
-Version: 1.19.2
-Imports: Biobase, S4Vectors, methods, AnnotationDbi, stats, utils, BiocFileCache,
+Version: 1.19.3
+Imports: Biobase, S4Vectors, methods, stats, utils, BiocFileCache,
 	shiny, graph, Rgraphviz, ontologyPlot, dplyr, magrittr, DT, igraph,
-	AnnotationHub
+	AnnotationHub, SummarizedExperiment
 Suggests: knitr, org.Hs.eg.db, org.Mm.eg.db, testthat, BiocStyle,
-	SingleCellExperiment, celldex, rmarkdown
+	SingleCellExperiment, celldex, rmarkdown, AnnotationHub
 Depends: R (>= 4.0), ontologyIndex
 License: Artistic-2.0
 LazyLoad: yes
@@ -25,3 +25,8 @@ biocViews: Infrastructure, GO
 RoxygenNote: 7.2.1
 VignetteBuilder: knitr
 Encoding: UTF-8
+Collate: bind_formal_tags.R  common_classes.R   data.R		      getOntos.R  seurTab.R		
+	CLextend.R	    connect_classes.R  dropStop.R	      graphNEL.R  shiny.R		treeproc.R
+	CLfeats.R	    countClasses.R     fastGrep.R	      mapNaive.R  subset_descendants.R
+	clfixer.R	    ctmarks.R	       findCommonAncestors.R  roots.R	  sym2CellOnto.R termProc.R
+

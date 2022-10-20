@@ -5,7 +5,8 @@
 #' @source This is a snapshot of all the terms available from 
 #' GO.db (3.4.2), August 2017, using keys(GO.db, keytype="TERM").
 #' @examples
-#' head(ontoProc::allGOterms)
+#' data(allGOterms)
+#' head(allGOterms)
 "allGOterms"
 #' stopWords: vector of stop words from xpo6.com
 #' @docType data
@@ -46,7 +47,8 @@
 #' HGNC symbols.
 #' See ?getPROnto for more provenance information.
 #' @examples
-#' head(ontoProc::PROSYM)
+#' data(PROSYM)
+#' head(PROSYM)
 "PROSYM"
 
 #' packDesc2019: overview of ontoProc resources
@@ -54,5 +56,6 @@
 #' @note Brief survey of functions available to load serialized
 #' ontology_index instances imported from OBO.
 #' @examples
+#' data(packDesc2019)
 #' head(packDesc2019)
 "packDesc2019"

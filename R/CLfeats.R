@@ -52,8 +52,8 @@ CLfeat = function(ont, curtag="CL:0001054", prefix="^CL",
 # require(dplyr)
 # require(magrittr)
 # require(ontoProc)
- if (!exists("pr", .GlobalEnv)) pr = getPROnto()
- if (!exists("go", .GlobalEnv)) go = getGeneOnto()
+ if (!exists("pr", .GlobalEnv)) pr = getOnto("PROnto")
+ if (!exists("go", .GlobalEnv)) go = getOnto("goOnto")
  kpl = lapply(preds, function(x)
          which(sapply(ont[[x]], length)>0))
  kp = unique(unlist(kpl))
@@ -147,8 +147,9 @@ dfl = lapply(1:numdf, function(x) {
 # if (length(lackspar)>0 && usePartsL) lackspardfa = data.frame(tag=i,
 #                              prtag=lackspar, cond="lacksPart", entity=prOrGO(lackspar), stringsAsFactors=FALSE)
 prupdate = function(x) {
+   data("PROSYM", package="ontoProc")
    if (is.null(x) || !inherits(x, "data.frame") || nrow(x)<1) return(x)
-   try(left_join(x, dplyr::transmute(ontoProc::PROSYM, prtag=PRID, SYMBOL), by="prtag"))
+   try(left_join(x, dplyr::transmute(PROSYM, prtag=PRID, SYMBOL), by="prtag"))
 }
 ans = lapply(dfl, prupdate)
 lkta = lapply(ans, function(x) x$tag[1])

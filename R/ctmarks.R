@@ -5,23 +5,23 @@
 #' ontology relationships.  Uses shiny.  Can perform better if getPROnto() and getGeneOnto() values
 #' are in .GlobalEnv as pr and go respectively.
 #' @importFrom magrittr "%>%"
-#' @importFrom dplyr filter transmute left_join
+#' @importFrom dplyr filter transmute left_join select
 #' @importFrom DT renderDataTable dataTableOutput
 #' @return a data.frame with features for selected cell types
 #' @export
 ctmarks = function(cl) {
- cumu <- NULL
+# cumu <- NULL
 # require(shiny)
 # require(dplyr)
 # require(magrittr)
 # require(ontoProc)
  if (!exists("pr")) {
   message("acquiring protein ontology")
-  pr <<- getPROnto()
+  pr <<- getOnto("PROnto")
   }
  if (!exists("go")) {
   message("acquiring GO")
-  go <<- getGeneOnto()
+  go <<- getOnto("goOnto")
   }
  rp = recognizedPredicates()
  lens = lapply(rp, function(x) which(sapply(cl[[x]],length)>0))
@@ -78,6 +78,7 @@ format-version: 1.2, 2 data-version: releases/2018-07-07."
    onto_plot2(cl, setdiff(anc,drp))
    })
   output$picks = DT::renderDataTable({
+#    text <- NULL
     curtag = (clCL %>% dplyr::filter(text == input$CLclasses))[["tag"]]
     ans = CLfeats(cl, curtag)
     cumu <<- rbind(cumu, ans)
