@@ -56,7 +56,7 @@ jobs:
         continue-on-error: true
 
       - if: runner.os == 'windows'
-        run: R --quiet -e 'ah = AnnotationHub::AnnotationHub(); AnnotationHub::query(ah, "ontoProcData");'
+        run: sh -c "R --quiet -e 'ah = AnnotationHub::AnnotationHub(); AnnotationHub::query(ah, \"ontoProcData\");'"
         continue-on-error: true
 
       - if: runner.os != 'windows'
