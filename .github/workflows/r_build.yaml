@@ -1,0 +1,108 @@
+on:
+  push:
+    branches: [with_pkgdown]
+
+name: All platforms build
+
+jobs:
+  check:
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: macOS-latest,   r: 'release'}
+          - {os: windows-latest, r: 'release'}
+          - {os: ubuntu-latest,   r: 'release'}
+
+    env:
+      R_KEEP_PKG_SOURCE: yes
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: ${{ matrix.config.r }}
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-tinytex@v2
+
+      - if: runner.os == 'macOS'
+        run: brew install --cask xquartz
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
+
+      - run: echo ::set-output name=REPOSITORY_NAME::$(echo "$GITHUB_REPOSITORY" | awk -F / '{print $2}' | sed -e "s/:refs//")
+        shell: bash
+        id: repo
+
+      - run: |
+          echo ::set-output name=PKG_VERSION::$(grep "Version:" DESCRIPTION | awk -F ': ' '{print $2}')
+        shell: bash
+        id: pkg
+
+      - run: |
+          echo ::set-output name=BUILT::$(echo "${{ steps.repo.outputs.REPOSITORY_NAME }}_${{ steps.pkg.outputs.PKG_VERSION }}")
+        shell: bash
+        id: builtfile
+
+      - if: runner.os == 'windows'
+        run: R.exe CMD INSTALL .
+        continue-on-error: true
+
+      - if: runner.os != 'windows'
+        run: R CMD INSTALL .
+        continue-on-error: true
+
+      - run: sh -c "R CMD build --keep-empty-dirs --no-resave-data . 2>&1 > /tmp/build.log || true && while grep -q 'not found' /tmp/build.log; do cat /tmp/build.log && Rscript -e 'tinytex::parse_install(\"/tmp/build.log\")' && R CMD build --keep-empty-dirs --no-resave-data . 2>&1 > /tmp/build.log || true; done"
+        continue-on-error: true
+
+      - run: cat /tmp/build.log
+        continue-on-error: true
+
+      - if: runner.os == 'macOS'
+        run: |
+          mkdir -p /tmp && git clone https://github.com/Bioconductor/BBS /tmp/BBS && mkdir ${{ steps.repo.outputs.REPOSITORY_NAME }}.buildbin-libdir;
+          (cd /tmp/BBS/utils && gcc chown-rootadmin.c -o chown-rootadmin && sudo chown root:admin chown-rootadmin && sudo chmod 4750 chown-rootadmin);
+          bash /tmp/BBS/utils/build-universal.sh ${{ steps.builtfile.outputs.BUILT }}.tar.gz /Library/Frameworks/R.framework/Resources/bin/R ${{ steps.repo.outputs.REPOSITORY_NAME }}.buildbin-libdir
+
+      - if: runner.os == 'macOS'
+        run: R CMD INSTALL --preclean --no-multiarch --library=${{ steps.repo.outputs.REPOSITORY_NAME }}.buildbin-libdir ${{ steps.builtfile.outputs.BUILT }}.tar.gz
+
+
+      - if: runner.os == 'windows'
+        run: R.exe CMD build --keep-empty-dirs --no-resave-data .
+
+      - if: runner.os == 'windows'
+        run: mkdir ${{ steps.repo.outputs.REPOSITORY_NAME }}.buildbin-libdir && R.exe CMD INSTALL --merge-multiarch --build --library=${{ steps.repo.outputs.REPOSITORY_NAME }}.buildbin-libdir ${{ steps.builtfile.outputs.BUILT }}.tar.gz && R.exe CMD INSTALL ${{ steps.builtfile.outputs.BUILT }}.zip && rm ${{ steps.builtfile.outputs.BUILT }}.zip
+
+      - if: runner.os == 'windows'
+        run: R.exe CMD INSTALL --merge-multiarch --build --library=${{ steps.repo.outputs.REPOSITORY_NAME }}.buildbin-libdir ${{ steps.builtfile.outputs.BUILT }}.tar.gz
+
+      - if: runner.os != 'windows'
+        run: mkdir -p /tmp/${{ matrix.config.os }} && cp ${{ steps.builtfile.outputs.BUILT }}.tar.gz /tmp/${{ matrix.config.os }}/${{ matrix.config.os }}-${{ steps.builtfile.outputs.BUILT }}.tar.gz
+
+      - if: runner.os == 'windows'
+        run: mkdir -p /tmp/${{ matrix.config.os }} && cp ${{ steps.builtfile.outputs.BUILT }}.zip /tmp/${{ matrix.config.os }}/${{ matrix.config.os }}-${{ steps.builtfile.outputs.BUILT }}.zip
+
+      - uses: r-lib/actions/check-r-package@v2
+
+      - if: runner.os != 'windows'
+        uses: actions/upload-artifact@v3
+        with:
+          name: "${{ matrix.config.os }}-${{ steps.builtfile.outputs.BUILT }}.tar.gz"
+          path: "/tmp/${{ matrix.config.os }}/${{ matrix.config.os }}-${{ steps.builtfile.outputs.BUILT }}.tar.gz"
+
+      - if: runner.os == 'windows'
+        uses: actions/upload-artifact@v3
+        with:
+          name: "${{ matrix.config.os }}-${{ steps.builtfile.outputs.BUILT }}.zip"
+          path: "/tmp/${{ matrix.config.os }}/${{ matrix.config.os }}-${{ steps.builtfile.outputs.BUILT }}.zip"
+

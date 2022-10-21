@@ -4,10 +4,14 @@
 \alias{ctmarks}
 \title{app to review molecular properties of cell types via cell ontology}
 \usage{
-ctmarks(cl)
+ctmarks(cl, pr, go)
 }
 \arguments{
 \item{cl}{an import of a Cell Ontology (or extended Cell Ontology) in ontology_index form}
+
+\item{pr}{an import of a Protein Ontology in ontology_index form}
+
+\item{go}{an import of a Gene Ontology in ontology_index form}
 }
 \value{
 a data.frame with features for selected cell types
@@ -20,4 +24,12 @@ Prototype of harvesting of cell ontology by searching
 has_part, has_plasma_membrane_part, intersection_of and allied
 ontology relationships.  Uses shiny.  Can perform better if getPROnto() and getGeneOnto() values
 are in .GlobalEnv as pr and go respectively.
+}
+\examples{
+if (interactive()) {
+   co = getOnto("cellOnto", year_added="2021")  # has plasma membrane relations
+   go = getOnto("goOnto", "2021")
+   pr = getOnto("Pronto", "2021") # peculiar tag used in legacy, would be PROnto with 2022
+   ctmarks(co, go, pr)
+}
 }

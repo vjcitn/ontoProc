@@ -1,0 +1,143 @@
+on:
+  push:
+    branches: [with_pkgdown]
+
+name: Binary Build
+
+jobs:
+  binarybuild:
+    runs-on: ubuntu-latest
+    container:
+      image: bioconductor/bioconductor_docker:RELEASE_3_15
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Current Job Log URL
+        uses: Tiryoh/gha-jobid-action@v0
+        id: jobs
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get unique identifier for worker
+        id: uniq
+        run: |
+          sleep $(( ( RANDOM % 10 )  + 1 ));
+          echo "::set-output name=uniq::$(cat /proc/sys/kernel/random/uuid | md5sum | awk '{print $1}')"
+      - name: Initialize if necessary then claim package
+        id: claim
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 20
+          shell: bash
+          command: |
+            set -x
+            sleep $(( ( RANDOM % 10 )  + 1 ));
+            git config --global --add safe.directory "$GITHUB_WORKSPACE"
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            bash -c "bash .github/scripts/claim_package.sh ${{steps.uniq.outputs.uniq}}" 2>&1 > /tmp/claimlog;
+            cat /tmp/claimlog
+            if grep -i 'error' /tmp/claimlog; then exit 1; else 
+            echo "::set-output name=pkg::$(cat tmp${{steps.uniq.outputs.uniq}})" && exit 0; fi
+      - name: Push run_id
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 20
+          shell: bash
+          command: |
+            sleep $(( ( RANDOM % 10 )  + 1 ));
+            git pull origin main || git reset --hard origin/main
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            PKG=$(cat tmp${{steps.uniq.outputs.uniq}})
+            sed -i 's/claimed/runidpushed/g' "lists/$PKG"
+            mkdir -p logs/run_ids
+            echo ${{ steps.jobs.outputs.html_url }} >> logs/run_ids/$PKG
+            git add logs
+            git commit -m "push run_id $PKG"
+            git push
+      - name: Build claimed package
+        id: pkgbuild
+        run: |
+          LIBRARY=$(echo "$(pwd)/built/")
+          PKG=$(cat tmp${{steps.uniq.outputs.uniq}})
+          bash .github/scripts/build_package.sh $LIBRARY $PKG 2>&1 > /tmp/$PKG
+        continue-on-error: true
+        if: steps.claim.outcome=='success'
+
+      - name: Push built package
+        id: push
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 20
+          shell: bash
+          command: |
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            PKG=$(cat tmp${{steps.uniq.outputs.uniq}})
+            cp -r /tmp/$PKG lists/$PKG
+            if bash -c "bash .github/scripts/push_built.sh $PKG 2>&1 | grep -i 'error'"; then exit 1; else 
+            echo "Marked built" && exit 0; fi
+      - name: Get tar name
+        id: tar
+        run: |
+          echo "::set-output name=name::$(ls /tmp/tars/ | grep ${{steps.claim.outputs.pkg}} | sed 's#/tmp/tars/##g')"
+        if: steps.pkgbuild.outcome=='success'
+
+      - name: Push failed before exit
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 20
+          shell: bash
+          command: |
+            git pull origin main || git reset --hard origin/main
+            mkdir -p lists/failed
+            cp /tmp/${{steps.claim.outputs.pkg}} lists/failed/${{steps.claim.outputs.pkg}};
+            PKG=$(cat tmp${{steps.uniq.outputs.uniq}})
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            git add lists
+            git commit -m "Marked failed $PKG"
+            git push
+        if: steps.pkgbuild.outcome=='failure'
+
+      - name: Exit on failure
+        run: exit 1
+        if: steps.pkgbuild.outcome=='failure'
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: "artifact-${{steps.claim.outputs.pkg}}"
+          path: /tmp/tars/${{steps.tar.outputs.name}}
+
+      - name: Install rclone
+        shell: bash
+        run: "sudo -v ; curl https://rclone.org/install.sh | sudo bash"
+
+      - name: Add rclone conf file
+        run: |
+          echo "$RCLONE_CONF" > ~/.rclone.conf
+        env:
+          RCLONE_CONF: ${{secrets.RCLONE_CONF}}
+
+      - name: Rclone push package and mark as pushed
+        run: |
+          set -x
+          rclone copy /tmp/tars/${{steps.tar.outputs.name}} js2:/gha-build/ -vvvvvv
+      - name: Rclone push package and mark as pushed
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 10
+          max_attempts: 20
+          shell: bash
+          command: |
+            set -x
+            git config --global --add safe.directory "$GITHUB_WORKSPACE"
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+            if bash -c "bash .github/scripts/rclone_push.sh ${{steps.claim.outputs.pkg}} ${{steps.tar.outputs.name}} 2>&1 | grep -i 'error'"; then exit 1; else 
+            echo "Marked pushed"; fi
