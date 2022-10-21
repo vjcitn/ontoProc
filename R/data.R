@@ -59,3 +59,21 @@
 #' data(packDesc2019)
 #' head(packDesc2019)
 "packDesc2019"
+
+#' packDesc2022: overview of ontoProc resources
+#' @format data.frame instance
+#' @note Brief survey of functions available to load serialized
+#' ontology_index instances imported from OBO.  Focus is on versions added in 2022.
+#' @examples
+#' data(packDesc2022)
+#' head(packDesc2022)
+"packDesc2022"
+
+#' packDesc2021: overview of ontoProc resources
+#' @format data.frame instance
+#' @note Brief survey of functions available to load serialized
+#' ontology_index instances imported from OBO.  Focus is on versions added in 2021.
+#' @examples
+#' data(packDesc2021)
+#' head(packDesc2021)
+"packDesc2021"
