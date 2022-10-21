@@ -12,9 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: macOS-latest,   r: 'release'}
           - {os: windows-latest, r: 'release'}
-          - {os: ubuntu-latest,   r: 'release'}
 
     env:
       R_KEEP_PKG_SOURCE: yes
@@ -59,6 +57,7 @@ jobs:
 
       - if: runner.os != 'windows'
         run: R CMD INSTALL .
+	run: R --quiet -e 'ah = AnnotationHub::AnnotationHub(); AnnotationHub::query(ah, "ontoProcData")'
         continue-on-error: true
 
       - run: sh -c "R CMD build --keep-empty-dirs --no-resave-data . 2>&1 > /tmp/build.log || true && while grep -q 'not found' /tmp/build.log; do cat /tmp/build.log && Rscript -e 'tinytex::parse_install(\"/tmp/build.log\")' && R CMD build --keep-empty-dirs --no-resave-data . 2>&1 > /tmp/build.log || true; done"
