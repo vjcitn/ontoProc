@@ -47,27 +47,44 @@ in Bioconductor-oriented data analysis.
 
 We'll start by setting up some package attachments and
 ontology objects.
-```{r setup}
-suppressPackageStartupMessages({
+```{r setup,echo=FALSE,results="hide",message=FALSE}
 library(knitr)
 library(ontoProc)
-go = getGeneOnto()
-cl = getCellOnto()
-pr = getPROnto()
+cl = getOnto("cellOnto", "2021") # for continuity -- 	has_high_plasma_membrane_amount: list
+#	has_low_plasma_membrane_amount: list are present in 2021 not 2022 - seems these have
+# moved to RO (relations ontology)
+#> grep("plasma", nn, value=TRUE)
+#                       RO:0002104                        RO:0015015 
+#       "has plasma membrane part" "has high plasma membrane amount" 
+#                       RO:0015016 
+# "has low plasma membrane amount" 
+#
+go = getOnto("goOnto")
+pr = getOnto("PROnto")
 library(ontologyPlot)
 library(BiocStyle)
-})
+library(SingleCellExperiment)
+library(celldex)
 ```
+```{r setup2, message=FALSE}
+library(ontoProc)
+library(ontologyPlot)
+library(BiocStyle)  # for package references
+cl = getOnto("cellOnto", "2021") # for continuity -- 	has_high_plasma_membrane_amount: list
+go = getOnto("goOnto", "2021")  # if updated, some assertions will fail...
+pr = getOnto("Pronto", "2021")
+```
+
 
 # Scope of package
 
-The following table describes the resources available with `get*`
-commands defined in ontoProc.
+The following table describes the most up-to-date resources available with `getOnto`.
 <!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
 ```{r lksco}
-data(packDesc2019)
-kable(packDesc2019)
+data(packDesc2022)
+kable(packDesc2022[,-c(1,7)])
 ```
+Other resources are listed in `packDesc2021` and `packDesc2019`.
 
 # Methods
 
@@ -171,7 +188,7 @@ for graphs derived from ontology structures.
 Here we display the PBMC cell sets reported in the Seurat tutorial.
 ```{r lklklk}
 library(ontoProc)
-cl = getCellOnto()
+cl = getOnto("cellOnto", "2021")
 onto_plot2(cl, stab$tag)
 ```
 
@@ -191,7 +208,7 @@ symbol is retrieved by `CLfeats`.  Here we obtain the listing
 for a mature CD1a-positive dermal dendritic cell.
 ```{r lkfa}
 suppressMessages({
-kable(CLfeats(cl, "CL:0002531"))
+kable(CLfeats(cl, "CL:0002531", pr=pr, go=go))
 })
 ```
 
@@ -328,7 +345,7 @@ sum(hpca_sce$label.ont == "", na.rm=TRUE) # iPS and BM
 ### Subsetting using the class hierarchy of Cell Ontology
 
 ```{r dosub, eval=TRUE}
-cell_onto = ontoProc::getCellOnto()
+cell_onto = ontoProc::getOnto("cellOnto", "2021")
 hpca_mono = subset_descendants( hpca_sce, cell_onto, "^monocyte$" )
 table(hpca_mono$label.fine)
 table(hpca_mono$label.ont) # not much diversity
@@ -338,6 +355,34 @@ table(hpca_tcell$label.ont) #
 uu = unique(hpca_tcell$label.ont)
 onto_plot2(cell_onto, uu)
 ```
+
+# Disease concept relationships
+
+The Experimental Factor Ontology
+is available and integrates information
+among diverse ontologies.  Here we
+check on terms likely related to asthma.
+
+```{r lkefo}
+ef = getOnto("efoOnto")
+alla <- grep("sthma", ef$name, value=TRUE) 
+aa <- grep("obso", alla, invert=TRUE, value=TRUE)
+onto_plot2(ef, names(aa))
+```
+
+However, the Human Disease Ontology seems more developed
+in terms of defining asthma subtypes.  We have not
+integrated that ontology into ontoProc yet, but it
+can be retrieved conveniently as follows:
+```{r lkhdo,eval=FALSE}
+hdo_2022_09 = get_OBO(
+  "https://github.com/DiseaseOntology/HumanDiseaseOntology/raw/main/src/ontology/HumanDO.obo", 
+  extract_tags = "everything"
+  )
+```
+With this resource, we can see finer-grained handling of asthma subtyping:
+
+![](hdoasth.png)
 
 # Related tools
 
