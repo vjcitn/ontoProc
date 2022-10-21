@@ -55,10 +55,6 @@ jobs:
         run: R.exe CMD INSTALL .
         continue-on-error: true
 
-      - if: runner.os == 'windows'
-        run: sh -c "R --quiet -e 'ah = AnnotationHub::AnnotationHub(); AnnotationHub::query(ah, \"ontoProcData\");'"
-        continue-on-error: true
-
       - if: runner.os != 'windows'
         run: R CMD INSTALL .
         continue-on-error: true
