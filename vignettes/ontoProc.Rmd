@@ -353,12 +353,10 @@ among diverse ontologies.  Here we
 check on terms likely related to asthma.
 
 ```{r lkefo}
-ah <- AnnotationHub::AnnotationHub()
-print(as.data.frame(S4Vectors::mcols(AnnotationHub::query(ah, "ontoProcData"))))
-#ef = getOnto("efoOnto")
-#alla <- grep("sthma", ef$name, value=TRUE) 
-#aa <- grep("obso", alla, invert=TRUE, value=TRUE)
-#onto_plot2(ef, names(aa))
+ef = getOnto("efoOnto")
+alla <- grep("sthma", ef$name, value=TRUE) 
+aa <- grep("obso", alla, invert=TRUE, value=TRUE)
+onto_plot2(ef, names(aa))
 ```
 
 However, the Human Disease Ontology seems more developed
