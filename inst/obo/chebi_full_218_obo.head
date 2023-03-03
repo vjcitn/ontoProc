@@ -1,0 +1,100 @@
+format-version: 1.2
+data-version: 218
+date: 27:01:2023 20:02
+saved-by: chebi
+subsetdef: 1_STAR "Preliminary entries"
+subsetdef: 2_STAR "Annotated by 3rd party"
+subsetdef: 3_STAR "Manually annotated by ChEBI Team"
+synonymtypedef: IUPAC_NAME "IUPAC NAME"
+synonymtypedef: BRAND_NAME "BRAND NAME"
+synonymtypedef: INN "INN"
+default-namespace: chebi_ontology
+remark: ChEBI subsumes and replaces the Chemical Ontology first
+remark: developed by Michael Ashburner & Pankaj Jaiswal.
+remark: Author: ChEBI curation team 
+remark: ChEBI Release version 218
+remark: For any queries contact chebi-help@ebi.ac.uk 
+ontology: chebi
+
+[Term]
+id: CHEBI:24431
+name: chemical entity
+subset: 3_STAR
+def: "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." []
+synonym: "chemical entity" EXACT [UniProt]
+
+[Term]
+id: CHEBI:23367
+name: molecular entity
+subset: 3_STAR
+def: "Any constitutionally or isotopically distinct atom, molecule, ion, ion pair, radical, radical ion, complex, conformer etc., identifiable as a separately distinguishable entity." []
+synonym: "entite moleculaire" RELATED [IUPAC]
+synonym: "entidad molecular" RELATED [IUPAC]
+synonym: "entidades moleculares" RELATED [IUPAC]
+synonym: "molecular entity" EXACT IUPAC_NAME [IUPAC]
+synonym: "molekulare Entitaet" RELATED [ChEBI]
+synonym: "molecular entities" RELATED [IUPAC]
+is_a: CHEBI:24431
+
+[Term]
+id: CHEBI:24870
+name: ion
+subset: 3_STAR
+def: "A molecular entity having a net electric charge." []
+synonym: "ion" EXACT IUPAC_NAME [IUPAC]
+synonym: "Ionen" RELATED [ChEBI]
+synonym: "ions" RELATED [ChEBI]
+synonym: "Ion" EXACT [ChEBI]
+synonym: "ion" EXACT [ChEBI]
+synonym: "iones" RELATED [ChEBI]
+is_a: CHEBI:23367
+
+[Term]
+id: CHEBI:24867
+name: monoatomic ion
+subset: 3_STAR
+synonym: "monoatomic ions" RELATED [ChEBI]
+is_a: CHEBI:24870
+is_a: CHEBI:33238
+
+[Term]
+id: CHEBI:23905
+name: monoatomic anion
+subset: 3_STAR
+synonym: "monoatomic anions" RELATED [ChEBI]
+is_a: CHEBI:24867
+is_a: CHEBI:22563
+
+[Term]
+id: CHEBI:33429
+name: monoatomic monoanion
+subset: 3_STAR
+synonym: "monoatomic monoanions" RELATED [ChEBI]
+property_value: http://purl.obolibrary.org/obo/chebi/mass "0.00000" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[*-]" xsd:string
+is_a: CHEBI:23905
+is_a: CHEBI:36830
+
+[Term]
+id: CHEBI:30151
+name: aluminide(1-)
+subset: 3_STAR
+synonym: "Aluminum anion" RELATED [NIST_Chemistry_WebBook]
+synonym: "aluminide(1-)" EXACT IUPAC_NAME [IUPAC]
+synonym: "aluminide(-I)" EXACT IUPAC_NAME [IUPAC]
+synonym: "Al(-)" RELATED [IUPAC]
+property_value: http://purl.obolibrary.org/obo/chebi/mass "26.98154" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "26.98209" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/formula "Al" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchi "InChI=1S/Al/q-1" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/smiles "[Al-]" xsd:string
+property_value: http://purl.obolibrary.org/obo/chebi/inchikey "SBLSYFIUPXRQRY-UHFFFAOYSA-N" xsd:string
+xref: CAS:22325-47-9 {source="NIST Chemistry WebBook"}
+is_a: CHEBI:33429
+is_a: CHEBI:33627
+
+[Term]
+id: CHEBI:16042
+name: halide anion
