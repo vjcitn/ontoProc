@@ -18,6 +18,7 @@ Brief survey of functions available to load serialized
 ontology_index instances imported from OBO.
 }
 \examples{
+data(packDesc2019)
 head(packDesc2019)
 }
 \keyword{datasets}

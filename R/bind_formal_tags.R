@@ -1,4 +1,5 @@
 #' add mapping from informal to formal cell type tags to a SummarizedExperiment colData
+#' @importFrom SummarizedExperiment colData colData<-
 #' @param se SummarizedExperiment instance
 #' @param informal character(1) name of colData element with uncontrolled vocabulary
 #' @param tagmap data.frame with columns 'informal' and 'formal'
