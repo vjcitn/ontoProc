@@ -18,6 +18,7 @@ allGOterms
 allGOterms: data.frame with ids and terms
 }
 \examples{
-head(ontoProc::allGOterms)
+data(allGOterms)
+head(allGOterms)
 }
 \keyword{datasets}

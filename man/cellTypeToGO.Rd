@@ -40,6 +40,7 @@ Very primitive, uses agrep to try to find relevant terms.
 }
 \examples{
 library(org.Hs.eg.db)
-head(cellTypeToGO("serotonergic neuron", ontoProc::allGOterms))
-head(cellTypeToGenes("serotonergic neuron", ontoProc::allGOterms, org.Hs.eg.db))
+data(allGOterms)
+head(cellTypeToGO("serotonergic neuron", allGOterms))
+head(cellTypeToGenes("serotonergic neuron", allGOterms, org.Hs.eg.db))
 }

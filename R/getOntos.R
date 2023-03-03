@@ -43,7 +43,7 @@ getOnto = function( ontoname="cellOnto", year_added = "2022" ) {
  ah = AnnotationHub::AnnotationHub()
  opd = AnnotationHub::query(ah, "ontoProcData")
  meta = mcols(opd)
- tmp = meta |> as.data.frame() |> filter(grepl(year_added, rdatadateadded)) |> select(title, description)
+ tmp = meta |> as.data.frame() |> dplyr::filter(grepl(year_added, rdatadateadded)) |> dplyr::select(title, description)
  if (year_added == "2022") {
     ontoname = paste0(ontoname, "_")
     stopifnot(length(grep(ontoname, tmp$title))==1)
@@ -123,7 +123,10 @@ add_cache_cl_simple = function(cache = BiocFileCache::BiocFileCache(),
 #' length(efo$id)
 #' @return instance of ontology_index (S3) from ontologyIndex
 #' @note Provenance information is kept in the form
-#' of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`
+#' of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`.  This
+#' function is deprecated in Bioc 3.16.  Use getOnto("cellOnto") to get the latest version
+#' provided by AnnotationHub.
+#' @export
 getCellOnto = function(useNew=TRUE, newest=FALSE, cache=BiocFileCache::BiocFileCache(),
     use0718=FALSE)  {
     .Deprecated("getOnto", msg="getCellOnto is deprecated: getOnto('cellOnto') should be used for versioned access")
@@ -144,51 +147,53 @@ getCellOnto = function(useNew=TRUE, newest=FALSE, cache=BiocFileCache::BiocFileC
     }
 
 
- 
+dmsg = function(x) .Deprecated(x, msg = sprintf("%s is deprecated: getOnto('%s') should be used for versioned access.", x, x)) 
 
 
 #' @rdname getCellOnto
 #' @aliases getCellLineOnto
 #' @export
-getCellLineOnto = function(){
-  .Deprecated("getCellLineOnto", msg="getCellLineOnto is deprecated: getOnto('cellLineOnto') should be used for versioned access")
-  get_onto("cellLineOnto")}
+getCellLineOnto = function() {
+ dmsg("cellLineOnto")
+ get_onto("cellLineOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getEFOOnto
 #' @export
 getEFOOnto = function() {
-  .Deprecated("getEFOOnto", msg="getEFOOnto is deprecated: getOnto('efoOnto') should be used for versioned access")
-  get_onto("efoOnto")}
+ dmsg("efoOnto")
+ get_onto("efoOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getChebiLite
 #' @export
 getChebiLite = function() {
-  .Deprecated("getChebiLite", msg="getChebiLite is deprecated: getOnto('chebi_lite') should be used for versioned access")
-  get_onto("chebi_lite")}
+ get_onto("chebi_lite")
+}
 
 #' @rdname getCellOnto
 #' @aliases getCellosaurusOnto
 #' @export
 getCellosaurusOnto = function() {
-  .Deprecated("getCellosaurusOnto", msg="getCellosaurusOnto is deprecated: getOnto('CellosaurusOnto') should be used for versioned access")
-  get_onto("cellosaurusOnto")}
+ get_onto("cellosaurusOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getUBERON_NE
 #' @export
 getUBERON_NE = function() {
-  .Deprecated("getUBERON_NE", msg="getUBERON_NE is deprecated: getOnto('uberon') should be used for versioned access")
-  get_onto("uberon")}
+ get_onto("uberon")
+}
 
 #' @rdname getCellOnto
 #' @aliases getChebiOnto
 #' @note getChebiOnto loads ontoRda/chebi_full.rda
 #' @export
 getChebiOnto = function() {
-  .Deprecated("getChebiOnto", msg="getChebiOnto is deprecated: getOnto('chebi_full') should be used for versioned access")
-  get_onto("chebi_full")}
+ get_onto("chebi_full")
+}
 
 
 #' @rdname getCellOnto
@@ -197,15 +202,15 @@ getChebiOnto = function() {
 #' @return instance of ontology_index (S3) from ontologyIndex
 #' @export
 getOncotreeOnto = function() {
-  .Deprecated("getOncotreeOnto", msg="getOncotreeOnto is deprecated: getOnto('oncotree', year_added = '2021') should be used for versioned access")
-  get_onto("oncotree")}
+ get_onto("oncotree")
+}
 
 #' @rdname getCellOnto
 #' @aliases getDiseaseOnto
 #' @export
 getDiseaseOnto = function() {
-  .Deprecated("getDiseaseOnto", msg="getDiseaseOnto is deprecated: getOnto('diseaseOnto') should be used for versioned access")
-  get_onto("diseaseOnto")}
+ get_onto("diseaseOnto")
+}
 
 
 #' @rdname getCellOnto
@@ -213,8 +218,8 @@ getDiseaseOnto = function() {
 #' @note getDiseaseOnto loads ontoRda/diseaseOnto.rda
 #' @export
 getGeneOnto = function() {
-  .Deprecated("getGeneOnto", msg="getGeneOnto is deprecated: getOnto('goOnto') should be used for versioned access")
-  get_onto("goOnto")}
+ get_onto("goOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getHCAOnto
@@ -222,8 +227,8 @@ getGeneOnto = function() {
 #' python pronto was used to convert OWL to OBO.
 #' @export
 getHCAOnto = function() {
-  .Deprecated("getHCAOnto", msg="getHCAOnto is deprecated: getOnto('hcaoOnto') should be used for versioned access")
-  get_onto("hcaOnto")}
+ get_onto("hcaOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getPROnto
@@ -232,8 +237,8 @@ getHCAOnto = function() {
 #' `extract_tags='minimal'`.
 #' @export
 getPROnto = function() {
-  .Deprecated("getPROnto", msg="getPROnto is deprecated: getOnto('PROnto') should be used for versioned access")
-  get_onto("PROonto")}
+ get_onto("PROonto")
+}
 
 
 #' @rdname getCellOnto
@@ -241,18 +246,20 @@ getPROnto = function() {
 #' @note getPATOnto loads ontoRda/patoOnto.rda, produced from https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo from OBO foundry, 02-08-2019.
 #' @export
 getPATOnto = function() {
-  .Deprecated("getPATOnto", msg="getPATOnto is deprecated: getOnto('patoOnto') should be used for versioned access")
-  get_onto("patoOnto")}
+ get_onto("patoOnto")
+}
 
 #' @rdname getCellOnto
 #' @aliases getMondoOnto
 #' @export
 getMondoOnto = function() {
-  .Deprecated("getMondoOnto", msg="getMondoOnto is deprecated: getOnto('mondo', year_added = '2021') should be used for versioned access")
-  get_onto("mondo_2021_04_07")}
+ get_onto("mondo_2021_04_07")
+}
 
 #' @rdname getCellOnto
 #' @aliases getSIOOnto
 #' @export
-getSIOOnto = function() get(load(system.file(
+getSIOOnto = function() {
+ get(load(system.file(
       "ontoRda/sio_rel_2021_04_26.rda", package="ontoProc")))
+}

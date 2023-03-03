@@ -22,7 +22,8 @@ contents from the selected elements of \code{namedvec}
 select a set of elements from a term 'map' and return a contribution to a data.frame
 }
 \examples{
-co = ontoProc::getCellOnto()
+#co = ontoProc::getCellOnto()
+co = getOnto("cellOnto", year_added="2022")
 mast = mapOneNaive("astrocyte", co)
 selectFromMap(mast, 1)
 }

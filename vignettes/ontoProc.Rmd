@@ -65,6 +65,7 @@ The following table describes the resources available with `get*`
 commands defined in ontoProc.
 <!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
 ```{r lksco}
+data(packDesc2019)
 kable(packDesc2019)
 ```
 

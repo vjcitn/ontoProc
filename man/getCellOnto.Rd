@@ -75,7 +75,9 @@ You may want to try `bfcupdate` on the BiocFileCache element.
 useNew
 
 Provenance information is kept in the form
-of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`
+of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`.  This
+function is deprecated in Bioc 3.16.  Use getOnto("cellOnto") to get the latest version
+provided by AnnotationHub.
 
 getChebiOnto loads ontoRda/chebi_full.rda
 
