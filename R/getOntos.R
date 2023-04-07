@@ -44,7 +44,11 @@ getOnto = function( ontoname="cellOnto", year_added = "2022" ) {
  opd = AnnotationHub::query(ah, "ontoProcData")
  meta = mcols(opd)
  tmp = meta |> as.data.frame() |> dplyr::filter(grepl(year_added, rdatadateadded)) |> dplyr::select(title, description)
- if (year_added == "2022") {
+ if (year_added == "2023") {
+   ontoname = paste0(ontoname, "_")
+   stopifnot(length(grep(ontoname, tmp$title))==1)
+ }
+ else if (year_added == "2022") {
     ontoname = paste0(ontoname, "_")
     stopifnot(length(grep(ontoname, tmp$title))==1)
     }
@@ -78,11 +82,20 @@ getOnto = function( ontoname="cellOnto", year_added = "2022" ) {
 # we will need metadata added to deal with versioning in future
 #
 
-ont_tags = c(caro = "AH97934", cellLineOnto = "AH97935", cellOnto = "AH97936", 
-cellosaurusOnto = "AH97937", chebi_full = "AH97938", chebi_lite = "AH97939", 
-diseaseOnto = "AH97940", efoOnto = "AH97941", goOnto = "AH97942", 
-hcaOnto = "AH97943", oncotree = "AH97944", patoOnto = "AH97945", 
-PROonto = "AH97946", uberon = "AH97947", mondo_2021_04_07 = "AH97948")
+ont_tags = c(caro = "AH97934", cellLineOnto = "AH97935",
+             cellOnto="AH111554",
+             cellosaurusOnto="AH111555",
+             chebi_full="AH111556",
+             chebi_lite="AH111557",
+             diseaseOnto="AH111558",
+             efoOnto="AH111559",
+             goOnto="AH111560",
+             hcaOnto="AH111561",
+             mondo_2022_12_01="AH111562",
+             patoOnto="AH111563",
+             PROnto="AH111564",
+             uberon="AH111565", 
+             oncotree = "AH97944")
 
 get_tag = function(stub) {
  stopifnot(length(stub)==1)
@@ -253,7 +266,7 @@ getPATOnto = function() {
 #' @aliases getMondoOnto
 #' @export
 getMondoOnto = function() {
- get_onto("mondo_2021_04_07")
+ get_onto("mondo_2022_12_01")
 }
 
 #' @rdname getCellOnto
