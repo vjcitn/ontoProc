@@ -51,9 +51,9 @@ ontology objects.
 suppressPackageStartupMessages({
 library(knitr)
 library(ontoProc)
-go = getGeneOnto()
-cl = getCellOnto()
-#pr = getPROnto()
+go = getOnto( ontoname="goOnto", year_added = "2023" )
+cl = getOnto( ontoname="cellOnto", year_added = "2022" )
+pr = getOnto( ontoname="PROnto", year_added = "2023" )
 library(ontologyPlot)
 library(BiocStyle)
 })
@@ -171,7 +171,7 @@ for graphs derived from ontology structures.
 Here we display the PBMC cell sets reported in the Seurat tutorial.
 ```{r lklklk}
 library(ontoProc)
-cl = getCellOnto()
+cl = getOnto(ontoname="cellOnto", year = "2022")
 onto_plot2(cl, stab$tag)
 ```
 
@@ -206,9 +206,9 @@ The `sym2CellOnto` function helps find mention of
 given gene symbols in properties or parts of cell types.
 
 ```{r lksy}
-#kable(sdf <- as.data.frame(sym2CellOnto("ITGAM", cl, pr)))
-#table(sdf$cond)
-#kable(as.data.frame(sym2CellOnto("FOXP3", cl, pr)))
+kable(sdf <- as.data.frame(sym2CellOnto("ITGAM", cl, pr)))
+table(sdf$cond)
+kable(as.data.frame(sym2CellOnto("FOXP3", cl, pr)))
 ```
 
 ## Adding terms to ontology_index structures to 'extend' Cell Ontology
