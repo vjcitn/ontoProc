@@ -53,7 +53,7 @@ library(knitr)
 library(ontoProc)
 go = getGeneOnto()
 cl = getCellOnto()
-pr = getPROnto()
+#pr = getPROnto()
 library(ontologyPlot)
 library(BiocStyle)
 })
@@ -206,9 +206,9 @@ The `sym2CellOnto` function helps find mention of
 given gene symbols in properties or parts of cell types.
 
 ```{r lksy}
-kable(sdf <- as.data.frame(sym2CellOnto("ITGAM", cl, pr)))
-table(sdf$cond)
-kable(as.data.frame(sym2CellOnto("FOXP3", cl, pr)))
+#kable(sdf <- as.data.frame(sym2CellOnto("ITGAM", cl, pr)))
+#table(sdf$cond)
+#kable(as.data.frame(sym2CellOnto("FOXP3", cl, pr)))
 ```
 
 ## Adding terms to ontology_index structures to 'extend' Cell Ontology
