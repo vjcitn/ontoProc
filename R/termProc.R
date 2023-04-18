@@ -30,7 +30,7 @@ setClass("TermSet", representation(ontoTags="character",
 #' @aliases show,TermSet-method
 #' @param object instance of TermSet class
 #' @examples
-#' efoOnto = getEFOOnto()
+#' efoOnto = getOnto("efoOnto")
 #' defsibs = siblings_TAG("EFO:1001209", efoOnto)
 #' class(defsibs)
 #' defsibs
@@ -61,7 +61,7 @@ setMethod("c", "TermSet", function(x, ...) {
 #' @param justSibs character(1)
 #' @return TermSet instance
 #' @examples
-#' efoOnto = getEFOOnto()
+#' efoOnto = getOnto("efoOnto")
 #' siblings_TAG( "EFO:1001209", efoOnto )
 #' @export
 siblings_TAG = function(Tagstring="EFO:1001209", ontology, justSibs=TRUE ) {
@@ -84,7 +84,7 @@ siblings_TAG = function(Tagstring="EFO:1001209", ontology, justSibs=TRUE ) {
 #' @return character(1)
 #' @note for \code{label_TAG}, \code{Tagstring} may be a vector
 #' @examples
-#' efoOnto = getEFOOnto()
+#' efoOnto = getOnto("efoOnto")
 #' label_TAG( "EFO:0000311", efoOnto )
 #' @export
 label_TAG = function(Tagstring="EFO:0000311", ontology) {
@@ -95,7 +95,7 @@ label_TAG = function(Tagstring="EFO:0000311", ontology) {
 #' @rdname siblings_TAG
 #' @aliases children_TAG
 #' @examples
-#' efoOnto = getEFOOnto()
+#' efoOnto = getOnto("efoOnto")
 #' children_TAG( ontology = efoOnto )
 #' @return TermSet instance
 #' @export
@@ -142,7 +142,7 @@ cellTypeToGenes = function(celltypeString, gotab, orgDb, cols=c("ENSEMBL", "SYMB
 #' @param ont instance of ontology_index (S3) from ontologyIndex package
 #' @return TermSet instance
 #' @examples
-#' efoOnto = getEFOOnto()
+#' efoOnto = getOnto("efoOnto")
 #' secLevGen( "disease", efoOnto )
 #' @export
 secLevGen = function( choices, ont ) { 

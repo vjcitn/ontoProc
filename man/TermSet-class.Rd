@@ -21,7 +21,7 @@ manage ontological data with tags and a DataFrame instance
 abbreviated display for TermSet instances
 }
 \examples{
-efoOnto = getEFOOnto()
+efoOnto = getOnto("efoOnto")
 defsibs = siblings_TAG("EFO:1001209", efoOnto)
 class(defsibs)
 defsibs

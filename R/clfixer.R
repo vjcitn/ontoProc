@@ -5,7 +5,8 @@
 #' @export
 cleanCLOnames = function() {
  requireNamespace("ontoProc")
- offic = getCellLineOnto()$name # has ID bound as names()
+ #offic = getCellLineOnto()$name # has ID bound as names()
+ offic = getOnto("cellLineOnto", year_added="2022")$name # has ID bound as names()
  isobs = grep("obso", offic)
  if (length(isobs)>0) offic = offic[-isobs]
  offic = sub(" cell$", "", offic)

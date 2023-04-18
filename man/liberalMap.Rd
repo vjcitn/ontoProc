@@ -25,6 +25,6 @@ Produce a data.frame with a set of naive terms mapped to all matching ontology i
 cands = c("astrocyte$", "oligodendrocyte", "oligodendrocyte precursor",
    "neoplastic", "^neuron$", "^vascular", "badterm")
 #co = ontoProc::getCellOnto()
-co = getOnto("cellOnto", year_added="2022")
+co = getOnto("cellOnto", year_added="2023")
 liberalMap(cands, co)
 }

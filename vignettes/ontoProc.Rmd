@@ -50,7 +50,7 @@ ontology objects.
 ```{r setup,echo=FALSE,results="hide",message=FALSE}
 library(knitr)
 library(ontoProc)
-cl = getOnto("cellOnto", "2021") # for continuity -- 	has_high_plasma_membrane_amount: list
+cl = getOnto("cellOnto", "2023") # for continuity -- 	has_high_plasma_membrane_amount: list
 #	has_low_plasma_membrane_amount: list are present in 2021 not 2022 - seems these have
 # moved to RO (relations ontology)
 #> grep("plasma", nn, value=TRUE)
@@ -70,9 +70,9 @@ library(celldex)
 library(ontoProc)
 library(ontologyPlot)
 library(BiocStyle)  # for package references
-cl = getOnto("cellOnto", "2021") # for continuity -- 	has_high_plasma_membrane_amount: list
-go = getOnto("goOnto", "2021")  # if updated, some assertions will fail...
-pr = getOnto("Pronto", "2021")
+cl = getOnto("cellOnto", "2023") # for continuity -- 	has_high_plasma_membrane_amount: list
+go = getOnto("goOnto", "2023")  # if updated, some assertions will fail...
+pr = getOnto("PROnto", "2023")  # important case change
 ```
 
 
@@ -81,10 +81,10 @@ pr = getOnto("Pronto", "2021")
 The following table describes the most up-to-date resources available with `getOnto`.
 <!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
 ```{r lksco}
-data(packDesc2022)
-kable(packDesc2022[,-c(1,7)])
+data(packDesc2023)
+kable(packDesc2023[,-c(1,7)])
 ```
-Other resources are listed in `packDesc2021` and `packDesc2019`.
+Other resources are listed in `packDesc202x` and `packDesc2019`.
 
 # Methods
 
@@ -188,7 +188,7 @@ for graphs derived from ontology structures.
 Here we display the PBMC cell sets reported in the Seurat tutorial.
 ```{r lklklk}
 library(ontoProc)
-cl = getOnto("cellOnto", "2021")
+cl = getOnto("cellOnto", "2023")
 onto_plot2(cl, stab$tag)
 ```
 
@@ -345,7 +345,7 @@ sum(hpca_sce$label.ont == "", na.rm=TRUE) # iPS and BM
 ### Subsetting using the class hierarchy of Cell Ontology
 
 ```{r dosub, eval=TRUE}
-cell_onto = ontoProc::getOnto("cellOnto", "2021")
+cell_onto = ontoProc::getOnto("cellOnto", "2023")
 hpca_mono = subset_descendants( hpca_sce, cell_onto, "^monocyte$" )
 table(hpca_mono$label.fine)
 table(hpca_mono$label.ont) # not much diversity

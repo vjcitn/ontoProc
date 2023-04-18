@@ -9,9 +9,9 @@ sym2CellOnto(sym, cl, pr)
 \arguments{
 \item{sym}{gene symbol, must be used in protein ontology as a PRO:DNx exact match token}
 
-\item{cl}{result of getCellOnto()}
+\item{cl}{result of getOnto("cellOnto")}
 
-\item{pr}{result of getPROnto()}
+\item{pr}{result of getOnto("PROnto")}
 }
 \value{
 DataFrame if any hits are found.  A field 'cond' abbreviates the identified
@@ -24,8 +24,8 @@ use Cell Ontology and Protein Ontology to identify cell-type defining conditions
 Currently just checks for *plasma_membrane_part, *plasma_membrane_amount, and *Part conditions.
 }
 \examples{
-if (!exists("cl")) cl = getCellOnto()
-if (!exists("pr")) pr = getPROnto()
+if (!exists("cl")) cl = getOnto("cellOnto")
+if (!exists("pr")) pr = getOnto("PROnto")
 sym2CellOnto("ITGAM", cl, pr)
 sym2CellOnto("FOXP3", cl, pr)
 }
