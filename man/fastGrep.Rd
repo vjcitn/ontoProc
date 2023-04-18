@@ -22,7 +22,7 @@ logical vector indicating vector or list elements where a match is found
 some fields of interest are lists, and grep per se should not be used -- this function checks and uses grep within vapply when appropriate
 }
 \examples{
-cheb = getChebiOnto()
+cheb = getOnto("chebi_lite")
 ind = fastGrep("17-AAG", cheb, "synonym")
 cheb$name[ind]
 }

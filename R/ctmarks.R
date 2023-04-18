@@ -12,8 +12,8 @@
 #' @return a data.frame with features for selected cell types
 #' @examples
 #' if (interactive()) {
-#'    co = getOnto("cellOnto", year_added="2021")  # has plasma membrane relations
-#'    go = getOnto("goOnto", "2021")
+#'    co = getOnto("cellOnto", year_added="2023")  # has plasma membrane relations
+#'    go = getOnto("goOnto", "2023")
 #'    pr = getOnto("Pronto", "2021") # peculiar tag used in legacy, would be PROnto with 2022
 #'    ctmarks(co, go, pr)
 #' }

@@ -5,7 +5,7 @@
 #' @param \dots passed to grep
 #' @return logical vector indicating vector or list elements where a match is found
 #' @examples
-#' cheb = getChebiOnto()
+#' cheb = getOnto("chebi_lite")
 #' ind = fastGrep("17-AAG", cheb, "synonym")
 #' cheb$name[ind]
 #' @export

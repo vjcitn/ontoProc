@@ -1,13 +1,13 @@
 #' use Cell Ontology and Protein Ontology to identify cell-type defining conditions in which a given gene is named
 #' @param sym gene symbol, must be used in protein ontology as a PRO:DNx exact match token
-#' @param cl result of getCellOnto()
-#' @param pr result of getPROnto()
+#' @param cl result of getOnto("cellOnto")
+#' @param pr result of getOnto("PROnto")
 #' @note Currently just checks for *plasma_membrane_part, *plasma_membrane_amount, and *Part conditions.
 #' @return DataFrame if any hits are found.  A field 'cond' abbreviates the identified
 #' conditions: (has/lacks)PMP (plasma membrane part) (hi/lo)PMAmt (plasma membrane amount), (has/lacks)Part.
 #' @examples
-#' if (!exists("cl")) cl = getCellOnto()
-#' if (!exists("pr")) pr = getPROnto()
+#' if (!exists("cl")) cl = getOnto("cellOnto")
+#' if (!exists("pr")) pr = getOnto("PROnto")
 #' sym2CellOnto("ITGAM", cl, pr)
 #' sym2CellOnto("FOXP3", cl, pr)
 #' @export
