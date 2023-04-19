@@ -1,153 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/404.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/articles/index.html</loc>
   </url>
   <url>
-    <loc>/articles/ontoProc.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/articles/ontoProc.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/index.html</loc>
   </url>
   <url>
-    <loc>/reference/CLfeats.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/CLfeats.html</loc>
   </url>
   <url>
-    <loc>/reference/PROSYM.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/PROSYM.html</loc>
   </url>
   <url>
-    <loc>/reference/TermSet-class.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/TermSet-class.html</loc>
   </url>
   <url>
-    <loc>/reference/allGOterms.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/allGOterms.html</loc>
   </url>
   <url>
-    <loc>/reference/bind_formal_tags.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/bind_formal_tags.html</loc>
   </url>
   <url>
-    <loc>/reference/c-TermSet-method.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/c-TermSet-method.html</loc>
   </url>
   <url>
-    <loc>/reference/cellTypeToGO.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/cellTypeToGO.html</loc>
   </url>
   <url>
-    <loc>/reference/cleanCLOnames.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/cleanCLOnames.html</loc>
   </url>
   <url>
-    <loc>/reference/common_classes.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/common_classes.html</loc>
   </url>
   <url>
-    <loc>/reference/connect_classes.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/connect_classes.html</loc>
   </url>
   <url>
-    <loc>/reference/ctmarks.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/ctmarks.html</loc>
   </url>
   <url>
-    <loc>/reference/cyclicSigset.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/cyclicSigset.html</loc>
   </url>
   <url>
-    <loc>/reference/demoApp.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/demoApp.html</loc>
   </url>
   <url>
-    <loc>/reference/dropStop.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/dropStop.html</loc>
   </url>
   <url>
-    <loc>/reference/fastGrep.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/fastGrep.html</loc>
   </url>
   <url>
-    <loc>/reference/findCommonAncestors.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/findCommonAncestors.html</loc>
   </url>
   <url>
-    <loc>/reference/getCellOnto.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/getCellOnto.html</loc>
   </url>
   <url>
-    <loc>/reference/getLeavesFromTerm.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/getLeavesFromTerm.html</loc>
   </url>
   <url>
-    <loc>/reference/getOnto.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/getOnto.html</loc>
   </url>
   <url>
-    <loc>/reference/humrna.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/humrna.html</loc>
   </url>
   <url>
-    <loc>/reference/improveNodes.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/improveNodes.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/ldfToTerms.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/ldfToTerms.html</loc>
   </url>
   <url>
-    <loc>/reference/liberalMap.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/liberalMap.html</loc>
   </url>
   <url>
-    <loc>/reference/makeSelectInput.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/makeSelectInput.html</loc>
   </url>
   <url>
-    <loc>/reference/make_graphNEL_from_ontology_plot.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/make_graphNEL_from_ontology_plot.html</loc>
   </url>
   <url>
-    <loc>/reference/map2prose.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/map2prose.html</loc>
   </url>
   <url>
-    <loc>/reference/mapOneNaive.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/mapOneNaive.html</loc>
   </url>
   <url>
-    <loc>/reference/minicorpus.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/minicorpus.html</loc>
   </url>
   <url>
-    <loc>/reference/nomenCheckup.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/nomenCheckup.html</loc>
   </url>
   <url>
-    <loc>/reference/onto_plot2.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/onto_plot2.html</loc>
   </url>
   <url>
-    <loc>/reference/onto_roots.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/onto_roots.html</loc>
   </url>
   <url>
-    <loc>/reference/packDesc2019.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/packDesc2019.html</loc>
   </url>
   <url>
-    <loc>/reference/packDesc2021.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/packDesc2021.html</loc>
   </url>
   <url>
-    <loc>/reference/packDesc2022.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/packDesc2022.html</loc>
   </url>
   <url>
-    <loc>/reference/packDesc2023.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/packDesc2023.html</loc>
   </url>
   <url>
-    <loc>/reference/recognizedPredicates.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/recognizedPredicates.html</loc>
   </url>
   <url>
-    <loc>/reference/secLevGen.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/secLevGen.html</loc>
   </url>
   <url>
-    <loc>/reference/selectFromMap.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/selectFromMap.html</loc>
   </url>
   <url>
-    <loc>/reference/seur3kTab.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/seur3kTab.html</loc>
   </url>
   <url>
-    <loc>/reference/siblings_TAG.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/siblings_TAG.html</loc>
   </url>
   <url>
-    <loc>/reference/stopWords.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/stopWords.html</loc>
   </url>
   <url>
-    <loc>/reference/subset_descendants.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/subset_descendants.html</loc>
   </url>
   <url>
-    <loc>/reference/sym2CellOnto.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/sym2CellOnto.html</loc>
   </url>
   <url>
-    <loc>/reference/valid_ontonames.html</loc>
+    <loc>https://github.com/vjcitn/ontoProc/reference/valid_ontonames.html</loc>
   </url>
 </urlset>
