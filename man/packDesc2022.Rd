@@ -8,7 +8,7 @@
 data.frame instance
 }
 \usage{
-packDesc2022
+data(packDesc2022)
 }
 \description{
 packDesc2022: overview of ontoProc resources

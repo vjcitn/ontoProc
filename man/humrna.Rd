@@ -11,7 +11,7 @@ data.frame
 NCBI SRA
 }
 \usage{
-humrna
+data(humrna)
 }
 \description{
 humrna: a data.frame of SRA metadata related to RNA-seq in humans

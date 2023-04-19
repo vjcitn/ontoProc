@@ -12,7 +12,7 @@ This is a snapshot of all the terms available from
 GO.db (3.4.2), August 2017, using keys(GO.db, keytype="TERM").
 }
 \usage{
-allGOterms
+data(allGOterms)
 }
 \description{
 allGOterms: data.frame with ids and terms

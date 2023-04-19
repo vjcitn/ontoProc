@@ -11,7 +11,7 @@ character vector
 \url{http://xpo6.com/list-of-english-stop-words/}
 }
 \usage{
-stopWords
+data(stopWords)
 }
 \description{
 stopWords: vector of stop words from xpo6.com
