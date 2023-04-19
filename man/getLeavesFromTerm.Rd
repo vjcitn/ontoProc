@@ -18,7 +18,7 @@ character vector of 'leaves' of ontology tree
 obtain childless descendents of a term (including query)
 }
 \examples{
-ch = getOnto("chebi-lite")
+ch = getOnto("chebi_lite")
 alldr = getLeavesFromTerm("CHEBI:23888", ch)
 head(ch$name[alldr[1:15]])
 }

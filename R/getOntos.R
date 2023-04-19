@@ -98,10 +98,10 @@ get_onto = function(stub) {
 
 
 # utility for caching recent obo for cell ontology
-add_cache_cl_simple = function(cache = BiocFileCache::BiocFileCache(),
-     target = "https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-simple.obo") {
- BiocFileCache::bfcadd(cache, target)
-}
+# add_cache_cl_simple = function(cache = BiocFileCache::BiocFileCache(),
+#      target = "https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-simple.obo") {
+# BiocFileCache::bfcadd(cache, target)
+# }
 
 
 dmsg = function(x) .Deprecated(x, msg = sprintf("%s is deprecated: getOnto('%s') should be used for versioned access.", x, x)) 
