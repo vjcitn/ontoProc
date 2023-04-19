@@ -23,6 +23,6 @@ some fields of interest are lists, and grep per se should not be used -- this fu
 }
 \examples{
 cheb = getOnto("chebi_lite")
-ind = fastGrep("17-AAG", cheb, "synonym")
+ind = fastGrep("tanespimycin", cheb, "name")
 cheb$name[ind]
 }

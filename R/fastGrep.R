@@ -6,7 +6,7 @@
 #' @return logical vector indicating vector or list elements where a match is found
 #' @examples
 #' cheb = getOnto("chebi_lite")
-#' ind = fastGrep("17-AAG", cheb, "synonym")
+#' ind = fastGrep("tanespimycin", cheb, "name")
 #' cheb$name[ind]
 #' @export
 fastGrep = function(patt, onto, field, ...) {
