@@ -18,6 +18,6 @@ TermSet instance
 simple generation of children of 'choices' given as terms, returned as TermSet
 }
 \examples{
-efoOnto = getEFOOnto()
+efoOnto = getOnto("efoOnto")
 secLevGen( "disease", efoOnto )
 }

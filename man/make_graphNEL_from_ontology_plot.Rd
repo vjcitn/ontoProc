@@ -18,7 +18,7 @@ obtain graphNEL from ontology_plot instance of ontologyPlot
 \examples{
 requireNamespace("Rgraphviz")
 requireNamespace("graph")
-cl = getCellOnto()
+cl = getOnto("cellOnto")
 cl3k = c("CL:0000492", "CL:0001054", "CL:0000236", "CL:0000625",
    "CL:0000576", "CL:0000623", "CL:0000451", "CL:0000556")
 p3k = ontologyPlot::onto_plot(cl, cl3k)

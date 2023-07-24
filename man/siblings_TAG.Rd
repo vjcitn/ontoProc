@@ -37,10 +37,10 @@ acquire the labels of children of an ontology subject tag
 for \code{label_TAG}, \code{Tagstring} may be a vector
 }
 \examples{
-efoOnto = getEFOOnto()
+efoOnto = getOnto("efoOnto")
 siblings_TAG( "EFO:1001209", efoOnto )
-efoOnto = getEFOOnto()
+efoOnto = getOnto("efoOnto")
 label_TAG( "EFO:0000311", efoOnto )
-efoOnto = getEFOOnto()
+efoOnto = getOnto("efoOnto")
 children_TAG( ontology = efoOnto )
 }

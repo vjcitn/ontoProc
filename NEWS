@@ -1,3 +1,10 @@
+CHANGES IN VERSION 1.21
+------------------------
+   o devel branch used for bioconductor code base
+   o main branch includes github action and pkgdown support
+   o getOnto to be used instead of, e.g, getCellOnto, most getters deprecated in 1.21, for removal
+
+
 CHANGES IN VERSION 1.2.0
 ------------------------
    o vignette, minicorpus updates

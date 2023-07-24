@@ -11,7 +11,7 @@
 #' if (requireNamespace("celldex")) {
 #'   imm = celldex::ImmGenData()
 #'   if ("label.ont" %in% names(colData(imm))) {
-#'     cl = getCellOnto()
+#'     cl = getOnto("cellOnto")
 #'     blu = celldex::BlueprintEncodeData()
 #'     common_classes( cl, imm, blu )
 #'     }

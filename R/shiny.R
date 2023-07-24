@@ -25,7 +25,7 @@ makeSelectInput = function(onto, term, type="siblings",
 }
 
 #library(ontoProc)
-#efo = getEFOOnto()
+#efo = getOnto("efoOnto")
 #cello = getCellOnto()
 #celli = getCellLineOnto()
 
@@ -45,10 +45,10 @@ makeSelectInput = function(onto, term, type="siblings",
 #' }
 #' @export
 demoApp = function() {
- cello = getCellOnto()
- cellineo = getCellLineOnto()
+ cello = getOnto("cellOnto")
+ cellineo = getOnto("cellLineOnto")
  uber = getUBERON_NE()
- efo = getEFOOnto()
+ efo = getOnto("efoOnto")
  onts = list(Cell=cello, CellLine=cellineo, uberon_ne=uber, EFO=efo)
  starts = list(Cell="neuron", CellLine="neuron", uberon_ne="anatomical system", EFO="neuron")
  
