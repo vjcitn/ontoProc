@@ -5,17 +5,6 @@
 # meta = mcols(opd)
 #meta |> as.data.frame() |> filter(grepl("2023", rdatadateadded)) |> select(title, description)
 #                          title              description
-<<<<<<< HEAD
-#AH107268        caro_2022.02.18 common anatomy reference
-#AH107269   cellLineOnto_2.1.178               cell lines
-
-# April 2023 information in AnnotationHub for Bioc 3.17
-# opd =query(ah, "ontoProcData")
-# meta = mcols(opd)
-#meta |> as.data.frame() |> filter(grepl("2023", rdatadateadded)) |> select(title, description)
-#                          title              description
-=======
->>>>>>> 36574916b8eb4d9fa1b79d9290d7d8629ee80533
 #AH111554    cellOnto_2023.02.15                    cells
 #AH111555     cellosaurusOnto_44               cell lines
 #AH111556         chebi_full_218 large chemicals ontology
@@ -28,10 +17,6 @@
 #AH111563    patoOnto_2023.02.17      phenotype and trait
 #AH111564              PROnto_68                  protein
 #AH111565      uberon_2023.02.14                  anatomy
-<<<<<<< HEAD
-
-=======
->>>>>>> 36574916b8eb4d9fa1b79d9290d7d8629ee80533
 
 #' give a vector of valid 'names' of ontoProc ontologies
 #' @examples
@@ -60,18 +45,11 @@ getOnto = function( ontoname="cellOnto", year_added = "2023" ) {
  opd = AnnotationHub::query(ah, "ontoProcData")
  meta = mcols(opd)
  tmp = meta |> as.data.frame() |> dplyr::filter(grepl(year_added, rdatadateadded)) |> dplyr::select(title, description)
-<<<<<<< HEAD
- if (year_added == "2023") {
-   ontoname = paste0(ontoname, "_")
-   stopifnot(length(grep(ontoname, tmp$title))==1)
-=======
-
 
  if (year_added == "2023") {
      if( ontoname %in% c("caro", "cellLineOnto")) stop("this ontology not updated in 2023, use a different year_added value")
     ontoname = paste0(ontoname, "_")
     stopifnot(length(grep(ontoname, tmp$title))==1)
->>>>>>> 36574916b8eb4d9fa1b79d9290d7d8629ee80533
  }
  else if (year_added == "2022") {
     ontoname = paste0(ontoname, "_")
@@ -226,12 +204,9 @@ getPATOnto = function() {
 #' @aliases getMondoOnto
 #' @export
 getMondoOnto = function() {
-<<<<<<< HEAD
- get_onto("mondo_2022_12_01")
-=======
  dmsg("mondo")
  get_onto("mondo_2021_04_07")
->>>>>>> 36574916b8eb4d9fa1b79d9290d7d8629ee80533
+
 }
 
 #' @rdname getCellOnto
