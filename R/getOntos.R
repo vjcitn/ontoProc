@@ -18,7 +18,6 @@
 #AH111564              PROnto_68                  protein
 #AH111565      uberon_2023.02.14                  anatomy
 
-
 #' give a vector of valid 'names' of ontoProc ontologies
 #' @examples
 #' head(valid_ontonames())
@@ -51,7 +50,6 @@ getOnto = function( ontoname="cellOnto", year_added = "2023" ) {
      if( ontoname %in% c("caro", "cellLineOnto")) stop("this ontology not updated in 2023, use a different year_added value")
     ontoname = paste0(ontoname, "_")
     stopifnot(length(grep(ontoname, tmp$title))==1)
-
  }
  else if (year_added == "2022") {
     ontoname = paste0(ontoname, "_")
