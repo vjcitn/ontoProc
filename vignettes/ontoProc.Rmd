@@ -51,9 +51,9 @@ ontology objects.
 suppressPackageStartupMessages({
 library(knitr)
 library(ontoProc)
-go = getGeneOnto()
-cl = getCellOnto()
-pr = getPROnto()
+go = getOnto('goOnto')
+cl = getOnto('cellOnto')
+pr = getOnto("PROnto")
 library(ontologyPlot)
 library(BiocStyle)
 })
@@ -171,7 +171,7 @@ for graphs derived from ontology structures.
 Here we display the PBMC cell sets reported in the Seurat tutorial.
 ```{r lklklk}
 library(ontoProc)
-cl = getCellOnto()
+cl = getOnto("cellOnto")
 onto_plot2(cl, stab$tag)
 ```
 
