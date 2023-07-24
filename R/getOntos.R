@@ -5,18 +5,25 @@
 #                          title              description
 #AH107268        caro_2022.02.18 common anatomy reference
 #AH107269   cellLineOnto_2.1.178               cell lines
-#AH107270    cellOnto_2022.08.16                    cells
-#AH107271     cellosaurusOnto_40               cell lines
-#AH107272         chebi_full_212 large chemicals ontology
-#AH107273         chebi_lite_212  short chemical ontology
-#AH107274 diseaseOnto_2022.07.27                 diseases
-#AH107275         efoOnto_3.45.0      experimental factor
-#AH107276      goOnto_2022.07.01            Gene ontology
-#AH107277    hcaoOnto_2022.07.19         human cell atlas
-#AH107278       mondo_2022.08.01                  disease
-#AH107279    patoOnto_2022.08.10      phenotype and trait
-#AH107280              PROnto_67                  protein
-#AH107281      uberon_2022.06.30                  anatomy
+
+# April 2023 information in AnnotationHub for Bioc 3.17
+# opd =query(ah, "ontoProcData")
+# meta = mcols(opd)
+#meta |> as.data.frame() |> filter(grepl("2023", rdatadateadded)) |> select(title, description)
+#                          title              description
+#AH111554    cellOnto_2023.02.15                    cells
+#AH111555     cellosaurusOnto_44               cell lines
+#AH111556         chebi_full_218 large chemicals ontology
+#AH111557         chebi_lite_218  short chemical ontology
+#AH111558 diseaseOnto_2023.01.30                 diseases
+#AH111559         efoOnto_3.51.0      experimental factor
+#AH111560      goOnto_2023.01.01            Gene ontology
+#AH111561    hcaoOnto_2022.12.16         human cell atlas
+#AH111562       mondo_2022.12.01                  disease
+#AH111563    patoOnto_2023.02.17      phenotype and trait
+#AH111564              PROnto_68                  protein
+#AH111565      uberon_2023.02.14                  anatomy
+
 
 #' give a vector of valid 'names' of ontoProc ontologies
 #' @examples
