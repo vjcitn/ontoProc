@@ -11,7 +11,7 @@ character vector
 NCBI SRA
 }
 \usage{
-minicorpus
+data(minicorpus)
 }
 \description{
 minicorpus: a vector of annotation strings found in 'study title' of SRA metadata.

@@ -25,6 +25,6 @@ use grep or agrep to find a match for a naive token into ontology
 }
 \examples{
 #co = ontoProc::getCellOnto()
-co = getOnto("cellOnto", year_added="2022")
+co = getOnto("cellOnto", year_added="2023")
 mapOneNaive("astrocyte", co)
 }

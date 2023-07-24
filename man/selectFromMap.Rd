@@ -23,7 +23,7 @@ select a set of elements from a term 'map' and return a contribution to a data.f
 }
 \examples{
 #co = ontoProc::getCellOnto()
-co = getOnto("cellOnto", year_added="2022")
+co = getOnto("cellOnto", year_added="2023")
 mast = mapOneNaive("astrocyte", co)
 selectFromMap(mast, 1)
 }

@@ -14,9 +14,15 @@ library(dplyr)
 library(ontoProc)
 select <- dplyr::select
 
-vn = valid_ontonames()
+vn = valid_ontonames()[-4] # cellosaurus is too big for this report
+yrs = rep("2023", length(vn))
+names(yrs) = vn
+yrs["caro"] = "2022"
+yrs["cellLineOnto"] = "2022"
+yrs["mondo"] = "2022"
+yrs["Pronto"] = "2021"
 if (!exists("ontos")) {
-  if (!file.exists("ontos.rda")) ontos = lapply(vn, getOnto) else load("ontos.rda")
+   ontos = lapply(seq_len(length(vn)), function(x) {cat(vn[x], "\n"); getOnto(vn[x], year_added=yrs[x])})
 }
 names(ontos) = vn
 ontos = lapply(seq_len(length(ontos)), function(i) {attr(ontos[[i]], "oname") <- names(ontos)[i]; ontos[[i]]})
@@ -34,4 +40,4 @@ desc = function(x) {
 }
 #packdesc = do.call(rbind, lapply(funcs, desc))
 packdesc = do.call(rbind, lapply(ontos, desc))
-write.csv(packdesc, file="packdesc2.csv")
+write.csv(packdesc, file="packdesc2023.csv")

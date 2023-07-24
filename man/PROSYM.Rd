@@ -11,7 +11,7 @@ data.frame instance
 OBO Foundry
 }
 \usage{
-PROSYM
+data(PROSYM)
 }
 \description{
 PROSYM: HGNC symbol synonyms for PR (protein ontology) entries identified in Cell Ontology

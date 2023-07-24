@@ -48,12 +48,10 @@ recognizedPredicates = function() {
       
 
 CLfeat = function(ont, curtag="CL:0001054", prefix="^CL", 
-   preds=recognizedPredicates(), ...) {
+   preds=recognizedPredicates(), pr, go, ...) {
 # require(dplyr)
 # require(magrittr)
 # require(ontoProc)
- if (!exists("pr", .GlobalEnv)) pr = getOnto("PROnto")
- if (!exists("go", .GlobalEnv)) go = getOnto("goOnto")
  kpl = lapply(preds, function(x)
          which(sapply(ont[[x]], length)>0))
  kp = unique(unlist(kpl))
@@ -178,21 +176,27 @@ data.frame(ans, name=as.character(ont$name[curtag]))
 
 #' produce a data.frame of features relevant to a Cell Ontology class
 #' @param ont instance of ontologyIndex ontology
+#' @param pr instance of ontologyIndex PRO protein ontology
+#' @param go instance of ontologyIndex GO gene ontology
 #' @param tag character(1) a CL: class tag
 #' @note This function will look in the intersection_of and has_part,
 #' lacks_part components of the CL entry to find properties asserted
-#' of or inherited by the cell type identified in 'tag'
+#' of or inherited by the cell type identified in 'tag'.  As of 1.19,
+#' this function does not look in global environment for ontologies.
+#' We use 2021 versions in the examples because some changes in
+#' ontologies omit important relationships; revisions to package
+#' code after 1.19.4 will attempt to address these.
 #' @return a data.frame instance
 #' @examples
-#' cl = getCellOnto()
-#' pr = getPROnto()
-#' go = getGeneOnto()
-#' CLfeats(cl, tag="CL:0001054")
+#' cl = getOnto("cellOnto", year_added="2021")
+#' pr = getOnto("Pronto", "2021")  # legacy tag, for 2022 would be PROnto
+#' go = getOnto("goOnto", "2021")
+#' CLfeats(cl, tag="CL:0001054", pr=pr, go=go)
 #' @export
-CLfeats = function(ont, tag="CL:0001054") {
+CLfeats = function(ont, tag="CL:0001054", pr, go) {
  stopifnot(length(tag)==1, is.character(tag))
  ints = unique(c(tag, intchain(ont, tag)))
  isas = unique(c(tag, isachain(ont, tag)))
  chn = unique(c(ints,isas))
- do.call(rbind, lapply(chn, function(x) CLfeat(ont, x)))
+ do.call(rbind, lapply(chn, function(x) CLfeat(ont, x, pr=pr, go=go)))
 }
