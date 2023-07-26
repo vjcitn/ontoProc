@@ -208,11 +208,7 @@ symbol is retrieved by `CLfeats`.  Here we obtain the listing
 for a mature CD1a-positive dermal dendritic cell.
 ```{r lkfa}
 suppressMessages({
-<<<<<<< HEAD
-kable(CLfeats(cl, "CL:0002531", pr=pr, go =go))
-=======
 kable(CLfeats(cl, "CL:0002531", pr=pr, go=go))
->>>>>>> 36574916b8eb4d9fa1b79d9290d7d8629ee80533
 })
 ```
 
