@@ -29,5 +29,6 @@ Collate: bind_formal_tags.R  common_classes.R   data.R		      getOntos.R  seurTa
 	CLextend.R	    connect_classes.R  dropStop.R	      graphNEL.R  shiny.R		treeproc.R
 	CLfeats.R	    countClasses.R     fastGrep.R	      mapNaive.R  subset_descendants.R
 	clfixer.R	    ctmarks.R	       findCommonAncestors.R  roots.R	  sym2CellOnto.R termProc.R
+	getAvailOntos.R
 URL: https://github.com/vjcitn/ontoProc
 BugReports: https://github.com/vjcitn/ontoProc/issues
