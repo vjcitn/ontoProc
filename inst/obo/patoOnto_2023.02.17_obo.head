@@ -1,0 +1,100 @@
+format-version: 1.2
+data-version: releases/2023-02-17/pato.obo
+subsetdef: abnormal_slim "Abnormal/normal slim"
+subsetdef: absent_slim "Absent/present slim"
+subsetdef: attribute_slim "Attribute slim"
+subsetdef: cell_quality "cell_quality"
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: hpo_slim "Human phenotype slim"
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
+subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: ro-eco ""
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: value_slim "Value slim"
+default-namespace: quality
+ontology: pato
+property_value: dc-description "An ontology of phenotypic qualities (properties, attributes or characteristics)." xsd:string
+property_value: dc-title "PATO - the Phenotype And Trait Ontology" xsd:string
+property_value: dcterms-license https://creativecommons.org/licenses/by/3.0/
+property_value: has_ontology_root_term PATO:0000001
+property_value: owl:versionInfo "2023-02-17" xsd:string
+
+[Term]
+id: PATO:0000000
+name: obsolete pato
+is_obsolete: true
+
+[Term]
+id: PATO:0000001
+name: quality
+alt_id: PATO:0000072
+def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
+
+[Term]
+id: PATO:0000002
+name: obsolete value
+is_obsolete: true
+
+[Term]
+id: PATO:0000003
+name: obsolete assay
+is_obsolete: true
+
+[Term]
+id: PATO:0000004
+name: mobility
+def: "A quality of inhering in a bearer by virtue of the bearer's disposition to move freely." [PATOC:GVG]
+comment: Should be defined using translocation.
+subset: attribute_slim
+subset: disposition_slim
+subset: scalar_slim
+is_a: PATO:0001018 ! physical quality
+
+[Term]
+id: PATO:0000005
+name: obsolete absolute activity
+is_obsolete: true
+
+[Term]
+id: PATO:0000006
+name: obsolete process
+is_obsolete: true
+
+[Term]
+id: PATO:0000007
+name: obsolete relative activity
+is_obsolete: true
+
+[Term]
+id: PATO:0000008
+name: speed
+def: "A physical quality inhering in a bearer by virtue of the bearer's scalar absolute value of the rate of change of the bearer's position." [Wikipedia:http\://en.wikipedia.org/wiki/Velocity]
+subset: attribute_slim
+subset: scalar_slim
+synonym: "velocity" RELATED []
+is_a: PATO:0001906 ! movement quality
+
+[Term]
+id: PATO:0000009
+name: obsolete absolute speed
+is_obsolete: true
+
+[Term]
+id: PATO:0000010
+name: obsolete relative speed
+is_obsolete: true
+
+[Term]
+id: PATO:0000011
+name: age
+def: "A time quality inhering in a bearer by virtue of how long the bearer has existed." [WordNet:WordNet]
+subset: attribute_slim
+subset: scalar_slim
+is_a: PATO:0000165 ! time
+
+[Term]
+id: PATO:0000012

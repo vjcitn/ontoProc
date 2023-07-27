@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.obolibrary.org/obo/clo.owl/"
+     xml:base="http://purl.obolibrary.org/obo/clo.owl/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ro="http://purl.obofoundry.org/obo/ro.owl#"
+     xmlns:efo="http://www.ebi.ac.uk/efo/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:core="http://purl.obolibrary.org/obo/core#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:chebi="http://purl.obolibrary.org/obo/chebi/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:refont="http://purl.obolibrary.org/obo/uberon/refont/"
+     xmlns:uberon="http://purl.obolibrary.org/obo/uberon#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
+     xmlns:cellline="http://www.ebi.ac.uk/cellline#"
+     xmlns:elements="http://purl.org/dc/elements/"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:cellline1="http://www.ebi.ac.uk/cellline/"
+     xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#"
+     xmlns:disease_ontology="http://purl.org/obo/owlapi/disease_ontology#">
+    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/clo.owl">
+        <dc:contributor xml:lang="en">Alex Ade</dc:contributor>
+        <dc:contributor>Yuqin Liu</dc:contributor>
+        <dc:creator xml:lang="en">Alexander Diehl</dc:creator>
+        <dc:creator xml:lang="en">Allen Xiang</dc:creator>
+        <dc:creator xml:lang="en">Asiyah Yu Lin</dc:creator>
+        <dc:creator>Caty Chung</dc:creator>
+        <dc:creator xml:lang="en">Daniel Cooper</dc:creator>
+        <dc:creator xml:lang="en">Helen Parkinson</dc:creator>
+        <dc:creator xml:lang="en">Hiroshi Masuya</dc:creator>
+        <dc:creator>Hongjie Pan</dc:creator>
+        <dc:creator xml:lang="en">James Malone</dc:creator>
+        <dc:creator>Jiangan Xie</dc:creator>
+        <dc:creator xml:lang="en">Jie Zheng</dc:creator>
+        <dc:creator>Matthew Brush</dc:creator>
+        <dc:creator xml:lang="en">Sirarat Sarntivijai</dc:creator>
+        <dc:creator xml:lang="en">Stefanie Seltmann</dc:creator>
+        <dc:creator>Stephan Schurer</dc:creator>
+        <dc:creator>Uma Vempati</dc:creator>
+        <dc:creator>Xiaolin Yang</dc:creator>
+        <dc:creator xml:lang="en">Yongqun &quot;Oliver&quot; He (YH)</dc:creator>
+        <dc:creator xml:lang="en">Yue Liu</dc:creator>
+        <dc:date xml:lang="en">2022-03-20</dc:date>
+        <dc:description xml:lang="en">The Cell Line Ontology (CLO) is a community-based ontology of cell lines. The CLO is developed to unify publicly available cell line entry data from multiple sources to a standardized logically defined format based on consensus design patterns.</dc:description>
+        <dc:format xml:lang="en">OWL-DL</dc:format>
+        <dc:subject xml:lang="en">An ontology for the domain of cell lines and cell line cells</dc:subject>
+        <dc:title xml:lang="en">CLO: Cell Line Ontology</dc:title>
+        <rdfs:comment>Citation: Sarntivijai S, Lin Y, Xiang Z, Meehan TF, Diehl AD, Vempati UD, Schürer TC, Pang C, Malone J, Parkinson H, Liu Y, Takatsuki T, Saijo K, Masuya H, Nakamura Y, Brush MH, Haendel MA, Zheng J, Stoeckert CJ, Peters B, Mungall CJ, Carey TE, States DJ, Athey BD, He Y. CLO: The Cell Line Ontology. Journal of Biomedical Semantics. 2014, 5:37. doi:10.1186/2041-1480-5-37. PMID: 25852852. PMCID: PMC4387853.</rdfs:comment>
+        <owl:versionInfo xml:lang="en">2.1.178</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://protege.stanford.edu/plugins/owl/protege#defaultLanguage -->
+
+    <owl:AnnotationProperty rdf:about="http://protege.stanford.edu/plugins/owl/protege#defaultLanguage"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000179 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000179">
+        <obo:IAO_0000111 xml:lang="en">BFO OWL specification label</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">Relates an entity in the ontology to the name of the variable that is used to represent it in the code that generates the BFO OWL file from the lispy specification.</obo:IAO_0000115>
+        <obo:IAO_0000232 xml:lang="en">Really of interest to developers only</obo:IAO_0000232>
+        <rdfs:label>BFO OWL specification label</rdfs:label>
+        <rdfs:label xml:lang="en">BFO OWL specification label</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/BFO_0000180 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000180">
+        <obo:IAO_0000111 xml:lang="en">BFO CLIF specification label</obo:IAO_0000111>
+        <obo:IAO_0000115 xml:lang="en">Relates an entity in the ontology to the term that is used to represent it in the the CLIF specification of BFO2</obo:IAO_0000115>
+        <obo:IAO_0000119>Person:Alan Ruttenberg</obo:IAO_0000119>
+        <obo:IAO_0000232 xml:lang="en">Really of interest to developers only</obo:IAO_0000232>
+        <rdfs:label>BFO CLIF specification label</rdfs:label>

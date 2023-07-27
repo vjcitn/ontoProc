@@ -46,7 +46,6 @@ getOnto = function( ontoname="cellOnto", year_added = "2023" ) {
  meta = mcols(opd)
  tmp = meta |> as.data.frame() |> dplyr::filter(grepl(year_added, rdatadateadded)) |> dplyr::select(title, description)
 
-
  if (year_added == "2023") {
      if( ontoname %in% c("caro", "cellLineOnto")) stop("this ontology not updated in 2023, use a different year_added value")
     ontoname = paste0(ontoname, "_")

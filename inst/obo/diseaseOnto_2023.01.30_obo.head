@@ -1,0 +1,100 @@
+format-version: 1.2
+data-version: doid/releases/2023-01-30/doid-non-classified.obo
+date: 30:01:2023 17:29
+saved-by: lschriml
+subsetdef: DO_AGR_slim "DO_AGR_slim"
+subsetdef: DO_cancer_slim "DO_cancer_slim"
+subsetdef: DO_CFDE_slim "DO_CFDE_slim"
+subsetdef: DO_FlyBase_slim "DO_FlyBase_slim"
+subsetdef: DO_GXD_slim "DO_GXD_slim"
+subsetdef: DO_IEDB_slim "DO_IEDB_slim"
+subsetdef: DO_infectious_disease_slim "DO_infectious_disease_slim"
+subsetdef: DO_MGI_slim "DO_MGI_slim"
+subsetdef: DO_RAD_slim "DO_RAD_slim"
+subsetdef: DO_rare_slim "DO_rare_slim"
+subsetdef: GOLD "GOLD"
+subsetdef: gram-negative_bacterial_infectious_disease "gram-negative_bacterial_infectious_disease"
+subsetdef: gram-positive_bacterial_infectious_disease "gram-positive_bacterial_infectious_disease"
+subsetdef: NCIthesaurus "NCIthesaurus"
+subsetdef: sexually_transmitted_infectious_disease "sexually_transmitted_infectious_disease"
+subsetdef: tick-borne_infectious_disease "tick-borne_infectious_disease"
+subsetdef: TopNodes_DOcancerslim "TopNodes_DOcancerslim"
+subsetdef: zoonotic_infectious_disease "zoonotic_infectious_disease"
+default-namespace: disease_ontology
+remark: The Disease Ontology content is available via the Creative Commons Public Domain Dedication CC0 1.0 Universal license (https://creativecommons.org/publicdomain/zero/1.0/).
+ontology: doid/doid-non-classified.obo
+property_value: http://purl.org/dc/elements/1.1/description "The Disease Ontology has been developed as a standardized ontology for human disease with the purpose of providing the biomedical community with consistent, reusable and sustainable descriptions of human disease terms, phenotype characteristics and related medical vocabulary disease concepts." xsd:string
+property_value: http://purl.org/dc/elements/1.1/title "Human Disease Ontology" xsd:string
+property_value: http://purl.org/dc/terms/license https://creativecommons.org/publicdomain/zero/1.0/
+property_value: IAO:0000700 DOID:4
+
+[Term]
+id: DOID:0001816
+name: angiosarcoma
+alt_id: DOID:267
+alt_id: DOID:4508
+def: "A vascular cancer that derives_from the cells that line the walls of blood vessels or lymphatic vessels." [url:http\://en.wikipedia.org/wiki/Hemangiosarcoma, url:https\://en.wikipedia.org/wiki/Angiosarcoma, url:https\://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&ns=ncit&code=C3088, url:https\://www.ncbi.nlm.nih.gov/pubmed/23327728]
+subset: DO_cancer_slim
+subset: NCIthesaurus
+synonym: "hemangiosarcoma" EXACT []
+xref: ICDO:9120/3
+xref: MESH:D006394
+xref: NCI:C3088
+xref: NCI:C9275
+xref: SNOMEDCT_US_2022_09_01:39000009
+xref: UMLS_CUI:C0018923
+xref: UMLS_CUI:C0854893
+is_a: DOID:175 ! vascular cancer
+
+[Term]
+id: DOID:0002116
+name: pterygium
+def: "A corneal disease that is characterized by a triangular tissue growth located_in cornea of the eye that is the result of collagen degeneration and fibrovascular proliferation." [url:https\://en.wikipedia.org/wiki/Pterygium_(conjunctiva)]
+synonym: "surfer's eye" EXACT []
+xref: UMLS_CUI:C0033999
+is_a: DOID:10124 ! corneal disease
+created_by: laronhughes
+creation_date: 2010-06-30T02:44:30Z
+
+[Term]
+id: DOID:0014667
+name: disease of metabolism
+def: "A disease that involving errors in metabolic processes of building or degradation of molecules." [url:http\://www.ncbi.nlm.nih.gov/books/NBK22259/]
+subset: DO_AGR_slim
+subset: DO_CFDE_slim
+subset: DO_GXD_slim
+subset: NCIthesaurus
+synonym: "metabolic disease" EXACT []
+xref: ICD10CM:E88.9
+xref: ICD9CM:277.9
+xref: MESH:D008659
+xref: NCI:C3235
+xref: SNOMEDCT_US_2022_09_01:75934005
+xref: UMLS_CUI:C0025517
+is_a: DOID:4 ! disease
+
+[Term]
+id: DOID:0040001
+name: shrimp allergy
+def: "A crustacean allergy that has_allergic_trigger shrimp." [url:https\://www.ncbi.nlm.nih.gov/pubmed/20471069] {comment="IEDB:RV"}
+subset: DO_IEDB_slim
+is_a: DOID:0060524 ! crustacean allergy
+
+[Term]
+id: DOID:0040002
+name: aspirin allergy
+def: "A drug allergy that has_allergic_trigger acetylsalicylic acid." [url:https\://www.ncbi.nlm.nih.gov/pubmed/2468301] {comment="IEDB:RV"}
+subset: DO_IEDB_slim
+synonym: "acetylsalicylic acid allergy" EXACT []
+synonym: "ASA allergy" EXACT []
+xref: SNOMEDCT_US_2022_09_01:293586001
+xref: UMLS_CUI:C0004058
+is_a: DOID:0060500 ! drug allergy
+
+[Term]
+id: DOID:0040003
+name: benzylpenicillin allergy
+def: "A beta-lactam allergy that has_allergic_trigger benzylpenicillin." [url:https\://www.ncbi.nlm.nih.gov/pubmed/14483916] {comment="IEDB:RV"}
+subset: DO_IEDB_slim
+synonym: "benzyl penicillin allergy" EXACT []
+synonym: "penicillin G allergy" EXACT []
