@@ -4,7 +4,7 @@
 \alias{getOnto}
 \title{get the ontology based on a short tag and year}
 \usage{
-getOnto(ontoname = "cellOnto", year_added = "2022")
+getOnto(ontoname = "cellOnto", year_added = "2023")
 }
 \arguments{
 \item{ontoname}{character(1) must be an element in `valid_ontonames()`}

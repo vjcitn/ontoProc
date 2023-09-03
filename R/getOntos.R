@@ -1,22 +1,22 @@
-# October 2022 information in AnnotationHub for Bioc 3.16
+
+
+# April 2023 information in AnnotationHub for Bioc 3.17
 # opd =query(ah, "ontoProcData")
 # meta = mcols(opd)
-# meta |> as.data.frame() |> filter(grepl("2022", rdatadateadded)) |> select(title, description)
+#meta |> as.data.frame() |> filter(grepl("2023", rdatadateadded)) |> select(title, description)
 #                          title              description
-#AH107268        caro_2022.02.18 common anatomy reference
-#AH107269   cellLineOnto_2.1.178               cell lines
-#AH107270    cellOnto_2022.08.16                    cells
-#AH107271     cellosaurusOnto_40               cell lines
-#AH107272         chebi_full_212 large chemicals ontology
-#AH107273         chebi_lite_212  short chemical ontology
-#AH107274 diseaseOnto_2022.07.27                 diseases
-#AH107275         efoOnto_3.45.0      experimental factor
-#AH107276      goOnto_2022.07.01            Gene ontology
-#AH107277    hcaoOnto_2022.07.19         human cell atlas
-#AH107278       mondo_2022.08.01                  disease
-#AH107279    patoOnto_2022.08.10      phenotype and trait
-#AH107280              PROnto_67                  protein
-#AH107281      uberon_2022.06.30                  anatomy
+#AH111554    cellOnto_2023.02.15                    cells
+#AH111555     cellosaurusOnto_44               cell lines
+#AH111556         chebi_full_218 large chemicals ontology
+#AH111557         chebi_lite_218  short chemical ontology
+#AH111558 diseaseOnto_2023.01.30                 diseases
+#AH111559         efoOnto_3.51.0      experimental factor
+#AH111560      goOnto_2023.01.01            Gene ontology
+#AH111561    hcaoOnto_2022.12.16         human cell atlas
+#AH111562       mondo_2022.12.01                  disease
+#AH111563    patoOnto_2023.02.17      phenotype and trait
+#AH111564              PROnto_68                  protein
+#AH111565      uberon_2023.02.14                  anatomy
 
 #' give a vector of valid 'names' of ontoProc ontologies
 #' @examples
@@ -29,6 +29,7 @@ c("caro", "cellLineOnto", "cellOnto", "cellosaurusOnto", "chebi_full",
 }
 
 #' get the ontology based on a short tag and year
+#' @importFrom AnnotationHub AnnotationHub
 #' @param ontoname character(1) must be an element in `valid_ontonames()`
 #' @param year_added character(1) refers to `rdatadateadded` in AnnotationHub metadata
 #' @note This queries AnnotationHub for "ontoProcData" and then filters to find
@@ -38,13 +39,20 @@ c("caro", "cellLineOnto", "cellOnto", "cellosaurusOnto", "chebi_full",
 #' co = getOnto()
 #' tail(co$name[1000:1500])
 #' @export
-getOnto = function( ontoname="cellOnto", year_added = "2022" ) {
+getOnto = function( ontoname="cellOnto", year_added = "2023" ) {
  stopifnot(ontoname %in% valid_ontonames())
  ah = AnnotationHub::AnnotationHub()
  opd = AnnotationHub::query(ah, "ontoProcData")
  meta = mcols(opd)
  tmp = meta |> as.data.frame() |> dplyr::filter(grepl(year_added, rdatadateadded)) |> dplyr::select(title, description)
- if (year_added == "2022") {
+
+
+ if (year_added == "2023") {
+     if( ontoname %in% c("caro", "cellLineOnto")) stop("this ontology not updated in 2023, use a different year_added value")
+    ontoname = paste0(ontoname, "_")
+    stopifnot(length(grep(ontoname, tmp$title))==1)
+ }
+ else if (year_added == "2022") {
     ontoname = paste0(ontoname, "_")
     stopifnot(length(grep(ontoname, tmp$title))==1)
     }
@@ -57,32 +65,24 @@ getOnto = function( ontoname="cellOnto", year_added = "2022" ) {
  ah[[tag]]
 }
 
-
-#This is the October 2021 result of querying AnnotationHub in Bioc 3.14 for ontoProcData
-#AH97934             caro           NA    <NA>         NA   <NA>
-#AH97935     cellLineOnto           NA    <NA>         NA   <NA>
-#AH97936         cellOnto           NA    <NA>         NA   <NA>
-#AH97937  cellosaurusOnto           NA    <NA>         NA   <NA>
-#AH97938       chebi_full           NA    <NA>         NA   <NA>
-#AH97939       chebi_lite           NA    <NA>         NA   <NA>
-#AH97940      diseaseOnto           NA    <NA>         NA   <NA>
-#AH97941          efoOnto           NA    <NA>         NA   <NA>
-#AH97942           goOnto           NA    <NA>         NA   <NA>
-#AH97943          hcaOnto           NA    <NA>         NA   <NA>
-#AH97944         oncotree           NA    <NA>         NA   <NA>
-#AH97945         patoOnto           NA    <NA>         NA   <NA>
-#AH97946           Pronto           NA    <NA>         NA   <NA>
-#AH97947           uberon           NA    <NA>         NA   <NA>
-#AH97948 mondo_2021_04_07           NA    <NA>         NA   <NA>
 #
 # we will need metadata added to deal with versioning in future
 #
 
-ont_tags = c(caro = "AH97934", cellLineOnto = "AH97935", cellOnto = "AH97936", 
-cellosaurusOnto = "AH97937", chebi_full = "AH97938", chebi_lite = "AH97939", 
-diseaseOnto = "AH97940", efoOnto = "AH97941", goOnto = "AH97942", 
-hcaOnto = "AH97943", oncotree = "AH97944", patoOnto = "AH97945", 
-PROonto = "AH97946", uberon = "AH97947", mondo_2021_04_07 = "AH97948")
+ont_tags = c(caro = "AH97934", cellLineOnto = "AH97935",
+             cellOnto="AH111554",
+             cellosaurusOnto="AH111555",
+             chebi_full="AH111556",
+             chebi_lite="AH111557",
+             diseaseOnto="AH111558",
+             efoOnto="AH111559",
+             goOnto="AH111560",
+             hcaOnto="AH111561",
+             mondo_2022_12_01="AH111562",
+             patoOnto="AH111563",
+             PROnto="AH111564",
+             uberon="AH111565", 
+             oncotree = "AH97944")
 
 get_tag = function(stub) {
  stopifnot(length(stub)==1)
@@ -98,78 +98,22 @@ get_onto = function(stub) {
 
 
 # utility for caching recent obo for cell ontology
-add_cache_cl_simple = function(cache = BiocFileCache::BiocFileCache(),
-     target = "https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-simple.obo") {
- BiocFileCache::bfcadd(cache, target)
-}
-
-#' load ontologies that may include non-ascii strings and therefore cannot be in data folder
-#' @import BiocFileCache
-#' @importFrom AnnotationHub AnnotationHub
-#' @param useNew logical(1) only for getCellOnto if TRUE return ontology_index instance of cell ontology 2.1 of May 21 2020, defaults to TRUE
-#' @param use0718 logical(1) only for getCellOnto if TRUE cell ontology of July 2018
-#' @param newest logical(1) if TRUE will use BiocFileCache to retrieve/use latest cl-simple.obo; overrides
-#' @param cache instance of BiocFileCache
-#' @note You may want to try `bfcupdate` on the BiocFileCache element.
-#' useNew
-#' @examples
-#' co = getCellOnto(useNew=TRUE)
-#' co
-#' clo = getCellLineOnto()
-#' length(clo$id)
-#' che = getChebiLite()
-#' length(che$id)
-#' efo = getEFOOnto()
-#' length(efo$id)
-#' @return instance of ontology_index (S3) from ontologyIndex
-#' @note Provenance information is kept in the form
-#' of excerpts of top records in `dir(system.file("obo", package="ontoProc"), full=TRUE)`.  This
-#' function is deprecated in Bioc 3.16.  Use getOnto("cellOnto") to get the latest version
-#' provided by AnnotationHub.
-#' @export
-getCellOnto = function(useNew=TRUE, newest=FALSE, cache=BiocFileCache::BiocFileCache(),
-    use0718=FALSE)  {
-    .Deprecated("getOnto", msg="getCellOnto is deprecated: getOnto('cellOnto') should be used for versioned access")
-    if (newest) {
-     qu = BiocFileCache::bfcquery(cache, "cl-simple")
-     if (nrow(qu) == 0) {
-       chk = try(add_cache_cl_simple(cache=cache))
-       if (inherits(chk, "try-error")) stop("could not add cl-simple.obo to cache")
-       qu = BiocFileCache::bfcquery(cache, "cl-simple")
-       }
-     if (nrow(qu)>1) warning("more than one row mentions cl-simple, using first")
-     return(ontologyIndex::get_OBO(qu$fpath[1], extract_tags="everything"))
-    }
-    sfstr = "ontoRda/cellOnto.rda"
-    if (use0718) sfstr = "ontoRda/co_0718.rda"
-    get(load(system.file(
-      sfstr, package="ontoProc")))
-    }
+# add_cache_cl_simple = function(cache = BiocFileCache::BiocFileCache(),
+#      target = "https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl-simple.obo") {
+# BiocFileCache::bfcadd(cache, target)
+# }
 
 
 dmsg = function(x) .Deprecated(x, msg = sprintf("%s is deprecated: getOnto('%s') should be used for versioned access.", x, x)) 
 
 
-#' @rdname getCellOnto
-#' @aliases getCellLineOnto
-#' @export
-getCellLineOnto = function() {
- dmsg("cellLineOnto")
- get_onto("cellLineOnto")
-}
 
-#' @rdname getCellOnto
-#' @aliases getEFOOnto
-#' @export
-getEFOOnto = function() {
- dmsg("efoOnto")
- get_onto("efoOnto")
-}
-
+#' basic getters in old style, retained 2023 for deprecation interval
 #' @rdname getCellOnto
 #' @aliases getChebiLite
 #' @export
 getChebiLite = function() {
+ dmsg("chebi_lite")
  get_onto("chebi_lite")
 }
 
@@ -177,6 +121,7 @@ getChebiLite = function() {
 #' @aliases getCellosaurusOnto
 #' @export
 getCellosaurusOnto = function() {
+ dmsg("cellosaurus")
  get_onto("cellosaurusOnto")
 }
 
@@ -184,6 +129,7 @@ getCellosaurusOnto = function() {
 #' @aliases getUBERON_NE
 #' @export
 getUBERON_NE = function() {
+ dmsg("uberon")
  get_onto("uberon")
 }
 
@@ -192,6 +138,7 @@ getUBERON_NE = function() {
 #' @note getChebiOnto loads ontoRda/chebi_full.rda
 #' @export
 getChebiOnto = function() {
+ dmsg("chebi_full")
  get_onto("chebi_full")
 }
 
@@ -209,6 +156,7 @@ getOncotreeOnto = function() {
 #' @aliases getDiseaseOnto
 #' @export
 getDiseaseOnto = function() {
+ dmsg("diseaseOnto")
  get_onto("diseaseOnto")
 }
 
@@ -218,6 +166,7 @@ getDiseaseOnto = function() {
 #' @note getDiseaseOnto loads ontoRda/diseaseOnto.rda
 #' @export
 getGeneOnto = function() {
+ dmsg("goOnto")
  get_onto("goOnto")
 }
 
@@ -227,6 +176,7 @@ getGeneOnto = function() {
 #' python pronto was used to convert OWL to OBO.
 #' @export
 getHCAOnto = function() {
+ dmsg("hcaOnto")
  get_onto("hcaOnto")
 }
 
@@ -237,6 +187,7 @@ getHCAOnto = function() {
 #' `extract_tags='minimal'`.
 #' @export
 getPROnto = function() {
+ dmsg("PROonto")
  get_onto("PROonto")
 }
 
@@ -246,6 +197,7 @@ getPROnto = function() {
 #' @note getPATOnto loads ontoRda/patoOnto.rda, produced from https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo from OBO foundry, 02-08-2019.
 #' @export
 getPATOnto = function() {
+ dmsg("patoOnto")
  get_onto("patoOnto")
 }
 
@@ -253,6 +205,7 @@ getPATOnto = function() {
 #' @aliases getMondoOnto
 #' @export
 getMondoOnto = function() {
+ dmsg("mondo")
  get_onto("mondo_2021_04_07")
 }
 
