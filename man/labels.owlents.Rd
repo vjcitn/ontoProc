@@ -15,5 +15,6 @@
 retrieve labels with names
 }
 \note{
-When multiple labels are present, only first is silently returned
+When multiple labels are present, only first is silently returned.
+To get ontology tags, use `names(labels(...))`.
 }

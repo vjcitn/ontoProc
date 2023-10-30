@@ -8,10 +8,6 @@ get_classes = function(owlfile) {
  o2$get_ontology(owlfile)$load()$classes()
 }
  
-#library(reticulate)
-
-#o2 = reticulate::import("owlready2")
-
 #' construct owlents instance from an owl file
 #' @importFrom reticulate import iterate
 #' @param owlfn character(1) path to valid owl ontology
@@ -48,10 +44,6 @@ print.owlents = function(x, ...) {
  cat(sprintf("owlents instance with %d classes.\n", length(x$clnames)))
 }
 
-#> args(get("[.data.frame"))
-#function (x, i, j, drop = if (missing(i)) TRUE else length(cols) == 
-#    1)
-
 #' subset method
 #' @param x owlents instance
 #' @param i character or numeric vector
@@ -80,6 +72,28 @@ ancestors = function(oe) {
   lapply(oe$allents, o2$EntityClass$ancestors)
 }
 
+#' retrieve is_a 
+#' @param oe owlents instance
+#' @return list of vectors of tags of parents
+#' @export
+parents = function(oe) {
+    pts = lapply(oe$allents, function(x) x$is_a)
+# must remove restrictions, only want actual entities
+    isent = function(x) inherits(x, "owlready2.entity.EntityClass")
+    ok = lapply(pts, sapply, isent)
+    for (i in seq_len(length(ok))) pts[[i]] = pts[[i]][which(ok[[i]])]
+    ans = lapply(pts, sapply, function(x) x$name)
+    names(ans) = oe$clnames
+    ans
+}
+
+#  pts = lapply(oe$allents, function(x) x$is_a)
+## must remove restrictions, only want actual entities
+#  ok = sapply(pts, inherits, "owlready2.entity.EntityClass")
+#  pts = pts[which(ok)]
+#  lapply(pts, function(x) names(labels(x)))
+#}
+#
 #' retrieve subclass entities
 #' @param oe owlents instance
 #' @export
