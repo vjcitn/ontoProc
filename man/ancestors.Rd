@@ -2,7 +2,7 @@
 % Please edit documentation in R/owl_ops.R
 \name{ancestors}
 \alias{ancestors}
-\title{subset method}
+\title{retrieve ancestor 'sets'}
 \usage{
 ancestors(oe)
 }
@@ -10,5 +10,5 @@ ancestors(oe)
 \item{oe}{owlents instance}
 }
 \description{
-subset method
+retrieve ancestor 'sets'
 }

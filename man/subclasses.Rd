@@ -2,7 +2,7 @@
 % Please edit documentation in R/owl_ops.R
 \name{subclasses}
 \alias{subclasses}
-\title{subset method}
+\title{retrieve subclass entities}
 \usage{
 subclasses(oe)
 }
@@ -10,5 +10,5 @@ subclasses(oe)
 \item{oe}{owlents instance}
 }
 \description{
-subset method
+retrieve subclass entities
 }

@@ -13,7 +13,7 @@ get_classes = function(owlfile) {
 #o2 = reticulate::import("owlready2")
 
 #' construct owlents instance from an owl file
-#' @importFrom reticulate import
+#' @importFrom reticulate import iterate
 #' @param owlfn character(1) path to valid owl ontology
 #' @return instance of owlents, which is a list with clnames (
 #' a vector of term names in form `[namespace]_[tag]`), allents
@@ -21,6 +21,12 @@ get_classes = function(owlfile) {
 #' can be operated on using owlready2.EntityClass methods),
 #' owlfn (filename), iri (IRI), call (record of call producing
 #' the entity.)
+#' @examples
+#' pa = get_ordo_owl_path()
+#' orde = setup_entities(pa)
+#' orde
+#' ancestors(orde[1000:1001])
+#' labels(orde[1000:1001])
 #' @export 
 setup_entities = function(owlfn) {
   thecall = match.call()
@@ -66,17 +72,35 @@ print.owlents = function(x, ...) {
   ans
 }
 
-#' subset method
+#' retrieve ancestor 'sets'
 #' @param oe owlents instance
+#' @export
 ancestors = function(oe) {
+  o2 = reticulate::import("owlready2")
   lapply(oe$allents, o2$EntityClass$ancestors)
 }
 
-#' subset method
+#' retrieve subclass entities
 #' @param oe owlents instance
+#' @export
 subclasses = function(oe) {
+  o2 = reticulate::import("owlready2")
   lapply(oe$allents, o2$EntityClass$subclasses)
 }
+
+#' retrieve labels with names
+#' @param object owlents instance
+#' @param \dots not used
+#' @note When multiple labels are present, only first is silently returned.
+#' To get ontology tags, use `names(labels(...))`.
+#' @export
+labels.owlents = function(object, ...) {
+  o2 = reticulate::import("owlready2")
+  ll = sapply(object$allents, function(x) x$label[1])
+  names(ll) = sapply(object$allents, function(x) x$name[1])
+  unlist(ll)
+}
+  
 
 #> ee["EFO_0008710"]$allents[[1]]
 #efo.EFO_0008710
