@@ -12,3 +12,14 @@ subclasses(oe)
 \description{
 retrieve subclass entities
 }
+\examples{
+pa = get_ordo_owl_path()
+orde = setup_entities(pa)
+orde
+sc <- subclasses(orde[1:5])
+labels(orde[3])
+o3 = reticulate::iterate(sc[[3]])
+print(length(o3))
+o3[[2]]
+labels(orde["Orphanet_100011"])
+}

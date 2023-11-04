@@ -15,3 +15,10 @@ list of vectors of tags of parents
 \description{
 retrieve is_a
 }
+\examples{
+pa = get_ordo_owl_path()
+orde = setup_entities(pa)
+orde
+parents(orde[1000:1001])
+labels(orde[1000:1001])
+}

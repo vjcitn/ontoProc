@@ -6,6 +6,11 @@
 \usage{
 \method{print}{owlents}(x, ...)
 }
+\arguments{
+\item{x}{owlents instance}
+
+\item{\dots}{not used}
+}
 \description{
 short printer
 }

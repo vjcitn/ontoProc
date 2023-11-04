@@ -39,6 +39,8 @@ setup_entities = function(owlfn) {
 }
 
 #' short printer
+#' @param x owlents instance
+#' @param \dots not used
 #' @export
 print.owlents = function(x, ...) {
  cat(sprintf("owlents instance with %d classes.\n", length(x$clnames)))
@@ -75,6 +77,12 @@ ancestors = function(oe) {
 #' retrieve is_a 
 #' @param oe owlents instance
 #' @return list of vectors of tags of parents
+#' @examples
+#' pa = get_ordo_owl_path()
+#' orde = setup_entities(pa)
+#' orde
+#' parents(orde[1000:1001])
+#' labels(orde[1000:1001])
 #' @export
 parents = function(oe) {
     pts = lapply(oe$allents, function(x) x$is_a)
@@ -94,8 +102,19 @@ parents = function(oe) {
 #  lapply(pts, function(x) names(labels(x)))
 #}
 #
+
 #' retrieve subclass entities
 #' @param oe owlents instance
+#' @examples
+#' pa = get_ordo_owl_path()
+#' orde = setup_entities(pa)
+#' orde
+#' sc <- subclasses(orde[1:5])
+#' labels(orde[3])
+#' o3 = reticulate::iterate(sc[[3]])
+#' print(length(o3))
+#' o3[[2]]
+#' labels(orde["Orphanet_100011"])
 #' @export
 subclasses = function(oe) {
   o2 = reticulate::import("owlready2")

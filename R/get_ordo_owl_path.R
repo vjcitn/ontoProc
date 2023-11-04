@@ -4,7 +4,9 @@
 get_ordo_owl_path = function(target=tempdir()) {
    ini = system.file("owl", "ordo.owl.gz", package="ontoProc")
    file.copy(ini, target)
-   R.utils::gunzip(file.path(target, "ordo.owl.gz"))
-   file.path(target, "ordo.owl")
+   goal = file.path(target, "ordo.owl")
+   if (!file.exists(goal))
+      R.utils::gunzip(file.path(target, "ordo.owl.gz"))
+   goal
 }
    
