@@ -9,6 +9,16 @@ ancestors(oe)
 \arguments{
 \item{oe}{owlents instance}
 }
+\value{
+a list of sets
+}
 \description{
 retrieve ancestor 'sets'
+}
+\examples{
+pa = get_ordo_owl_path()
+orde = setup_entities(pa)
+orde
+ancestors(orde[1:5])
+labels(orde[1:5])
 }

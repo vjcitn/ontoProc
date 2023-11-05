@@ -68,11 +68,40 @@ print.owlents = function(x, ...) {
 
 #' retrieve ancestor 'sets'
 #' @param oe owlents instance
+#' @return a list of sets
+#' @examples
+#' pa = get_ordo_owl_path()
+#' orde = setup_entities(pa)
+#' orde
+#' ancestors(orde[1:5])
+#' labels(orde[1:5])
 #' @export
 ancestors = function(oe) {
   o2 = reticulate::import("owlready2")
   lapply(oe$allents, o2$EntityClass$ancestors)
 }
+
+#' obtain vector of names of a set of ancestors
+#' @param anclist output of `ancestors`
+#' @note non-entities are removed and names are extracted
+#' @return list of vectors of character()
+#' @examples
+#' pa = get_ordo_owl_path()
+#' orde = setup_entities(pa)
+#' al = ancestors(orde[1001:1002])
+#' ancestors_names(al)
+#' @export
+ancestors_names = function(anclist) {
+  lapply(anclist, .ancestor_element_names)
+}
+
+.ancestor_element_names = function(anclist_el) {
+  al = reticulate::iterate(anclist_el) # python set becomes R list
+  alok = sapply(al, function(x) inherits(x, "owlready2.entity.EntityClass"))
+  if (any(!alok)) al = al[which(alok)]
+  sapply(al, function(x) x$name)
+}
+  
 
 #' retrieve is_a 
 #' @param oe owlents instance
@@ -95,13 +124,6 @@ parents = function(oe) {
     ans
 }
 
-#  pts = lapply(oe$allents, function(x) x$is_a)
-## must remove restrictions, only want actual entities
-#  ok = sapply(pts, inherits, "owlready2.entity.EntityClass")
-#  pts = pts[which(ok)]
-#  lapply(pts, function(x) names(labels(x)))
-#}
-#
 
 #' retrieve subclass entities
 #' @param oe owlents instance
