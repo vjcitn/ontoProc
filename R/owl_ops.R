@@ -78,10 +78,12 @@ print.owlents = function(x, ...) {
 #' @export
 ancestors = function(oe) {
   o2 = reticulate::import("owlready2")
-  lapply(oe$allents, o2$EntityClass$ancestors)
+  ans = lapply(oe$allents, o2$EntityClass$ancestors)
+  names(ans) = oe$clnames
+  ans
 }
 
-#' obtain vector of names of a set of ancestors
+#' obtain list of names of a set of ancestors
 #' @param anclist output of `ancestors`
 #' @note non-entities are removed and names are extracted
 #' @return list of vectors of character()
@@ -95,11 +97,32 @@ ancestors_names = function(anclist) {
   lapply(anclist, .ancestor_element_names)
 }
 
+#' obtain list of names of a set of subclasses/children
+#' @param sclist output of `subclasses`
+#' @note non-entities are removed and names are extracted
+#' @return list of vectors of character()
+#' @examples
+#' pa = get_ordo_owl_path()
+#' orde = setup_entities(pa)
+#' al = subclasses(orde[100:120])
+#' children_names(al)
+#' @export
+children_names = function(sclist) {
+  lapply(sclist, .subclass_element_names)
+}
+
 .ancestor_element_names = function(anclist_el) {
   al = reticulate::iterate(anclist_el) # python set becomes R list
   alok = sapply(al, function(x) inherits(x, "owlready2.entity.EntityClass"))
   if (any(!alok)) al = al[which(alok)]
   sapply(al, function(x) x$name)
+}
+
+.subclass_element_names = function(sclist_el) {
+  scl = reticulate::iterate(sclist_el) # python set becomes R list
+  sclok = sapply(scl, function(x) inherits(x, "owlready2.entity.EntityClass"))
+  if (any(!sclok)) scl = scl[which(sclok)]
+  sapply(scl, function(x) x$name)
 }
   
 
@@ -140,7 +163,9 @@ parents = function(oe) {
 #' @export
 subclasses = function(oe) {
   o2 = reticulate::import("owlready2")
-  lapply(oe$allents, o2$EntityClass$subclasses)
+  ans = lapply(oe$allents, o2$EntityClass$subclasses)
+  names(ans) = oe$clnames
+  ans
 }
 
 #' retrieve labels with names
