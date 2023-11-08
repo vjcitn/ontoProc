@@ -1,3 +1,10 @@
+#' check that a URL can get a 200 for a HEAD request
+#' @param url character(1)
+#' @return logical(1)
+url_ok = function(url) {
+  httr::status_code(httr::HEAD(url)) == 200
+}
+
 #' cache an owl file accessible via URL
 #' @param cache BiocFileCache instance or equivalent
 #' @param url character(1)
@@ -10,13 +17,14 @@
 #'    url="http://purl.obolibrary.org/obo/hp/releases/2023-10-09/hp-base.owl")
 #' setup_entities(hppa)
 #' @export
-owl2cache = function(cache = BiocFileCache::BiocFileCache(),
-   url = "http://purl.obolibrary.org/obo/cl.owl") {
+owl2cache = function(cache = BiocFileCache::BiocFileCache(), url) {
    inf = BiocFileCache::bfcquery(cache, url)
    if (nrow(inf)>0) {
      res = inf[nrow(inf),]
      message(sprintf("resource %s already in cache from %s\n", res$rid, url))
      return(res$rpath)
-     }
+     } 
+   url = "http://purl.obolibrary.org/obo/cl.owl"
+   if (!url_ok(url)) stop(sprintf("HEAD for %s does not return status code 200\n", url))
    BiocFileCache::bfcadd(cache, rname = basename(url), fpath=url, rtype="web")
 }

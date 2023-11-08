@@ -4,10 +4,7 @@
 \alias{owl2cache}
 \title{cache an owl file accessible via URL}
 \usage{
-owl2cache(
-  cache = BiocFileCache::BiocFileCache(),
-  url = "http://purl.obolibrary.org/obo/cl.owl"
-)
+owl2cache(cache = BiocFileCache::BiocFileCache(), url)
 }
 \arguments{
 \item{cache}{BiocFileCache instance or equivalent}
