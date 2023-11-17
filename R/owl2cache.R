@@ -1,4 +1,5 @@
 #' check that a URL can get a 200 for a HEAD request
+#' @importFrom httr status_code HEAD
 #' @param url character(1)
 #' @return logical(1)
 url_ok = function(url) {
@@ -24,7 +25,6 @@ owl2cache = function(cache = BiocFileCache::BiocFileCache(), url) {
      message(sprintf("resource %s already in cache from %s\n", res$rid, url))
      return(res$rpath)
      } 
-   url = "http://purl.obolibrary.org/obo/cl.owl"
    if (!url_ok(url)) stop(sprintf("HEAD for %s does not return status code 200\n", url))
    BiocFileCache::bfcadd(cache, rname = basename(url), fpath=url, rtype="web")
 }

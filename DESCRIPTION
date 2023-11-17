@@ -12,10 +12,10 @@ Description: Support harvesting of diverse bioinformatic ontologies,
 	analyze genome-scale experiments, particularly cell x compound 
         screens.  Another purpose is to strengthen development of 
 	compelling use cases for richer interfaces to emerging ontologies.
-Version: 1.25.2
+Version: 1.25.3
 Imports: Biobase, S4Vectors, methods, stats, utils, BiocFileCache,
 	shiny, graph, Rgraphviz, ontologyPlot, dplyr, magrittr, DT, igraph,
-	AnnotationHub, SummarizedExperiment, reticulate, R.utils
+	AnnotationHub, SummarizedExperiment, reticulate, R.utils, httr
 Suggests: knitr, org.Hs.eg.db, org.Mm.eg.db, testthat, BiocStyle,
 	SingleCellExperiment, celldex, rmarkdown, AnnotationDbi
 Depends: R (>= 4.0), ontologyIndex

@@ -4,7 +4,7 @@
 \alias{plot.owlents}
 \title{visualize ontology selection via onto_plot2, based on owlents}
 \usage{
-plot.owlents(x, y, ...)
+plot.owlents(x, y, ..., dropThing = TRUE)
 }
 \arguments{
 \item{x}{owlents instance}
@@ -12,6 +12,9 @@ plot.owlents(x, y, ...)
 \item{y}{character() vector of entries in x$clnames}
 
 \item{\dots}{passed to onto_plot2}
+
+\item{dropThing}{logical(1) defaults to TRUE; if "Thing" is
+present in terms to display, it is removed}
 }
 \description{
 visualize ontology selection via onto_plot2, based on owlents
