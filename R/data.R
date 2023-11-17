@@ -77,3 +77,14 @@
 #' data(packDesc2021)
 #' head(packDesc2021)
 "packDesc2021"
+
+#' packDesc2023: overview of ontoProc resources
+#' @format data.frame instance
+#' @note Brief survey of functions available to load serialized
+#' ontology_index instances imported from OBO.  Focus is on versions added in 2023.
+#' Several manual interventions were needed -- cellosaurus was too large to use the
+#' script in inst/scripts/desc.R, and a number of ontologies do not have 2023 versions.
+#' @examples
+#' data(packDesc2023)
+#' head(packDesc2023)
+"packDesc2023"

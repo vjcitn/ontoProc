@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.25.0
+------------------------
+   o introducing owl operations, relying on reticulate
+
 CHANGES IN VERSION 1.2.0
 ------------------------
    o vignette, minicorpus updates

@@ -18,7 +18,7 @@ children = function(x, ont) ont$children[[x]]
 #' @param ont an ontology_index instance as defined in ontologyIndex package
 #' @return character vector of 'leaves' of ontology tree
 #' @examples
-#' ch = getChebiOnto()
+#' ch = getOnto("chebi_lite")
 #' alldr = getLeavesFromTerm("CHEBI:23888", ch)
 #' head(ch$name[alldr[1:15]])
 #' @export

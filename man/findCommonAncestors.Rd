@@ -39,7 +39,7 @@ e.g., when harmonizing annotation from different datasets or studies.
 Note that any names for \code{...} will be reflected in the columns of the DataFrame for each LCA.
 }
 \examples{
-co <- getCellOnto(useNew=TRUE)
+co <- getOnto("cellOnto")
 
 # TODO: wrap in utility function.
 parents <- co$parents
