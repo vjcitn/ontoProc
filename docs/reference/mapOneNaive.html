@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ontoProc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.25.3</span>
       </span>
     </div>
 
@@ -28,8 +28,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/owlents.html">owlents: using OWL directly in ontoProc</a>
+    </li>
+  </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/vjcitn/ontoProc/">
+  <a href="https://github.com/vjcitn/ontoProc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -44,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>use grep or agrep to find a match for a naive token into ontology</h1>
-    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/mapNaive.R"><code>R/mapNaive.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/mapNaive.R" class="external-link"><code>R/mapNaive.R</code></a></small>
     <div class="hidden name"><code>mapOneNaive.Rd</code></div>
     </div>
 
@@ -87,8 +97,7 @@
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co">#co = ontoProc::getCellOnto()</span></span></span>
-<span class="r-in"><span><span class="va">co</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, year_added<span class="op">=</span><span class="st">"2022"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> snapshotDate(): 2022-10-19</span>
+<span class="r-in"><span><span class="va">co</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, year_added<span class="op">=</span><span class="st">"2023"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
 <span class="r-in"><span><span class="fu">mapOneNaive</span><span class="op">(</span><span class="st">"astrocyte"</span>, <span class="va">co</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                         CL:0000127 </span>
@@ -96,7 +105,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                         CL:0002603 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                      "astrocyte of the cerebellum" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                         CL:0002604 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                     "astrocyte of the hippocampus" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                            "hippocampal astrocyte" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                         CL:0002605 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                 "astrocyte of the cerebral cortex" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                         CL:0002606 </span>
@@ -161,7 +170,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

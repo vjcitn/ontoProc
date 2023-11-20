@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ontoProc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.25.3</span>
       </span>
     </div>
 
@@ -45,10 +45,22 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/owlents.html">owlents: using OWL directly in ontoProc</a>
+    </li>
+  </ul>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/vjcitn/ontoProc/">
+  <a href="https://github.com/vjcitn/ontoProc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -63,15 +75,15 @@
 
       
 
-      </header><div class="row">
+      </header><script src="ontoProc_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>ontoProc: Ontology interfaces for Bioconductor, with focus on cell type identification</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">October 20, 2022</h4>
+            <h4 data-toc-skip class="date">November 20, 2023</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/vignettes/ontoProc.Rmd"><code>vignettes/ontoProc.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/vignettes/ontoProc.Rmd" class="external-link"><code>vignettes/ontoProc.Rmd</code></a></small>
       <div class="hidden name"><code>ontoProc.Rmd</code></div>
 
     </div>
@@ -86,20 +98,20 @@
 <p>In this vignette, we review key concepts and tasks required to make progress in the adoption and application of ontological discipline in Bioconductor-oriented data analysis.</p>
 <p>We’ll start by setting up some package attachments and ontology objects.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/vjcitn/ontoProc">ontoProc</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/vjcitn/ontoProc" class="external-link">ontoProc</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">ontologyPlot</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Bioconductor/BiocStyle" class="external-link">BiocStyle</a></span><span class="op">)</span>  <span class="co"># for package references</span></span>
 <span><span class="va">cl</span> <span class="op">=</span> <span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, <span class="st">"2021"</span><span class="op">)</span> <span class="co"># for continuity --    has_high_plasma_membrane_amount: list</span></span>
 <span><span class="va">go</span> <span class="op">=</span> <span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"goOnto"</span>, <span class="st">"2021"</span><span class="op">)</span>  <span class="co"># if updated, some assertions will fail...</span></span>
-<span><span class="va">pr</span> <span class="op">=</span> <span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"Pronto"</span>, <span class="st">"2021"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">pr</span> <span class="op">=</span> <span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"Pronto"</span>, <span class="st">"2021"</span><span class="op">)</span>  <span class="co"># important case change</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="scope-of-package">Scope of package<a class="anchor" aria-label="anchor" href="#scope-of-package"></a>
 </h2>
 <p>The following table describes the most up-to-date resources available with <code>getOnto</code>. <!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand --></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">packDesc2022</span><span class="op">)</span></span>
-<span><span class="fu">kable</span><span class="op">(</span><span class="va">packDesc2022</span><span class="op">[</span>,<span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">packDesc2023</span><span class="op">)</span></span>
+<span><span class="fu">kable</span><span class="op">(</span><span class="va">packDesc2023</span><span class="op">[</span>,<span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">7</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="left">name</th>
@@ -125,59 +137,59 @@
 </tr>
 <tr class="odd">
 <td align="left">cellOnto</td>
-<td align="right">17126</td>
-<td align="right">226</td>
+<td align="right">17371</td>
+<td align="right">229</td>
 <td align="right">102</td>
-<td align="left">releases/2022-08-16</td>
+<td align="left">releases/2023-02-15</td>
 </tr>
 <tr class="even">
-<td align="left">cellosaurusOnto</td>
-<td align="right">134841</td>
-<td align="right">21</td>
-<td align="right">134841</td>
-<td align="left">40.0</td>
+<td align="left">cellosaurus</td>
+<td align="right">144570</td>
+<td align="right">NA</td>
+<td align="right">144571</td>
+<td align="left">44.0</td>
 </tr>
 <tr class="odd">
 <td align="left">chebi_full</td>
-<td align="right">162229</td>
+<td align="right">163735</td>
 <td align="right">34</td>
 <td align="right">13</td>
-<td align="left">212</td>
+<td align="left">218</td>
 </tr>
 <tr class="even">
 <td align="left">chebi_lite</td>
-<td align="right">162229</td>
+<td align="right">163735</td>
 <td align="right">32</td>
 <td align="right">13</td>
-<td align="left">212</td>
+<td align="left">218</td>
 </tr>
 <tr class="odd">
 <td align="left">diseaseOnto</td>
-<td align="right">13495</td>
+<td align="right">13680</td>
 <td align="right">26</td>
 <td align="right">3</td>
-<td align="left">doid/releases/2022-07-27/doid-non-classified.obo</td>
+<td align="left">doid/releases/2023-01-30/doid-non-classified.obo</td>
 </tr>
 <tr class="even">
 <td align="left">efoOnto</td>
-<td align="right">36420</td>
-<td align="right">91</td>
-<td align="right">53</td>
-<td align="left"><a href="http://www.ebi.ac.uk/efo/releases/v3.45.0/efo.owl" class="external-link uri">http://www.ebi.ac.uk/efo/releases/v3.45.0/efo.owl</a></td>
+<td align="right">40514</td>
+<td align="right">93</td>
+<td align="right">60</td>
+<td align="left"><a href="http://www.ebi.ac.uk/efo/releases/v3.51.0/efo.owl" class="external-link uri">http://www.ebi.ac.uk/efo/releases/v3.51.0/efo.owl</a></td>
 </tr>
 <tr class="odd">
 <td align="left">goOnto</td>
-<td align="right">47338</td>
+<td align="right">47427</td>
 <td align="right">41</td>
 <td align="right">10</td>
-<td align="left">releases/2022-07-01</td>
+<td align="left">releases/2023-01-01</td>
 </tr>
 <tr class="even">
 <td align="left">hcaoOnto</td>
-<td align="right">22289</td>
-<td align="right">258</td>
-<td align="right">154</td>
-<td align="left">releases/2022-07-19/hcao.owl</td>
+<td align="right">22821</td>
+<td align="right">259</td>
+<td align="right">161</td>
+<td align="left">releases/2022-12-16/hcao.owl</td>
 </tr>
 <tr class="odd">
 <td align="left">mondo</td>
@@ -188,28 +200,35 @@
 </tr>
 <tr class="even">
 <td align="left">patoOnto</td>
-<td align="right">2810</td>
+<td align="right">2813</td>
 <td align="right">45</td>
 <td align="right">16</td>
-<td align="left">releases/2022-08-10/pato.obo</td>
+<td align="left">releases/2022-12-15/pato.obo</td>
 </tr>
 <tr class="odd">
 <td align="left">PROnto</td>
-<td align="right">334523</td>
+<td align="right">334873</td>
+<td align="right">48</td>
 <td align="right">49</td>
-<td align="right">41</td>
-<td align="left">67.0</td>
+<td align="left">68.0</td>
 </tr>
 <tr class="even">
 <td align="left">uberon</td>
-<td align="right">21010</td>
-<td align="right">192</td>
-<td align="right">130</td>
-<td align="left">releases/2022-06-30</td>
+<td align="right">25836</td>
+<td align="right">245</td>
+<td align="right">138</td>
+<td align="left">releases/2023-02-14</td>
+</tr>
+<tr class="odd">
+<td align="left">Pronto</td>
+<td align="right">315957</td>
+<td align="right">6</td>
+<td align="right">53</td>
+<td align="left">57.0</td>
 </tr>
 </tbody>
 </table>
-<p>Other resources are listed in <code>packDesc2021</code> and <code>packDesc2019</code>.</p>
+<p>Other resources are listed in <code>packDesc202x</code> and <code>packDesc2019</code>.</p>
 </div>
 <div class="section level2">
 <h2 id="methods">Methods<a class="anchor" aria-label="anchor" href="#methods"></a>
@@ -305,11 +324,10 @@
 <p>Given the informally selected tags in the table above, we can sketch the Cell Ontology graph connecting the associated cell types. The ontoProc package adds functionality to ontologyPlot with <code>make_graphNEL_from_ontology_plot</code>. This allows use of all Rgraphviz and igraph visualization facilities for graphs derived from ontology structures.</p>
 <p>Here we display the PBMC cell sets reported in the Seurat tutorial.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/vjcitn/ontoProc">ontoProc</a></span><span class="op">)</span></span>
-<span><span class="va">cl</span> <span class="op">=</span> <span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, <span class="st">"2021"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## snapshotDate(): 2022-10-19</span></span></code></pre>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/vjcitn/ontoProc" class="external-link">ontoProc</a></span><span class="op">)</span></span>
+<span><span class="va">cl</span> <span class="op">=</span> <span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, <span class="st">"2023"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## loading from cache</span></span></code></pre>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/onto_plot2.html">onto_plot2</a></span><span class="op">(</span><span class="va">cl</span>, <span class="va">stab</span><span class="op">$</span><span class="va">tag</span><span class="op">)</span></span></code></pre></div>
 <p><img src="ontoProc_files/figure-html/lklklk-1.png" width="700"></p>
 </div>
@@ -317,18 +335,18 @@
 <h4 id="molecular-features-asserted-in-the-cell-ontology">Molecular features asserted in the Cell Ontology<a class="anchor" aria-label="anchor" href="#molecular-features-asserted-in-the-cell-ontology"></a>
 </h4>
 <p>The <code>CLfeats</code> function traces relationships and properties from a given Cell Ontology class. Briefly, each class can assert that it is the <code>intersection_of</code> other classes, and <code>has_part</code>, <code>lacks_part</code>, <code>has_plasma_membrane_part</code>, <code>lacks_plasma_membrane_part</code> can be asserted as relationships holding between cell type instances and cell components. The components are often cross-referenced to Protein Ontology or Gene Ontology. When the Protein Ontology component has a synonym for which an HGNC symbol is provided, that symbol is retrieved by <code>CLfeats</code>. Here we obtain the listing for a mature CD1a-positive dermal dendritic cell.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressMessages</a></span><span class="op">(</span><span class="op">{</span></span>
 <span><span class="fu">kable</span><span class="op">(</span><span class="fu"><a href="../reference/CLfeats.html">CLfeats</a></span><span class="op">(</span><span class="va">cl</span>, <span class="st">"CL:0002531"</span>, pr<span class="op">=</span><span class="va">pr</span>, go<span class="op">=</span><span class="va">go</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
-<col width="8%">
 <col width="10%">
-<col width="7%">
-<col width="39%">
-<col width="5%">
-<col width="28%">
+<col width="12%">
+<col width="8%">
+<col width="47%">
+<col width="6%">
+<col width="14%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">tag</th>
@@ -340,14 +358,6 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">CL:0000990</td>
-<td align="left">PR:000001013</td>
-<td align="left">hiPMAmt</td>
-<td align="left">integrin alpha-X</td>
-<td align="left">ITGAX</td>
-<td align="left">conventional dendritic cell</td>
-</tr>
-<tr class="even">
 <td align="left">CL:0000451</td>
 <td align="left">PR:000001002</td>
 <td align="left">lacksPMP</td>
@@ -355,7 +365,7 @@
 <td align="left">CD19</td>
 <td align="left">dendritic cell</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">CL:0000451</td>
 <td align="left">PR:000001003</td>
 <td align="left">lacksPMP</td>
@@ -363,7 +373,7 @@
 <td align="left">CD34</td>
 <td align="left">dendritic cell</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">CL:0000451</td>
 <td align="left">PR:000001020</td>
 <td align="left">lacksPMP</td>
@@ -371,7 +381,7 @@
 <td align="left">CD3E</td>
 <td align="left">dendritic cell</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">CL:0000451</td>
 <td align="left">PR:000001024</td>
 <td align="left">lacksPMP</td>
@@ -379,7 +389,7 @@
 <td align="left">NCAM1</td>
 <td align="left">dendritic cell</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">CL:0000451</td>
 <td align="left">PR:000001289</td>
 <td align="left">lacksPMP</td>
@@ -387,37 +397,13 @@
 <td align="left">MS4A1</td>
 <td align="left">dendritic cell</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">CL:0000451</td>
 <td align="left"><a href="GO:0042613" class="uri">GO:0042613</a></td>
 <td align="left">hasPart</td>
 <td align="left">MHC class II protein complex</td>
 <td align="left">NA</td>
 <td align="left">dendritic cell</td>
-</tr>
-<tr class="even">
-<td align="left">CL:0000841</td>
-<td align="left"><a href="GO:0042613" class="uri">GO:0042613</a></td>
-<td align="left">hiPMAmt</td>
-<td align="left">MHC class II protein complex</td>
-<td align="left">NA</td>
-<td align="left">mature conventional dendritic cell</td>
-</tr>
-<tr class="odd">
-<td align="left">CL:0000841</td>
-<td align="left">PR:000001412</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CD86 molecule</td>
-<td align="left">CD86</td>
-<td align="left">mature conventional dendritic cell</td>
-</tr>
-<tr class="even">
-<td align="left">CL:0000841</td>
-<td align="left">PR:000001438</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CD80 molecule</td>
-<td align="left">CD80</td>
-<td align="left">mature conventional dendritic cell</td>
 </tr>
 <tr class="odd">
 <td align="left">CL:0000000</td>
@@ -439,21 +425,21 @@
 </table>
 <p>The <code>ctmarks</code> function starts a shiny app that generates tables of this sort for selected cell types.</p>
 <div class="figure">
-<img src="ctmarks.png" alt="ctmarks snapshot"><p class="caption">ctmarks snapshot</p>
+<img src="ctmarks.png" alt=""><p class="caption">ctmarks snapshot</p>
 </div>
 </div>
 <div class="section level4">
 <h4 id="mapping-from-gene-presencerole-to-cell-type">Mapping from gene ‘presence/role’ to cell type<a class="anchor" aria-label="anchor" href="#mapping-from-gene-presencerole-to-cell-type"></a>
 </h4>
 <p>The <code>sym2CellOnto</code> function helps find mention of given gene symbols in properties or parts of cell types.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">kable</span><span class="op">(</span><span class="va">sdf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="../reference/sym2CellOnto.html">sym2CellOnto</a></span><span class="op">(</span><span class="st">"ITGAM"</span>, <span class="va">cl</span>, <span class="va">pr</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="6%">
-<col width="9%">
-<col width="11%">
-<col width="73%">
+<col width="10%">
+<col width="12%">
+<col width="69%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">sym</th>
@@ -594,116 +580,14 @@
 <td align="left">CL:0002679</td>
 <td align="left">natural helper lymphocyte</td>
 </tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0000581</td>
-<td align="left">peritoneal macrophage</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0002347</td>
-<td align="left">CD27-high, CD11b-high natural killer cell, mouse</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0002348</td>
-<td align="left">CD27-low, CD11b-high natural killer cell, mouse</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0002474</td>
-<td align="left">lymphoid MHC-II-negative classical monocyte</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0002475</td>
-<td align="left">lymphoid MHC-II-negative non-classical monocyte</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0002505</td>
-<td align="left">liver CD103-negative dendritic cell</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0002510</td>
-<td align="left">CD103-negative, langerin-positive lymph node dendritic cell</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">hiPMAmt</td>
-<td align="left">CL:0002512</td>
-<td align="left">CD11b-high, CD103-negative, langerin-negative lymph node dendritic cell</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0000091</td>
-<td align="left">Kupffer cell</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0000583</td>
-<td align="left">alveolar macrophage</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0000868</td>
-<td align="left">lymph node macrophage</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0000874</td>
-<td align="left">splenic red pulp macrophage</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0002345</td>
-<td align="left">CD27-low, CD11b-low immature natural killer cell, mouse</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0002349</td>
-<td align="left">CD27-high, CD11b-low natural killer cell, mouse</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0002506</td>
-<td align="left">liver CD103-positive dendritic cell</td>
-</tr>
-<tr class="even">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0002509</td>
-<td align="left">CD103-positive, langerin-positive lymph node dendritic cell</td>
-</tr>
-<tr class="odd">
-<td align="left">ITGAM</td>
-<td align="left">loPMAmt</td>
-<td align="left">CL:0002511</td>
-<td align="left">CD11b-low, CD103-negative, langerin-negative lymph node dendritic cell</td>
-</tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">sdf</span><span class="op">$</span><span class="va">cond</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
-<span><span class="co">##  hiPMAmt lacksPMP  loPMAmt </span></span>
-<span><span class="co">##        8       22        9</span></span></code></pre>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<span><span class="co">## lacksPMP </span></span>
+<span><span class="co">##       22</span></span></code></pre>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">kable</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="fu"><a href="../reference/sym2CellOnto.html">sym2CellOnto</a></span><span class="op">(</span><span class="st">"FOXP3"</span>, <span class="va">cl</span>, <span class="va">pr</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
@@ -756,10 +640,10 @@
 </h4>
 <p>For a demonstration, we consider the discussion in <span class="citation">Bakken et al. (2017)</span>, of a ‘diagonal’ expression pattern defining a group of novel cell types. A set of genes is identified and cells are distinguised by expressing exactly one gene from the set.</p>
 <div class="figure">
-<img src="usecaseCyclic.png" alt="Diagonal expression pattern."><p class="caption">Diagonal expression pattern.</p>
+<img src="usecaseCyclic.png" alt=""><p class="caption">Diagonal expression pattern.</p>
 </div>
 <p>The necessary information is collected in a vector. The vector is the set of genes, the name of element i is the tag to be associated with the type of cell that expresses gene i and does not express any other gene in the set.</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sigels</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CL:X01"</span><span class="op">=</span><span class="st">"GRIK3"</span>, <span class="st">"CL:X02"</span><span class="op">=</span><span class="st">"NTNG1"</span>, <span class="st">"CL:X03"</span><span class="op">=</span><span class="st">"BAGE2"</span>,</span>
 <span>             <span class="st">"CL:X04"</span><span class="op">=</span><span class="st">"MC4R"</span>, <span class="st">"CL:X05"</span><span class="op">=</span><span class="st">"PAX6"</span>, <span class="st">"CL:X06"</span><span class="op">=</span><span class="st">"TSPAN12"</span>, </span>
 <span>             <span class="st">"CL:X07"</span><span class="op">=</span><span class="st">"hSHISA8"</span>, <span class="st">"CL:X08"</span><span class="op">=</span><span class="st">"SNCG"</span>, <span class="st">"CL:X09"</span><span class="op">=</span><span class="st">"ARHGEF28"</span>, </span>
@@ -769,11 +653,11 @@
 <h4 id="a-data-frame-defining-the-cell-types-and-their-properties">A data.frame defining the cell types and their properties<a class="anchor" aria-label="anchor" href="#a-data-frame-defining-the-cell-types-and-their-properties"></a>
 </h4>
 <p>The <code>cyclicSigset</code> function produces a data.frame instance connecting cell types with the genes expressed or unexpressed.</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cs</span> <span class="op">=</span> <span class="fu"><a href="../reference/cyclicSigset.html">cyclicSigset</a></span><span class="op">(</span><span class="va">sigels</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cs</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 100   3</span></span></code></pre>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cs</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span>,<span class="fl">9</span><span class="op">:</span><span class="fl">13</span><span class="op">)</span>,<span class="op">]</span></span></code></pre></div>
 <pre><code><span><span class="co">##        gene   type     cond</span></span>
 <span><span class="co">## 1  ARHGEF28 CL:X09   hasExp</span></span>
@@ -786,7 +670,7 @@
 <span><span class="co">## 11    BAGE2 CL:X03   hasExp</span></span>
 <span><span class="co">## 12    GRIK3 CL:X03 lacksExp</span></span>
 <span><span class="co">## 13    NTNG1 CL:X03 lacksExp</span></span></code></pre>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">cs</span><span class="op">$</span><span class="va">cond</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">##   hasExp lacksExp </span></span>
@@ -797,7 +681,7 @@
 <h4 id="translating-the-data-frame-elements-to-obo-term-instances">Translating the data.frame elements to OBO Term instances<a class="anchor" aria-label="anchor" href="#translating-the-data-frame-elements-to-obo-term-instances"></a>
 </h4>
 <p>The most complicated aspect of novel OBO term construction is the proper specifications of relationships with existing ontology components. A prolog that is mostly shared by all terms is generated programmatically for the diagonal pattern task.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="va">makeIntnProlog</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">id</span>, <span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span> <span class="co"># make type-specific prologs as key-value pairs</span></span>
 <span>     <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>  </span>
@@ -808,7 +692,7 @@
 <span>       <span class="st">"intersection_of: CL:0000099 ! interneuron"</span><span class="op">)</span></span>
 <span> <span class="op">}</span></span></code></pre></div>
 <p>The <code>ldfToTerms</code> API uses this to create a set of strings that can be parsed as a term.</p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pmap</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"hasExp"</span><span class="op">=</span><span class="st">"has_expression_of"</span>, lacksExp<span class="op">=</span><span class="st">"lacks_expression_of"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="va">tms</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ldfToTerms.html">ldfToTerms</a></span><span class="op">(</span><span class="va">cs</span>, <span class="va">pmap</span>, <span class="va">sigels</span>, <span class="va">makeIntnProlog</span><span class="op">)</span><span class="op">)</span>, <span class="fl">20</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##  [1] "[Term]"                                                                                                        </span></span>
@@ -841,7 +725,7 @@
 <h4 id="a-data-frame-mapping-from-informal-to-formal-terms">A data.frame mapping from informal to formal terms<a class="anchor" aria-label="anchor" href="#a-data-frame-mapping-from-informal-to-formal-terms"></a>
 </h4>
 <p>Aaron Lun has produced a mapping from informal terms used in the Human Primary Cell Atlas to Cell Ontology tags. We provisionally include a copy of this mapping in ontoProc:</p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hpca_map</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html" class="external-link">read.csv</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/hpca.csv"</span>, package<span class="op">=</span><span class="st">"ontoProc"</span><span class="op">)</span>, strings<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">hpca_map</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##                          uncontrolled controlled</span></span>
@@ -852,7 +736,7 @@
 <span><span class="co">## 5 Smooth_muscle_cells:bronchial:vit_D CL:0002598</span></span>
 <span><span class="co">## 6       Smooth_muscle_cells:bronchial CL:0002598</span></span></code></pre>
 <p>We will rename columns of this map for convenience of our <code>bind_formal_tags</code> method.</p>
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">hpca_map</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"informal"</span>, <span class="st">"formal"</span><span class="op">)</span>  <span class="co"># obligatory for now</span></span></code></pre></div>
 </div>
 <div class="section level4">
@@ -860,43 +744,41 @@
 </h4>
 <p>I am turning this code off for now because there is no standard approach to getting the mapping from the SummarizedExperment yet. When SingleR merges the ‘standardized’ branch, this will come back.</p>
 <p>Let’s retrieve the HPCA data from SingleR:</p>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">SingleCellExperiment</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/LTLA/celldex" class="external-link">celldex</a></span><span class="op">)</span></span>
 <span><span class="va">hpca_sce</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/celldex/man/HumanPrimaryCellAtlasData.html" class="external-link">HumanPrimaryCellAtlasData</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## snapshotDate(): 2022-10-17</span></span></code></pre>
 <pre><code><span><span class="co">## see ?celldex and browseVignettes('celldex') for documentation</span></span></code></pre>
 <pre><code><span><span class="co">## loading from cache</span></span></code></pre>
 <pre><code><span><span class="co">## see ?celldex and browseVignettes('celldex') for documentation</span></span></code></pre>
 <pre><code><span><span class="co">## loading from cache</span></span></code></pre>
 <p>Now bind the formal tags:</p>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hpca_sce</span> <span class="op">=</span> <span class="fu"><a href="../reference/bind_formal_tags.html">bind_formal_tags</a></span><span class="op">(</span><span class="va">hpca_sce</span>, <span class="st">"label.fine"</span>, <span class="va">hpca_map</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">hpca_sce</span><span class="op">$</span><span class="va">label.ont</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 66</span></span></code></pre>
 <p>We don’t check for failed mappings:</p>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">xx</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/which.html" class="external-link">which</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">hpca_sce</span><span class="op">$</span><span class="va">label.ont</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 2</span></span></code></pre>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">xx</span><span class="op">)</span><span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">colData</a></span><span class="op">(</span><span class="va">hpca_sce</span><span class="op">)</span><span class="op">[</span><span class="va">xx</span>,<span class="op">]</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## DataFrame with 2 rows and 3 columns</span></span>
 <span><span class="co">##            label.main             label.fine   label.ont</span></span>
 <span><span class="co">##           &lt;character&gt;            &lt;character&gt; &lt;character&gt;</span></span>
 <span><span class="co">## GSM154081     T_cells T_cell:CCR10+CLA+1,2..          NA</span></span>
 <span><span class="co">## GSM154084     T_cells T_cell:CCR10-CLA+1,2..          NA</span></span></code></pre>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="va">hpca_sce</span><span class="op">$</span><span class="va">label.ont</span> <span class="op">==</span> <span class="st">""</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co"># iPS and BM</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 50</span></span></code></pre>
 </div>
 <div class="section level4">
 <h4 id="subsetting-using-the-class-hierarchy-of-cell-ontology">Subsetting using the class hierarchy of Cell Ontology<a class="anchor" aria-label="anchor" href="#subsetting-using-the-class-hierarchy-of-cell-ontology"></a>
 </h4>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">cell_onto</span> <span class="op">=</span> <span class="fu">ontoProc</span><span class="fu">::</span><span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, <span class="st">"2021"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## snapshotDate(): 2022-10-19</span></span></code></pre>
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">cell_onto</span> <span class="op">=</span> <span class="fu">ontoProc</span><span class="fu">::</span><span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, <span class="st">"2023"</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## loading from cache</span></span></code></pre>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hpca_mono</span> <span class="op">=</span> <span class="fu"><a href="../reference/subset_descendants.html">subset_descendants</a></span><span class="op">(</span> <span class="va">hpca_sce</span>, <span class="va">cell_onto</span>, <span class="st">"^monocyte$"</span> <span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">hpca_mono</span><span class="op">$</span><span class="va">label.fine</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -910,12 +792,12 @@
 <span><span class="co">##                                 6                                 4 </span></span>
 <span><span class="co">##                     Monocyte:MCSF Monocyte:S._typhimurium_flagellin </span></span>
 <span><span class="co">##                                 2                                 1</span></span></code></pre>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">hpca_mono</span><span class="op">$</span><span class="va">label.ont</span><span class="op">)</span> <span class="co"># not much diversity</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## CL:0000576 CL:0001054 </span></span>
 <span><span class="co">##         57          3</span></span></code></pre>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hpca_tcell</span> <span class="op">=</span> <span class="fu"><a href="../reference/subset_descendants.html">subset_descendants</a></span><span class="op">(</span> <span class="va">hpca_sce</span>, <span class="va">cell_onto</span>, <span class="st">"^T cell$"</span> <span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">hpca_tcell</span><span class="op">$</span><span class="va">label.fine</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -931,14 +813,14 @@
 <span><span class="co">##                              4                              4 </span></span>
 <span><span class="co">##             T_cell:gamma-delta              T_cell:Treg:Naive </span></span>
 <span><span class="co">##                              2                              2</span></span></code></pre>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">hpca_tcell</span><span class="op">$</span><span class="va">label.ont</span><span class="op">)</span> <span class="co"># </span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## CL:0000624 CL:0000625 CL:0000798 CL:0000895 CL:0000900 CL:0000904 CL:0000905 </span></span>
 <span><span class="co">##         12         16          2          6          4          5          4 </span></span>
 <span><span class="co">## CL:0000907 CL:0000911 CL:0000913 CL:0001062 CL:0002677 </span></span>
 <span><span class="co">##          3          4          4          4          2</span></span></code></pre>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">uu</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">hpca_tcell</span><span class="op">$</span><span class="va">label.ont</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/onto_plot2.html">onto_plot2</a></span><span class="op">(</span><span class="va">cell_onto</span>, <span class="va">uu</span><span class="op">)</span></span></code></pre></div>
 <p><img src="ontoProc_files/figure-html/dosub-1.png" width="700"></p>
@@ -949,17 +831,16 @@
 <h2 id="disease-concept-relationships">Disease concept relationships<a class="anchor" aria-label="anchor" href="#disease-concept-relationships"></a>
 </h2>
 <p>The Experimental Factor Ontology is available and integrates information among diverse ontologies. Here we check on terms likely related to asthma.</p>
-<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ef</span> <span class="op">=</span> <span class="fu"><a href="../reference/getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"efoOnto"</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## snapshotDate(): 2022-10-19</span></span></code></pre>
 <pre><code><span><span class="co">## loading from cache</span></span></code></pre>
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">alla</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grep</a></span><span class="op">(</span><span class="st">"sthma"</span>, <span class="va">ef</span><span class="op">$</span><span class="va">name</span>, value<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> </span>
 <span><span class="va">aa</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grep</a></span><span class="op">(</span><span class="st">"obso"</span>, <span class="va">alla</span>, invert<span class="op">=</span><span class="cn">TRUE</span>, value<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/onto_plot2.html">onto_plot2</a></span><span class="op">(</span><span class="va">ef</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">aa</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><img src="ontoProc_files/figure-html/lkefo-1.png" width="700"></p>
 <p>However, the Human Disease Ontology seems more developed in terms of defining asthma subtypes. We have not integrated that ontology into ontoProc yet, but it can be retrieved conveniently as follows:</p>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">hdo_2022_09</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/ontologyIndex/man/get_ontology.html" class="external-link">get_OBO</a></span><span class="op">(</span></span>
 <span>  <span class="st">"https://github.com/DiseaseOntology/HumanDiseaseOntology/raw/main/src/ontology/HumanDO.obo"</span>, </span>
 <span>  extract_tags <span class="op">=</span> <span class="st">"everything"</span></span>
@@ -974,9 +855,9 @@
 <p>A CRAN package that is very useful for R programming with ontologies is <code>ontologyIndex</code> <span class="citation">Westbury et al. (2015)</span>. This provides easily used functions for parsing ontologies in the OBO format and for performing basic queries on text fields and list structures.</p>
 </div>
 <div class="section level2">
-<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
-<div id="refs" class="references">
+<div id="refs" class="references hanging-indent">
 <div id="ref-Aevermann2018">
 <p>Aevermann, Brian D., Mark Novotny, Trygve Bakken, Jeremy A. Miller, Alexander D. Diehl, David Osumi-Sutherland, Roger S. Lasken, Ed S. Lein, and Richard H. Scheuermann. 2018. “Cell type discovery using single-cell transcriptomics: Implications for ontological representation.” <em>Human Molecular Genetics</em> 27 (R1): R40–R47. <a href="https://doi.org/10.1093/hmg/ddy100" class="external-link">https://doi.org/10.1093/hmg/ddy100</a>.</p>
 </div>
@@ -1010,7 +891,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

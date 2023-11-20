@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ontoProc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.25.3</span>
       </span>
     </div>
 
@@ -28,8 +28,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/owlents.html">owlents: using OWL directly in ontoProc</a>
+    </li>
+  </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/vjcitn/ontoProc/">
+  <a href="https://github.com/vjcitn/ontoProc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -44,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>use Cell Ontology and Protein Ontology to identify cell-type defining conditions in which a given gene is named</h1>
-    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/sym2CellOnto.R"><code>R/sym2CellOnto.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/sym2CellOnto.R" class="external-link"><code>R/sym2CellOnto.R</code></a></small>
     <div class="hidden name"><code>sym2CellOnto.Rd</code></div>
     </div>
 
@@ -63,11 +73,11 @@
 
 
 <dt>cl</dt>
-<dd><p>result of getCellOnto()</p></dd>
+<dd><p>result of getOnto("cellOnto")</p></dd>
 
 
 <dt>pr</dt>
-<dd><p>result of getPROnto()</p></dd>
+<dd><p>result of getOnto("PROnto")</p></dd>
 
 </dl></div>
     <div id="value">
@@ -84,13 +94,12 @@ conditions: (has/lacks)PMP (plasma membrane part) (hi/lo)PMAmt (plasma membrane 
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">exists</a></span><span class="op">(</span><span class="st">"cl"</span><span class="op">)</span><span class="op">)</span> <span class="va">cl</span> <span class="op">=</span> <span class="fu"><a href="getCellOnto.html">getCellOnto</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>getCellOnto is deprecated: getOnto('cellOnto') should be used for versioned access</span>
-<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">exists</a></span><span class="op">(</span><span class="st">"pr"</span><span class="op">)</span><span class="op">)</span> <span class="va">pr</span> <span class="op">=</span> <span class="fu"><a href="getCellOnto.html">getPROnto</a></span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> snapshotDate(): 2022-10-19</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">exists</a></span><span class="op">(</span><span class="st">"cl"</span><span class="op">)</span><span class="op">)</span> <span class="va">cl</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">exists</a></span><span class="op">(</span><span class="st">"pr"</span><span class="op">)</span><span class="op">)</span> <span class="va">pr</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"PROnto"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
 <span class="r-in"><span><span class="fu">sym2CellOnto</span><span class="op">(</span><span class="st">"ITGAM"</span>, <span class="va">cl</span>, <span class="va">pr</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 39 rows and 4 columns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 22 rows and 4 columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>             sym        cond          cl                   type</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     &lt;character&gt; &lt;character&gt; &lt;character&gt;            &lt;character&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1         ITGAM    lacksPMP  CL:0000037 hematopoietic stem c..</span>
@@ -99,11 +108,11 @@ conditions: (has/lacks)PMP (plasma membrane part) (hi/lo)PMAmt (plasma membrane 
 <span class="r-out co"><span class="r-pr">#&gt;</span> 4         ITGAM    lacksPMP  CL:0000558           reticulocyte</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 5         ITGAM    lacksPMP  CL:0000611 eosinophil progenito..</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ...         ...         ...         ...                    ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35        ITGAM     loPMAmt  CL:0002345 CD27-low, CD11b-low ..</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36        ITGAM     loPMAmt  CL:0002349 CD27-high, CD11b-low..</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37        ITGAM     loPMAmt  CL:0002506 liver CD103-positive..</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38        ITGAM     loPMAmt  CL:0002509 CD103-positive, lang..</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39        ITGAM     loPMAmt  CL:0002511 CD11b-low, CD103-neg..</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18        ITGAM    lacksPMP  CL:0001060 hematopoietic oligop..</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19        ITGAM    lacksPMP  CL:0001066 erythroid progenitor..</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20        ITGAM    lacksPMP  CL:0002010 pre-conventional den..</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21        ITGAM    lacksPMP  CL:0002089 group 2 innate lymph..</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22        ITGAM    lacksPMP  CL:0002679 natural helper lymph..</span>
 <span class="r-in"><span><span class="fu">sym2CellOnto</span><span class="op">(</span><span class="st">"FOXP3"</span>, <span class="va">cl</span>, <span class="va">pr</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 4 rows and 4 columns</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>           sym        cond          cl                   type</span>
@@ -126,7 +135,7 @@ conditions: (has/lacks)PMP (plasma membrane part) (hi/lo)PMAmt (plasma membrane 
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

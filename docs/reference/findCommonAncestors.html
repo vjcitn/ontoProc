@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ontoProc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.25.3</span>
       </span>
     </div>
 
@@ -28,8 +28,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/owlents.html">owlents: using OWL directly in ontoProc</a>
+    </li>
+  </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/vjcitn/ontoProc/">
+  <a href="https://github.com/vjcitn/ontoProc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -44,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Find common ancestors</h1>
-    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/findCommonAncestors.R"><code>R/findCommonAncestors.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/findCommonAncestors.R" class="external-link"><code>R/findCommonAncestors.R</code></a></small>
     <div class="hidden name"><code>findCommonAncestors.Rd</code></div>
     </div>
 
@@ -63,7 +73,7 @@
 
 
 <dt>g</dt>
-<dd><p>A <a href="https://rdrr.io/pkg/igraph/man/make_graph.html" class="external-link">graph</a> object containing the hierarchy of all ontology terms.</p></dd>
+<dd><p>A <a href="https://r.igraph.org/reference/make_graph.html" class="external-link">graph</a> object containing the hierarchy of all ontology terms.</p></dd>
 
 
 <dt>remove.self</dt>
@@ -104,13 +114,13 @@ Note that any names for <code>...</code> will be reflected in the columns of the
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">co</span> <span class="op">&lt;-</span> <span class="fu"><a href="getCellOnto.html">getCellOnto</a></span><span class="op">(</span>useNew<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>getCellOnto is deprecated: getOnto('cellOnto') should be used for versioned access</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">co</span> <span class="op">&lt;-</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># TODO: wrap in utility function.</span></span></span>
 <span class="r-in"><span><span class="va">parents</span> <span class="op">&lt;-</span> <span class="va">co</span><span class="op">$</span><span class="va">parents</span></span></span>
 <span class="r-in"><span><span class="va">self</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">parents</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/lengths.html" class="external-link">lengths</a></span><span class="op">(</span><span class="va">parents</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://igraph.org" class="external-link">igraph</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r.igraph.org/" class="external-link">igraph</a></span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘igraph’</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The following object is masked from ‘package:GenomicRanges’:</span>
@@ -131,11 +141,11 @@ Note that any names for <code>...</code> will be reflected in the columns of the
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The following object is masked from ‘package:base’:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     union</span>
-<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/igraph/man/make_graph.html" class="external-link">make_graph</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="va">parents</span><span class="op">)</span>, <span class="va">self</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://r.igraph.org/reference/make_graph.html" class="external-link">make_graph</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html" class="external-link">rbind</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unlist.html" class="external-link">unlist</a></span><span class="op">(</span><span class="va">parents</span><span class="op">)</span>, <span class="va">self</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Selecting random terms:</span></span></span>
-<span class="r-in"><span><span class="va">LCA</span> <span class="op">&lt;-</span> <span class="fu">ontoProc</span><span class="fu">:::</span><span class="fu">findCommonAncestors</span><span class="op">(</span>A<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/igraph/man/V.html" class="external-link">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">)</span>, <span class="fl">20</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>   B<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/igraph/man/V.html" class="external-link">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">)</span>, <span class="fl">20</span><span class="op">)</span>, g<span class="op">=</span><span class="va">g</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">LCA</span> <span class="op">&lt;-</span> <span class="fu">ontoProc</span><span class="fu">:::</span><span class="fu">findCommonAncestors</span><span class="op">(</span>A<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://r.igraph.org/reference/V.html" class="external-link">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">)</span>, <span class="fl">20</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>   B<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/AnnotationDbi/man/Bimap-envirAPI.html" class="external-link">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="fu"><a href="https://r.igraph.org/reference/V.html" class="external-link">V</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span><span class="op">)</span>, <span class="fl">20</span><span class="op">)</span>, g<span class="op">=</span><span class="va">g</span><span class="op">)</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The dim() method for DataFrameList objects is deprecated. Please use</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span>   dims() on these objects instead.</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>The nrow() method for DataFrameList objects is deprecated. Please use</span>
@@ -145,15 +155,15 @@ Note that any names for <code>...</code> will be reflected in the columns of the
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">LCA</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 1 row and 2 columns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               number           descendents</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;integer&gt;       &lt;DataFrameList&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> CL:0000075         2 TRUE:FALSE,FALSE:TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                number           descendents</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;integer&gt;       &lt;DataFrameList&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> CHEBI:23367         2 TRUE:FALSE,TRUE:FALSE</span>
 <span class="r-in"><span><span class="va">LCA</span><span class="op">[</span><span class="fl">1</span>,<span class="st">"descendents"</span><span class="op">]</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> DataFrame with 2 rows and 2 columns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    A         B</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            &lt;logical&gt; &lt;logical&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> CL:0002515      TRUE     FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> CL:0005010     FALSE      TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                     A         B</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             &lt;logical&gt; &lt;logical&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> CHEBI:33256      TRUE     FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> CHEBI:24866      TRUE     FALSE</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -169,7 +179,7 @@ Note that any names for <code>...</code> will be reflected in the columns of the
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

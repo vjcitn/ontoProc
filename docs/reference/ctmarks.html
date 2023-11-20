@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ontoProc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.25.3</span>
       </span>
     </div>
 
@@ -28,8 +28,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/owlents.html">owlents: using OWL directly in ontoProc</a>
+    </li>
+  </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/vjcitn/ontoProc/">
+  <a href="https://github.com/vjcitn/ontoProc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -44,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>app to review molecular properties of cell types via cell ontology</h1>
-    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/ctmarks.R"><code>R/ctmarks.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/ctmarks.R" class="external-link"><code>R/ctmarks.R</code></a></small>
     <div class="hidden name"><code>ctmarks.Rd</code></div>
     </div>
 
@@ -87,8 +97,8 @@ are in .GlobalEnv as pr and go respectively.</p>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>   <span class="va">co</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, year_added<span class="op">=</span><span class="st">"2021"</span><span class="op">)</span>  <span class="co"># has plasma membrane relations</span></span></span>
-<span class="r-in"><span>   <span class="va">go</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"goOnto"</span>, <span class="st">"2021"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>   <span class="va">co</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, year_added<span class="op">=</span><span class="st">"2023"</span><span class="op">)</span>  <span class="co"># has plasma membrane relations</span></span></span>
+<span class="r-in"><span>   <span class="va">go</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"goOnto"</span>, <span class="st">"2023"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>   <span class="va">pr</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"Pronto"</span>, <span class="st">"2021"</span><span class="op">)</span> <span class="co"># peculiar tag used in legacy, would be PROnto with 2022</span></span></span>
 <span class="r-in"><span>   <span class="fu">ctmarks</span><span class="op">(</span><span class="va">co</span>, <span class="va">go</span>, <span class="va">pr</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
@@ -106,7 +116,7 @@ are in .GlobalEnv as pr and go respectively.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

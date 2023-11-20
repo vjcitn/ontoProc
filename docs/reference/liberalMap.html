@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ontoProc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.25.3</span>
       </span>
     </div>
 
@@ -28,8 +28,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/owlents.html">owlents: using OWL directly in ontoProc</a>
+    </li>
+  </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/vjcitn/ontoProc/">
+  <a href="https://github.com/vjcitn/ontoProc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -44,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Produce a data.frame with a set of naive terms mapped to all matching ontology ids and their formal terms</h1>
-    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/mapNaive.R"><code>R/mapNaive.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/mapNaive.R" class="external-link"><code>R/mapNaive.R</code></a></small>
     <div class="hidden name"><code>liberalMap.Rd</code></div>
     </div>
 
@@ -86,114 +96,117 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">cands</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"astrocyte$"</span>, <span class="st">"oligodendrocyte"</span>, <span class="st">"oligodendrocyte precursor"</span>,</span></span>
 <span class="r-in"><span>   <span class="st">"neoplastic"</span>, <span class="st">"^neuron$"</span>, <span class="st">"^vascular"</span>, <span class="st">"badterm"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="co">#co = ontoProc::getCellOnto()</span></span></span>
-<span class="r-in"><span><span class="va">co</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, year_added<span class="op">=</span><span class="st">"2022"</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> snapshotDate(): 2022-10-19</span>
+<span class="r-in"><span><span class="va">co</span> <span class="op">=</span> <span class="fu"><a href="getOnto.html">getOnto</a></span><span class="op">(</span><span class="st">"cellOnto"</span>, year_added<span class="op">=</span><span class="st">"2023"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> loading from cache</span>
 <span class="r-in"><span><span class="fu">liberalMap</span><span class="op">(</span><span class="va">cands</span>, <span class="va">co</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              input         ontoid</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1       astrocyte$     CL:0000127</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2       astrocyte$     CL:0002626</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3       astrocyte$     CL:0002627</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  oligodendrocyte     CL:0000128</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  oligodendrocyte     CL:0002453</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  oligodendrocyte     CL:2000025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  oligodendrocyte     GO:0014003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  oligodendrocyte     GO:0022032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  oligodendrocyte     GO:0048709</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 oligodendrocyte     GO:0048713</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11 oligodendrocyte     GO:0048714</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12 oligodendrocyte     GO:0048715</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13 oligodendrocyte     GO:0070444</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14 oligodendrocyte     GO:0070445</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15 oligodendrocyte     GO:0070446</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16 oligodendrocyte     GO:0070447</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17 oligodendrocyte     GO:0097252</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18 oligodendrocyte     GO:1900141</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19 oligodendrocyte     GO:1900142</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20 oligodendrocyte     GO:1900143</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22      neoplastic    CHEBI:35610</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23      neoplastic     CL:0001063</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24      neoplastic   PATO:0002011</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25      neoplastic   PATO:0002097</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26        ^neuron$     CL:0000540</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27       ^vascular     CL:0000359</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28       ^vascular     CL:0005022</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29       ^vascular     CL:4023051</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30       ^vascular     CL:4023056</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31       ^vascular     GO:0003018</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32       ^vascular     GO:0005172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33       ^vascular     GO:0010232</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34       ^vascular     GO:0035886</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35       ^vascular     GO:0043184</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36       ^vascular     GO:0072360</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37       ^vascular     GO:0097084</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38       ^vascular     GO:0101023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39       ^vascular     GO:1904738</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40       ^vascular     GO:1905288</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41       ^vascular     GO:1990874</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42       ^vascular   PR:000001971</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43       ^vascular   PR:000002112</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44       ^vascular   PR:000048096</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45       ^vascular      PR:P35918</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46       ^vascular      PR:P35968</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47       ^vascular UBERON:0005629</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48       ^vascular UBERON:0006965</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49       ^vascular UBERON:0007798</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50       ^vascular UBERON:0009536</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51       ^vascular UBERON:0009537</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52         badterm        badterm</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2       astrocyte$     CL:0002604</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3       astrocyte$     CL:0002626</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4       astrocyte$     CL:0002627</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  oligodendrocyte     CL:0000128</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  oligodendrocyte     CL:0002453</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  oligodendrocyte     CL:2000025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  oligodendrocyte     CL:4023059</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  oligodendrocyte     GO:0014003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 oligodendrocyte     GO:0022032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11 oligodendrocyte     GO:0048709</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12 oligodendrocyte     GO:0048713</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13 oligodendrocyte     GO:0048714</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14 oligodendrocyte     GO:0048715</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15 oligodendrocyte     GO:0070444</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16 oligodendrocyte     GO:0070445</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17 oligodendrocyte     GO:0070446</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18 oligodendrocyte     GO:0070447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19 oligodendrocyte     GO:0097252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20 oligodendrocyte     GO:1900141</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21 oligodendrocyte     GO:1900142</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22 oligodendrocyte     GO:1900143</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25      neoplastic    CHEBI:35610</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26      neoplastic     CL:0001063</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27      neoplastic   PATO:0002011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28      neoplastic   PATO:0002097</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29        ^neuron$     CL:0000540</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30       ^vascular     CL:0000359</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31       ^vascular     CL:0005022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32       ^vascular     CL:4023051</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33       ^vascular     CL:4023056</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34       ^vascular     GO:0003018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35       ^vascular     GO:0005172</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36       ^vascular     GO:0010232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37       ^vascular     GO:0035886</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38       ^vascular     GO:0043184</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39       ^vascular     GO:0072360</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40       ^vascular     GO:0097084</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41       ^vascular     GO:0101023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42       ^vascular     GO:1904738</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43       ^vascular     GO:1905288</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44       ^vascular     GO:1990874</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45       ^vascular   PR:000001971</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46       ^vascular   PR:000002112</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47       ^vascular   PR:000048096</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48       ^vascular      PR:P35918</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49       ^vascular      PR:P35968</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50       ^vascular UBERON:0005629</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51       ^vascular UBERON:0006965</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52       ^vascular UBERON:0007798</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53       ^vascular UBERON:0009536</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54       ^vascular UBERON:0009537</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55         badterm        badterm</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                  term</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                           astrocyte</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                                  immature astrocyte</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                    mature astrocyte</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                     oligodendrocyte</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                      oligodendrocyte precursor cell</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                         spinal cord oligodendrocyte</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                         oligodendrocyte development</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                        telencephalon oligodendrocyte cell migration</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                                     oligodendrocyte differentiation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                      regulation of oligodendrocyte differentiation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11                             positive regulation of oligodendrocyte differentiation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 12                             negative regulation of oligodendrocyte differentiation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13                                           oligodendrocyte progenitor proliferation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14                             regulation of oligodendrocyte progenitor proliferation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15                    negative regulation of oligodendrocyte progenitor proliferation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16                    positive regulation of oligodendrocyte progenitor proliferation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17                                                  oligodendrocyte apoptotic process</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18                                    regulation of oligodendrocyte apoptotic process</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19                           negative regulation of oligodendrocyte apoptotic process</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20                           positive regulation of oligodendrocyte apoptotic process</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22                                                               antineoplastic agent</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23                                                                    neoplastic cell</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 24                                                                         neoplastic</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 25                                                              neoplastic, malignant</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 26                                                                             neuron</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 27                                             vascular associated smooth muscle cell</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 28                                                           vascular lymphangioblast</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 29                                                       vascular leptomeningeal cell</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 30                                                vascular leptomeningeal cell (Mmus)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 31                                             vascular process in circulatory system</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 32                                vascular endothelial growth factor receptor binding</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 33                                                                 vascular transport</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 34                             vascular associated smooth muscle cell differentiation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 35                              vascular endothelial growth factor receptor 2 binding</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 36                                                          vascular cord development</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 37                                 vascular associated smooth muscle cell development</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 38                                            vascular endothelial cell proliferation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 39                                   vascular associated smooth muscle cell migration</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 40                           vascular associated smooth muscle cell apoptotic process</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 41                               vascular associated smooth muscle cell proliferation</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 42                                        vascular endothelial growth factor receptor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 43                                      vascular endothelial growth factor receptor 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 44 vascular endothelial growth factor receptor 2, signal peptide removed form (human)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 45                              vascular endothelial growth factor receptor 2 (mouse)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 46                              vascular endothelial growth factor receptor 2 (human)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 47                                                                    vascular plexus</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 48                                                                      vascular cord</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 49                                                                    vascular system</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 50                                                      vascular element of left lung</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 51                                                     vascular element of right lung</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 52                                                                               &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                               hippocampal astrocyte</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                                  immature astrocyte</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                                                                    mature astrocyte</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                                     oligodendrocyte</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6                                                      oligodendrocyte precursor cell</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                                                         spinal cord oligodendrocyte</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                                 differentiation-committed oligodendrocyte precursor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9                                                         oligodendrocyte development</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10                                       telencephalon oligodendrocyte cell migration</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11                                                    oligodendrocyte differentiation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12                                      regulation of oligodendrocyte differentiation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13                             positive regulation of oligodendrocyte differentiation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14                             negative regulation of oligodendrocyte differentiation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15                                           oligodendrocyte progenitor proliferation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16                             regulation of oligodendrocyte progenitor proliferation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17                    negative regulation of oligodendrocyte progenitor proliferation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18                    positive regulation of oligodendrocyte progenitor proliferation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19                                                  oligodendrocyte apoptotic process</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20                                    regulation of oligodendrocyte apoptotic process</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21                           negative regulation of oligodendrocyte apoptotic process</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22                           positive regulation of oligodendrocyte apoptotic process</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25                                                               antineoplastic agent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26                                                                    neoplastic cell</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27                                                                         neoplastic</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28                                                              neoplastic, malignant</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29                                                                             neuron</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30                                             vascular associated smooth muscle cell</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31                                                           vascular lymphangioblast</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32                                                       vascular leptomeningeal cell</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33                                                vascular leptomeningeal cell (Mmus)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34                                             vascular process in circulatory system</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35                                vascular endothelial growth factor receptor binding</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36                                                                 vascular transport</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37                             vascular associated smooth muscle cell differentiation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38                              vascular endothelial growth factor receptor 2 binding</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39                                                          vascular cord development</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40                                 vascular associated smooth muscle cell development</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41                                            vascular endothelial cell proliferation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42                                   vascular associated smooth muscle cell migration</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43                           vascular associated smooth muscle cell apoptotic process</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44                               vascular associated smooth muscle cell proliferation</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45                                        vascular endothelial growth factor receptor</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46                                      vascular endothelial growth factor receptor 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47 vascular endothelial growth factor receptor 2, signal peptide removed form (human)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48                              vascular endothelial growth factor receptor 2 (mouse)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49                              vascular endothelial growth factor receptor 2 (human)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50                                                                    vascular plexus</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51                                                                      vascular cord</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52                                                                    vascular system</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53                                                      vascular element of left lung</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54                                                     vascular element of right lung</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55                                                                               &lt;NA&gt;</span>
 </code></pre></div>
     </div>
   </div>
@@ -208,7 +221,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

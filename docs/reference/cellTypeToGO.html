@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ontoProc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.19.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.25.3</span>
       </span>
     </div>
 
@@ -28,8 +28,18 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu"><li>
+      <a href="../articles/owlents.html">owlents: using OWL directly in ontoProc</a>
+    </li>
+  </ul></li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/vjcitn/ontoProc/">
+  <a href="https://github.com/vjcitn/ontoProc/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -44,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>utilities for approximate matching of cell type terms to GO categories and annotations</h1>
-    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/termProc.R"><code>R/termProc.R</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/R/termProc.R" class="external-link"><code>R/termProc.R</code></a></small>
     <div class="hidden name"><code>cellTypeToGO.Rd</code></div>
     </div>
 
@@ -118,8 +128,8 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     as.data.frame, basename, cbind, colnames, dirname, do.call,</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     duplicated, eval, evalq, get, grep, grepl, intersect, is.unsorted,</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     lapply, mapply, match, mget, order, paste, pmax, pmax.int, pmin,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     pmin.int, rank, rbind, rownames, sapply, setdiff, sort, table,</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>     tapply, union, unique, unsplit, which.max, which.min</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     pmin.int, rank, rbind, rownames, sapply, setdiff, table, tapply,</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     union, unique, unsplit, which.max, which.min</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: Biobase</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Welcome to Bioconductor</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
@@ -130,6 +140,9 @@
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: S4Vectors</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Attaching package: ‘S4Vectors’</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> The following object is masked from ‘package:utils’:</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span>     findMatches</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The following objects are masked from ‘package:base’:</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span>     I, expand.grid, unname</span>
@@ -141,10 +154,12 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18625 GO:0036517 chemoattraction of serotonergic neuron axon</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 18627 GO:0036519  chemorepulsion of serotonergic neuron axon</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">cellTypeToGenes</span><span class="op">(</span><span class="st">"serotonergic neuron"</span>, <span class="va">allGOterms</span>, <span class="va">org.Hs.eg.db</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> 'select()' returned 1:1 mapping between keys and columns</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           GO EVIDENCE ONTOLOGY         ENSEMBL SYMBOL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 GO:0036515      IEA       BP ENSG00000104290   FZD3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 GO:0036517      IEA       BP ENSG00000114251  WNT5A</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> 'select()' returned 1:many mapping between keys and columns</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           GO EVIDENCE ONTOLOGY         ENSEMBL  SYMBOL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 GO:0036515      IEA       BP ENSG00000104290    FZD3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 GO:0036515      IEA       BP ENSG00000243232 PCDHAC2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 GO:0036515      IEA       BP ENSG00000291668 PCDHAC2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 GO:0036517      IEA       BP ENSG00000114251   WNT5A</span>
 </code></pre></div>
     </div>
   </div>
@@ -159,7 +174,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
