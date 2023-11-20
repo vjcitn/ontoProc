@@ -61,7 +61,7 @@ library(ontologyPlot)
 library(BiocStyle)  # for package references
 cl = getOnto("cellOnto", "2021") # for continuity -- 	has_high_plasma_membrane_amount: list
 go = getOnto("goOnto", "2021")  # if updated, some assertions will fail...
-pr = getOnto("PROnto", "2021")  # important case change
+pr = getOnto("Pronto", "2021")  # important case change
 ```
 
 
