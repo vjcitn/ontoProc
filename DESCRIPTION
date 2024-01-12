@@ -39,3 +39,4 @@ Config/reticulate/autoconfigure:
       list(package = "owlready2")
     )
   )
+SystemRequirements: owlready2
