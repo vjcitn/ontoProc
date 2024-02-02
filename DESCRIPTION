@@ -12,7 +12,7 @@ Description: Support harvesting of diverse bioinformatic ontologies,
 	analyze genome-scale experiments, particularly cell x compound 
         screens.  Another purpose is to strengthen development of 
 	compelling use cases for richer interfaces to emerging ontologies.
-Version: 1.25.5
+Version: 1.25.6
 Imports: Biobase, S4Vectors, methods, stats, utils, BiocFileCache,
 	shiny, graph, Rgraphviz, ontologyPlot, dplyr, magrittr, DT, igraph,
 	AnnotationHub, SummarizedExperiment, reticulate, R.utils, httr
@@ -22,7 +22,7 @@ Depends: R (>= 4.0), ontologyIndex
 License: Artistic-2.0
 LazyLoad: yes
 biocViews: Infrastructure, GO
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 VignetteBuilder: knitr
 Encoding: UTF-8
 Collate: bind_formal_tags.R  common_classes.R   data.R		      getOntos.R  seurTab.R		

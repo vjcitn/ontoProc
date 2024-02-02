@@ -15,6 +15,8 @@
 retrieve labels with names
 }
 \note{
-When multiple labels are present, only first is silently returned.
+When multiple labels are present, only first is silently returned.  Note that reticulate 1.35.0 made a change that
+appears to imply that `[0]` can be used to retrieve the desired
+components.
 To get ontology tags, use `names(labels(...))`.
 }
