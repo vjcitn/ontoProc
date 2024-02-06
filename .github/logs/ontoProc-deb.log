@@ -1,0 +1,225 @@
+ontoProc starting
+Smartmatch is experimental at /usr/bin/dh-make-R line 63.
+I: Using repo=bioc from --repo
+I: Package source and binary name: r-bioc-ontoproc
+W: Ignoring specified R dependency: R (>= 4.0)
+I: Using r-cran-ontologyindex for Depends:ontologyIndex
+I: Using r-cran-knitr for Suggests:knitr
+I: Using r-bioc-org.hs.eg.db for Suggests:org.Hs.eg.db
+I: Using r-bioc-org.mm.eg.db for Suggests:org.Mm.eg.db
+I: Using r-cran-testthat for Suggests:testthat
+I: Using r-bioc-biocstyle for Suggests:BiocStyle
+I: Using r-bioc-singlecellexperiment for Suggests:SingleCellExperiment
+W: Cannot find a debian package for Suggests:celldex
+I: Using r-cran-rmarkdown for Suggests:rmarkdown
+I: Using r-bioc-annotationdbi for Suggests:AnnotationDbi
+I: Using r-bioc-biobase for Imports:Biobase
+I: Using r-bioc-s4vectors for Imports:S4Vectors
+I: Using r-bioc-biocfilecache for Imports:BiocFileCache
+I: Using r-cran-shiny for Imports:shiny
+I: Using r-bioc-graph for Imports:graph
+I: Using r-bioc-rgraphviz for Imports:Rgraphviz
+I: Using r-cran-ontologyplot for Imports:ontologyPlot
+I: Using r-cran-dplyr for Imports:dplyr
+I: Using r-cran-magrittr for Imports:magrittr
+I: Using r-cran-dt for Imports:DT
+I: Using r-cran-igraph for Imports:igraph
+I: Using r-bioc-annotationhub for Imports:AnnotationHub
+I: Using r-bioc-summarizedexperiment for Imports:SummarizedExperiment
+I: Using r-cran-reticulate for Imports:reticulate
+I: Using r-cran-r.utils for Imports:R.utils
+I: Using r-cran-httr for Imports:httr
+I: Package depends: r-cran-ontologyindex
+I: Package imports: r-bioc-biobase,
+               r-bioc-s4vectors,
+               r-bioc-biocfilecache,
+               r-cran-shiny,
+               r-bioc-graph,
+               r-bioc-rgraphviz,
+               r-cran-ontologyplot,
+               r-cran-dplyr,
+               r-cran-magrittr,
+               r-cran-dt,
+               r-cran-igraph,
+               r-bioc-annotationhub,
+               r-bioc-summarizedexperiment,
+               r-cran-reticulate,
+               r-cran-r.utils,
+               r-cran-httr
+I: Package recommends: 
+I: Package suggests: r-cran-knitr,
+          r-bioc-org.hs.eg.db,
+          r-bioc-org.mm.eg.db,
+          r-cran-testthat,
+          r-bioc-biocstyle,
+          r-bioc-singlecellexperiment,
+          r-cran-rmarkdown,
+          r-bioc-annotationdbi
+I: Package build-depends: debhelper-compat (= 13),
+               dh-r,
+               r-base-dev,
+               r-cran-ontologyindex,
+               r-bioc-biobase,
+               r-bioc-s4vectors,
+               r-bioc-biocfilecache,
+               r-cran-shiny,
+               r-bioc-graph,
+               r-bioc-rgraphviz,
+               r-cran-ontologyplot,
+               r-cran-dplyr,
+               r-cran-magrittr,
+               r-cran-dt,
+               r-cran-igraph,
+               r-bioc-annotationhub,
+               r-bioc-summarizedexperiment,
+               r-cran-reticulate,
+               r-cran-r.utils,
+               r-cran-httr
+W: NeedsCompilation field is missing in DESCRIPTION
+W: This package NeedsCompilation: there are probably extra dependencies required
+W: Package SystemRequirements: 'owlready2'
+I: Generating maintainers, uploaders, VCS entries for debian-r team
+I: Creating debian/
+I: writing debian/control
+I: writing debian/source/format
+I: writing debian/rules
+I: writing debian/watch
+I: writing debian/copyright
+I: Writing debian/changelog
+I: writing debian/salsa-ci.yml
+I: writing debian/upstream/metadata
+I: writing debian/tests/control
+Smartmatch is experimental at /usr/bin/dh-update-R line 46.
+I: Updating Build-Depends
+W: Ignoring specified R dependency: R (>= 4.0)
+I: Using r-cran-ontologyindex for Depends:ontologyIndex
+I: Using r-bioc-biobase for Imports:Biobase
+I: Using r-bioc-s4vectors for Imports:S4Vectors
+I: Using r-bioc-biocfilecache for Imports:BiocFileCache
+I: Using r-cran-shiny for Imports:shiny
+I: Using r-bioc-graph for Imports:graph
+I: Using r-bioc-rgraphviz for Imports:Rgraphviz
+I: Using r-cran-ontologyplot for Imports:ontologyPlot
+I: Using r-cran-dplyr for Imports:dplyr
+I: Using r-cran-magrittr for Imports:magrittr
+I: Using r-cran-dt for Imports:DT
+I: Using r-cran-igraph for Imports:igraph
+I: Using r-bioc-annotationhub for Imports:AnnotationHub
+I: Using r-bioc-summarizedexperiment for Imports:SummarizedExperiment
+I: Using r-cran-reticulate for Imports:reticulate
+I: Using r-cran-r.utils for Imports:R.utils
+I: Using r-cran-httr for Imports:httr
+W: NeedsCompilation field is missing in DESCRIPTION
+I: Using debhelper compat from build-depends: debhelper-compat (= 13)
+I: Updating binary Depends, Recommends, Suggests
+Note, using directory '.' to get the build dependencies
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Some packages could not be installed. This may mean that you have
+requested an impossible situation or if you are using the unstable
+distribution that some required packages have not yet been created
+or been moved out of Incoming.
+The following information may help to resolve the situation:
+
+The following packages have unmet dependencies:
+ builddeps:. : Depends: r-bioc-3.18 but it is not installable
+E: Unable to correct problems, you have held broken packages.
+dpkg-buildpackage: info: source package r-bioc-ontoproc
+dpkg-buildpackage: info: source version 1.25.6001-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Bioc GHA Build <maintainer@bioconductor.org>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean --buildsystem R
+   dh_auto_clean -O--buildsystem=R
+   dh_autoreconf_clean -O--buildsystem=R
+   dh_clean -O--buildsystem=R
+ debian/rules binary
+dh binary --buildsystem R
+   dh_update_autotools_config -O--buildsystem=R
+   dh_autoreconf -O--buildsystem=R
+   dh_auto_configure -O--buildsystem=R
+   dh_auto_build -O--buildsystem=R
+   dh_auto_test -O--buildsystem=R
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot -O--buildsystem=R
+   dh_prep -O--buildsystem=R
+   dh_auto_install --destdir=debian/r-bioc-ontoproc/ -O--buildsystem=R
+I: R Package: ontoProc Version: 1.25.6001
+I: Building using R version 4.3.2-1.2204.0
+I: R API version: r-api-4.0
+I: Using built-time from d/changelog: Tue, 06 Feb 2024 17:15:48 +0000
+	mkdir -p /__w/ontoProc/ontoProc/debian/r-bioc-ontoproc/usr/lib/R/site-library
+	R CMD INSTALL -l /__w/ontoProc/ontoProc/debian/r-bioc-ontoproc/usr/lib/R/site-library --clean . "--built-timestamp='Tue, 06 Feb 2024 17:15:48 +0000'"
+* installing *source* package ‘ontoProc’ ...
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (ontoProc)
+Use of uninitialized value $dep_line in substitution (s///) at /usr/share/perl5/Dpkg/Deps.pm line 300.
+Use of uninitialized value $dep_line in substitution (s///) at /usr/share/perl5/Dpkg/Deps.pm line 301.
+Use of uninitialized value $dep_line in split at /usr/share/perl5/Dpkg/Deps.pm line 304.
+W: Ignoring specified R dependency: R (>= 4.0)
+I: Using r-cran-ontologyindex for Depends:ontologyIndex
+I: Using r-cran-knitr for Suggests:knitr
+I: Using r-bioc-org.hs.eg.db for Suggests:org.Hs.eg.db
+I: Using r-bioc-org.mm.eg.db for Suggests:org.Mm.eg.db
+I: Using r-cran-testthat for Suggests:testthat
+I: Using r-bioc-biocstyle for Suggests:BiocStyle
+I: Using r-bioc-singlecellexperiment for Suggests:SingleCellExperiment
+W: Cannot find a debian package for Suggests:celldex
+I: Using r-cran-rmarkdown for Suggests:rmarkdown
+I: Using r-bioc-annotationdbi for Suggests:AnnotationDbi
+I: Using r-bioc-biobase for Imports:Biobase
+I: Using r-bioc-s4vectors for Imports:S4Vectors
+I: Using r-bioc-biocfilecache for Imports:BiocFileCache
+I: Using r-cran-shiny for Imports:shiny
+I: Using r-bioc-graph for Imports:graph
+I: Using r-bioc-rgraphviz for Imports:Rgraphviz
+I: Using r-cran-ontologyplot for Imports:ontologyPlot
+I: Using r-cran-dplyr for Imports:dplyr
+I: Using r-cran-magrittr for Imports:magrittr
+I: Using r-cran-dt for Imports:DT
+I: Using r-cran-igraph for Imports:igraph
+I: Using r-bioc-annotationhub for Imports:AnnotationHub
+I: Using r-bioc-summarizedexperiment for Imports:SummarizedExperiment
+I: Using r-cran-reticulate for Imports:reticulate
+I: Using r-cran-r.utils for Imports:R.utils
+I: Using r-cran-httr for Imports:httr
+W: Impossible to determine BioConductor release from DESCRIPTION file! Is there a 'git_branch' field?
+I: Use r-bioc-ontoproc as Debian binary package for variables substitution
+   dh_installdocs -O--buildsystem=R
+   dh_installchangelogs -O--buildsystem=R
+   dh_installsystemduser -O--buildsystem=R
+   dh_perl -O--buildsystem=R
+   dh_link -O--buildsystem=R
+   dh_strip_nondeterminism -O--buildsystem=R
+   dh_compress -O--buildsystem=R
+   dh_fixperms -O--buildsystem=R
+   dh_missing -O--buildsystem=R
+   dh_dwz -a -O--buildsystem=R
+   dh_strip -a -O--buildsystem=R
+   dh_makeshlibs -a -O--buildsystem=R
+   dh_shlibdeps -a -O--buildsystem=R
+   dh_installdeb -O--buildsystem=R
+   dh_gencontrol -O--buildsystem=R
+dpkg-gencontrol: warning: Depends field of package r-bioc-ontoproc: substitution variable ${shlibs:Depends} used, but is not defined
+   dh_md5sums -O--buildsystem=R
+   dh_builddeb -O--buildsystem=R
+dpkg-deb: building package 'r-bioc-ontoproc' in '../r-bioc-ontoproc_1.25.6001-1_amd64.deb'.
+ dpkg-genbuildinfo --build=binary -O../r-bioc-ontoproc_1.25.6001-1_amd64.buildinfo
+ dpkg-genchanges --build=binary -O../r-bioc-ontoproc_1.25.6001-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
