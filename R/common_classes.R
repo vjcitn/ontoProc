@@ -10,7 +10,7 @@
 #' @examples
 #' if (requireNamespace("celldex")) {
 #'   imm = celldex::ImmGenData()
-#'   if ("label.ont" %in% names(colData(imm))) {
+#'   if ("label.ont" %in% names(SummarizedExperiment::colData(imm))) {
 #'     cl = getOnto("cellOnto")
 #'     blu = celldex::BlueprintEncodeData()
 #'     common_classes( cl, imm, blu )
