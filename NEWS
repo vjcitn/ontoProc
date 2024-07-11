@@ -1,3 +1,7 @@
+CHANGES IN VERSION 1.27.1
+------------------------
+   o added search_labels(), to use owlready2 search facility on term labels
+
 CHANGES IN VERSION 1.25.0
 ------------------------
    o introducing owl operations, relying on reticulate
