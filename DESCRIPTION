@@ -30,7 +30,7 @@ Collate: bind_formal_tags.R  common_classes.R   data.R		      getOntos.R  seurTa
 	CLfeats.R	    countClasses.R     fastGrep.R	      mapNaive.R  subset_descendants.R
 	clfixer.R	    ctmarks.R	       findCommonAncestors.R  
 	roots.R	  sym2CellOnto.R termProc.R owl_ops.R get_ordo_owl_path.R owl2cache.R
-	plot.owlents.R
+	plot.owlents.R zzz.R
 URL: https://github.com/vjcitn/ontoProc
 BugReports: https://github.com/vjcitn/ontoProc/issues
 Config/reticulate/autoconfigure:
