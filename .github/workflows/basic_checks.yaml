@@ -1,5 +1,6 @@
 # MUNGED VJC 15 May 2024 to get rid of sysreqs which was archived
 # adds quarto install
+# may need to remove it
 name: Check, build, and push image
 
 on: [push, pull_request]
