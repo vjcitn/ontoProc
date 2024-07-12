@@ -326,6 +326,7 @@ yet.  When SingleR merges the 'standardized' branch, this will come back.
 
 Let's retrieve the HPCA data from SingleR:
 ```{r gethpca, eval=TRUE, message=FALSE}
+library(SummarizedExperiment)
 library(SingleCellExperiment)
 library(celldex)
 hpca_sce = HumanPrimaryCellAtlasData()

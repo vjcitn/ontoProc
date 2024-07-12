@@ -176,9 +176,27 @@ subclasses = function(oe) {
 #' @note When multiple labels are present, only first is silently returned.  Note that reticulate 1.35.0 made a change that
 #' appears to imply that `[0]` can be used to retrieve the desired
 #' components.
-#' To get ontology tags, use `names(labels(...))`.
+#' To get ontology tags, use `names(labels(...))`.  Note: This function was revised Jul 12 2024
+#' to allow terms that lack labels (like CHEBI references in cl.owl) to be processed, returning NA.
+#' The previous functionality which failed is available, not exported, as labelsOLD.owlents.
+#' @examples
+#' clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
+#' clont = setup_entities(clont_path)
+#' labels(clont[1:5])
+#' labels(clont[51:55])
 #' @export
-labels.owlents = function(object, ...) {
+labels.owlents = function (object, ...) 
+{
+    ll = sapply(object$allents, function(x) {
+      z = try(x$label[0], silent=TRUE)
+      if (inherits(z, "try-error")) return(NA)
+      z
+      })
+    names(ll) = sapply(object$allents, function(x) x$name)
+    unlist(ll)
+}
+
+labelsOLD.owlents = function(object, ...) {
   #o2 = reticulate::import("owlready2")
   ll = sapply(object$allents, function(x) x$label[0])
   names(ll) = sapply(object$allents, function(x) x$name)
