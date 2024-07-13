@@ -30,7 +30,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install scanpy
-        run: python -m pip install --upgrade pip setuptools wheel scanpy
+        run: python -m pip install --upgrade pip setuptools wheel scanpy owlready2
 
       - name: Install quarto
         run: |
