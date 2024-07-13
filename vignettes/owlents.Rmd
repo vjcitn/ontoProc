@@ -30,6 +30,7 @@ instance of S3 class `owlents`.
 
 ```{r getcl,message=FALSE}
 library(ontoProc)
+ontoProc:::install_owlready2()
 clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
 cle = setup_entities(clont_path)
 cle
