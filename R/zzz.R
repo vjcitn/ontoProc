@@ -10,5 +10,7 @@ install_owlready2 <- function(..., envname = "r-owlready2") {
 
 
 .onLoad <- function(...) {
+  z = try(reticulate::import("owlready2"))
+  if (inherits(z, "try-error")) install_owlready2()
   reticulate::use_virtualenv("r-owlready2", required = FALSE)
 }
