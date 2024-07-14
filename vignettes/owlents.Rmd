@@ -55,6 +55,7 @@ We'll obtain and ad hoc selection of
 the hierarchy.
 
 ```{r gethp}
+ontoProc:::install_owlready2()
 hpont_path = owl2cache(url="http://purl.obolibrary.org/obo/hp.owl")
 hpents = setup_entities(hpont_path)
 kp = grep("UBER", hpents$clnames, value=TRUE)[21:35]

@@ -41,6 +41,7 @@ jobs:
       - name: Query dependencies and update old packages
         run: |
           BiocManager::install(ask=FALSE)
+          BiocManager::install("magick")
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
         shell: Rscript {0}
         
