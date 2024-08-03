@@ -29,9 +29,6 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install scanpy
-        run: python -m pip install --upgrade pip setuptools wheel scanpy owlready2
-
       - name: Install quarto
         run: |
           sudo curl -o quarto-linux-amd64.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.551/quarto-1.4.551-linux-amd64.deb
@@ -42,6 +39,8 @@ jobs:
         run: |
           BiocManager::install(ask=FALSE)
           BiocManager::install("magick")
+          BiocManager::install("reticulate")
+          reticulate::py_install("owlready2", pip=TRUE)
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
         shell: Rscript {0}
         
