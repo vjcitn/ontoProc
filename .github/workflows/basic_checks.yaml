@@ -66,6 +66,8 @@ jobs:
         run: |
           BiocManager::repositories()
           remotes::install_deps(dependencies = TRUE, repos = c(BiocManager::repositories(), "https://tldbsm.r-universe.dev"))
+          BiocManager::install("reticulate")
+          reticulate::py_install("owlready2", pip=TRUE)
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
