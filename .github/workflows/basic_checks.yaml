@@ -18,16 +18,15 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       CRAN: https://packagemanager.posit.co/cran/__linux__/jammy/latest
       QUARTO_VERSION: 1.4.551
-      RETICULATE_PYTHON: /usr/bin/python3
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Install python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'
+#      - name: Install python
+#        uses: actions/setup-python@v5
+#        with:
+#          python-version: '3.9'
 
       - name: Install quarto
         run: |
@@ -39,8 +38,6 @@ jobs:
         run: |
           BiocManager::install(ask=FALSE)
           BiocManager::install("magick")
-          BiocManager::install("reticulate")
-          reticulate::py_install("owlready2", pip=TRUE)
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.Rds", version = 2)
         shell: Rscript {0}
         
