@@ -4,7 +4,8 @@ Authors@R: c(person(given="Vincent", family="Carey", role=c("ctb", "cre"),
 	   email = "stvjc@channing.harvard.edu",
            comment = c(ORCID = "0000-0003-4046-0063")),
 	     person(given="Sara", family="Stankiewicz", role="ctb",
-	     email = "reshs@channing.harvard.edu"))
+	     email = "reshs@channing.harvard.edu"), person(given="Victor", family="Tarca", role="ctb", 
+		email = "vtarca11@gmail.com", comment = c(ORCID = "0009-0003-1976-0392")))
 Description: Support harvesting of diverse bioinformatic ontologies,
 	making particular use of the ontologyIndex package on CRAN.
 	We provide snapshots of key ontologies for terms about
@@ -12,7 +13,7 @@ Description: Support harvesting of diverse bioinformatic ontologies,
 	analyze genome-scale experiments, particularly cell x compound 
         screens.  Another purpose is to strengthen development of 
 	compelling use cases for richer interfaces to emerging ontologies.
-Version: 1.27.4
+Version: 1.27.5
 Imports: Biobase, S4Vectors, methods, stats, utils, BiocFileCache,
 	shiny, graph, Rgraphviz, ontologyPlot, dplyr, magrittr, DT, igraph,
 	AnnotationHub, SummarizedExperiment, reticulate, R.utils, httr
@@ -25,12 +26,35 @@ biocViews: Infrastructure, GO
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
 Encoding: UTF-8
-Collate: bind_formal_tags.R  common_classes.R   data.R		      getOntos.R  seurTab.R		
-	CLextend.R	    connect_classes.R  dropStop.R	      graphNEL.R  shiny.R		treeproc.R
-	CLfeats.R	    countClasses.R     fastGrep.R	      mapNaive.R  subset_descendants.R
-	clfixer.R	    ctmarks.R	       findCommonAncestors.R  
-	roots.R	  sym2CellOnto.R termProc.R owl_ops.R get_ordo_owl_path.R owl2cache.R
-	plot.owlents.R zzz.R
+Collate: 
+    'CLextend.R'
+    'CLfeats.R'
+    'bind_formal_tags.R'
+    'clfixer.R'
+    'common_classes.R'
+    'connect_classes.R'
+    'countClasses.R'
+    'ctmarks.R'
+    'data.R'
+    'dropStop.R'
+    'fastGrep.R'
+    'findCommonAncestors.R'
+    'getOntos.R'
+    'get_ordo_owl_path.R'
+    'graphNEL.R'
+    'mapNaive.R'
+    'ontoDiff.R'
+    'owl2cache.R'
+    'owl_ops.R'
+    'plot.owlents.R'
+    'roots.R'
+    'seurTab.R'
+    'shiny.R'
+    'subset_descendants.R'
+    'sym2CellOnto.R'
+    'termProc.R'
+    'treeproc.R'
+    'zzz.R'
 URL: https://github.com/vjcitn/ontoProc
 BugReports: https://github.com/vjcitn/ontoProc/issues
 Config/reticulate/autoconfigure:
