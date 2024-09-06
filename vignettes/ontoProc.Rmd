@@ -17,36 +17,14 @@ output:
 
 # Introduction
 
+The ambitions of collaborative single cell biology will only be achieved through the coordinated efforts of many groups, to help clarify cell types and dynamics in an array of functional and environmental contexts. The use of formal ontology in this pursuit is well-motivated and research progress has already been substantial.
 
+@Bakken2017 discuss "strategies for standardized cell type representations based on the data outputs from [high-content flow cytometry and single cell RNA sequencing], including 'context annotations' in the form of standardized experiment metadata about the specimen source analyzed and marker genes that serve as the most useful features in machine learning-based cell type classification models." @Aevermann2018 describe how the FAIR principles can be implemented using statistical identification of necessary and sufficient conditions for determining cell class membership. They propose that Cell Ontology can be transformed to a broadly usable knowledgebase through the incorporation of accurate marker gene signatures for cell classes.
 
-The ambitions of collaborative single cell biology 
-will only be achieved through the coordinated efforts 
-of many groups, to help clarify cell types 
-and dynamics in an array of functional and 
-environmental contexts.  The use of formal ontology in 
-this pursuit is well-motivated and research progress has 
-already been substantial. 
+In this vignette, we review key concepts and tasks required to make progress in the adoption and application of ontological discipline in Bioconductor-oriented data analysis.
 
-@Bakken2017 discuss "strategies for standardized cell type 
-representations based on the data outputs from [high-content 
-flow cytometry and single cell RNA sequencing], including 
-'context annotations' in the form of standardized experiment 
-metadata about the specimen source analyzed and marker 
-genes that serve as the most useful features 
-in machine learning-based cell type classification models."
-@Aevermann2018 describe how the FAIR principles
-can be implemented using statistical identification of necessary
-and sufficient conditions for determining cell class membership.
-They propose that Cell Ontology can be transformed
-to a broadly usable knowledgebase through the incorporation
-of accurate marker gene signatures for cell classes.
+We'll start by setting up some package attachments and ontology objects.
 
-In this vignette, we review key concepts and tasks required to
-make progress in the adoption and application of ontological discipline
-in Bioconductor-oriented data analysis. 
-
-We'll start by setting up some package attachments and
-ontology objects.
 ```{r setup,echo=FALSE,results="hide",message=FALSE}
 library(knitr)
 library(ontoProc)
@@ -66,6 +44,7 @@ library(BiocStyle)
 library(SingleCellExperiment)
 library(celldex)
 ```
+
 ```{r setup2, message=FALSE}
 library(ontoProc)
 library(ontologyPlot)
@@ -75,102 +54,34 @@ go = getOnto("goOnto", "2023")  # if updated, some assertions will fail...
 pr = getOnto("PROnto", "2023")  # important case change
 ```
 
-
 # Scope of package
 
-The following table describes the most up-to-date resources available with `getOnto`.
-<!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
+The following table describes the most up-to-date resources available with `getOnto`. <!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
+
 ```{r lksco}
 data(packDesc2023)
 kable(packDesc2023[,-c(1,7)])
 ```
+
 Other resources are listed in `packDesc202x` and `packDesc2019`.
 
 # Methods
 
 ## Conceptual overview of ontology with cell types
 
-__Definitions, semantics.__ For concreteness, we provide some definitions and examples.
-We use `ontology` to denote the systematic organization
-of terminology used in a conceptual domain.  The
-`Cell Ontology` is a graphical data structure with 
-carefully annotated terms as nodes and conventionally defined 
-semantic relationships among terms serving as edges.  As 
-an example, `lung ciliated cell` has URI \url{http://purl.obolibrary.org/obo/CL_1000271}.
-This URI includes a fixed-length identifier `CL_1000271` with 
-unambiguous interpretation wherever it is encountered.  There is 
-a chain of relationships from `lung ciliated cell` 
-up through `ciliated cell`, then `native cell`, then 
-`cell`, each possessing its own URI and related 
-interpretive metadata.  The relationship connecting the more precise 
-to the less precise term in this chain 
-is denoted `SubclassOf`.  `Ciliated cell` is equivalent to 
-a `native cell` that `has plasma membrane part`
-`cilium`.  Semantic characteristics of terms and relationships are 
-used to infer relationships among terms that may 
-not have relations directly specified in available ontologies.
+**Definitions, semantics.** For concreteness, we provide some definitions and examples. We use `ontology` to denote the systematic organization of terminology used in a conceptual domain. The `Cell Ontology` is a graphical data structure with carefully annotated terms as nodes and conventionally defined semantic relationships among terms serving as edges. As an example, `lung ciliated cell` has URI \url{http://purl.obolibrary.org/obo/CL_1000271}. This URI includes a fixed-length identifier `CL_1000271` with unambiguous interpretation wherever it is encountered. There is a chain of relationships from `lung ciliated cell` up through `ciliated cell`, then `native cell`, then `cell`, each possessing its own URI and related interpretive metadata. The relationship connecting the more precise to the less precise term in this chain is denoted `SubclassOf`. `Ciliated cell` is equivalent to a `native cell` that `has plasma membrane part` `cilium`. Semantic characteristics of terms and relationships are used to infer relationships among terms that may not have relations directly specified in available ontologies.
 
-__Barriers to broad adoption.__ Given the wealth of material available in biological 
-ontologies, it is somewhat surprising that formal annotation 
-is so seldom used in practice. Barriers to 
-more common use of ontology in data annotation 
-include: (i) Non-existence of exact matching between intended 
-term and terms available in ontologies of interest. 
-(ii) The practical problem of decoding ontology identifiers. 
-A GO tag or CL tag is excellent 
-for programming, but it is clumsy to co-locate 
-with the tag the associated natural language term 
-or phrase. (iii) Likelihood of disagreement of suitability 
-of terms for conditions observed at the boundaries 
-of knowledge. To help cope with the first 
-of these problems, Bioconductor's `ontologyProc` package 
-includes a function `liberalMap`
-which will search an ontology for terms lexically 
-close to some target term or phrase.  The 
-second problem can be addressed with more elaborate 
-data structures for variable annotation and programming in 
-R, and the third problem will diminish in 
-importance as the value of ontology adoption becomes 
-manifest in more applications.
+**Barriers to broad adoption.** Given the wealth of material available in biological ontologies, it is somewhat surprising that formal annotation is so seldom used in practice. Barriers to more common use of ontology in data annotation include: (i) Non-existence of exact matching between intended term and terms available in ontologies of interest. (ii) The practical problem of decoding ontology identifiers. A GO tag or CL tag is excellent for programming, but it is clumsy to co-locate with the tag the associated natural language term or phrase. (iii) Likelihood of disagreement of suitability of terms for conditions observed at the boundaries of knowledge. To help cope with the first of these problems, Bioconductor's `ontologyProc` package includes a function `liberalMap` which will search an ontology for terms lexically close to some target term or phrase. The second problem can be addressed with more elaborate data structures for variable annotation and programming in R, and the third problem will diminish in importance as the value of ontology adoption becomes manifest in more applications.
 
-__Class vs. instance.__ It is important to distinguish the practice of 
-designing and maintaining ontologies from the use of 
-ontological class terms to annotate instances of the 
-concepts.  The combination of an ontology and a 
-set of annotated instances is called a knowledge 
-base.  To illustrate some of the salient distinctions 
-here, consider the cell line called A549, which 
-is established from a human lung adenocarcinoma sample.
-There is no mention of A549 in the 
-Cell Ontology.  However, A549 is present in the 
-EBI Experimental Factor Ontology as a subclass of 
-the "Homo sapiens cell line" class.  Presumably this 
-is because A549 is a class of cells 
-that are widely used experimentally, and this cell 
-line constitutes a concept deserving of mapping in 
-the universe of experimental factors.  In the universe 
-of concepts related to cell structure and function 
-_per se_, A549 is an individual that can 
-be characterized through possession of or lack of 
-properties enumerated in Cell Ontology, but it is 
-not deserving of inclusion in that ontology.
+**Class vs. instance.** It is important to distinguish the practice of designing and maintaining ontologies from the use of ontological class terms to annotate instances of the concepts. The combination of an ontology and a set of annotated instances is called a knowledge base. To illustrate some of the salient distinctions here, consider the cell line called A549, which is established from a human lung adenocarcinoma sample. There is no mention of A549 in the Cell Ontology. However, A549 is present in the EBI Experimental Factor Ontology as a subclass of the "Homo sapiens cell line" class. Presumably this is because A549 is a class of cells that are widely used experimentally, and this cell line constitutes a concept deserving of mapping in the universe of experimental factors. In the universe of concepts related to cell structure and function *per se*, A549 is an individual that can be characterized through possession of or lack of properties enumerated in Cell Ontology, but it is not deserving of inclusion in that ontology.
 
 ## Illustration in a single-cell RNA-seq dataset
 
-The 10X Genomics corporation has distributed
-a dataset on results of sequencing 10000 PBMC from a healthy donor
-\url{https://support.10xgenomics.com/single-cell-gene-expression/datasets}.
-Subsets of the data are used in tutorials for the Seurat analytical 
-suite (@butler).
+The 10X Genomics corporation has distributed a dataset on results of sequencing 10000 PBMC from a healthy donor \url{https://support.10xgenomics.com/single-cell-gene-expression/datasets}. Subsets of the data are used in tutorials for the Seurat analytical suite (@butler).
 
 ### Labeling PBMC in the Seurat tutorial
 
-One result of the tutorial analysis of the 3000 cell subset is a table
-of cell types and expression-based markers of cell identity.  The
-first three columns of the table below are from 
-concluding material in the Seurat tutorial;
-the remaining columns are created by "manual" matching
-between the Seurat terms and terms found in Cell Ontology.
+One result of the tutorial analysis of the 3000 cell subset is a table of cell types and expression-based markers of cell identity. The first three columns of the table below are from concluding material in the Seurat tutorial; the remaining columns are created by "manual" matching between the Seurat terms and terms found in Cell Ontology.
 
 ```{r lklk}
 kable(stab <- seur3kTab())
@@ -178,14 +89,10 @@ kable(stab <- seur3kTab())
 
 ### Relationships asserted in the Cell Ontology
 
-Given the informally selected tags in the table above, we can
-sketch the Cell Ontology graph connecting the associated
-cell types.  The ontoProc package adds functionality to
-ontologyPlot with `make_graphNEL_from_ontology_plot`.  This
-allows use of all Rgraphviz and igraph visualization facilities
-for graphs derived from ontology structures.
+Given the informally selected tags in the table above, we can sketch the Cell Ontology graph connecting the associated cell types. The ontoProc package adds functionality to ontologyPlot with `make_graphNEL_from_ontology_plot`. This allows use of all Rgraphviz and igraph visualization facilities for graphs derived from ontology structures.
 
 Here we display the PBMC cell sets reported in the Seurat tutorial.
+
 ```{r lklklk, message=FALSE}
 library(ontoProc)
 cl = getOnto("cellOnto", "2023")
@@ -194,33 +101,21 @@ onto_plot2(cl, stab$tag)
 
 ### Molecular features asserted in the Cell Ontology
 
-The `CLfeats` function traces relationships and
-properties from a given Cell Ontology class.
-Briefly, each class can assert that it is the
-`intersection_of` other classes, and
-`has_part`, `lacks_part`, `has_plasma_membrane_part`,
-`lacks_plasma_membrane_part` can be asserted as
-relationships holding between cell type instances
-and cell components.  The components are often cross-referenced
-to Protein Ontology or Gene Ontology.  When the Protein Ontology
-component has a synonym for which an HGNC symbol is provided, that
-symbol is retrieved by `CLfeats`.  Here we obtain the listing
-for a mature CD1a-positive dermal dendritic cell.
+The `CLfeats` function traces relationships and properties from a given Cell Ontology class. Briefly, each class can assert that it is the `intersection_of` other classes, and `has_part`, `lacks_part`, `has_plasma_membrane_part`, `lacks_plasma_membrane_part` can be asserted as relationships holding between cell type instances and cell components. The components are often cross-referenced to Protein Ontology or Gene Ontology. When the Protein Ontology component has a synonym for which an HGNC symbol is provided, that symbol is retrieved by `CLfeats`. Here we obtain the listing for a mature CD1a-positive dermal dendritic cell.
+
 ```{r lkfa}
 suppressMessages({
 kable(CLfeats(cl, "CL:0002531", pr=pr, go=go))
 })
 ```
 
-The `ctmarks` function starts a shiny app that generates
-tables of this sort for selected cell types.
+The `ctmarks` function starts a shiny app that generates tables of this sort for selected cell types.
 
 ![ctmarks snapshot](ctmarks.png)
 
 ### Mapping from gene 'presence/role' to cell type
 
-The `sym2CellOnto` function helps find mention of
-given gene symbols in properties or parts of cell types.
+The `sym2CellOnto` function helps find mention of given gene symbols in properties or parts of cell types.
 
 ```{r lksy}
 kable(sdf <- as.data.frame(sym2CellOnto("ITGAM", cl, pr)))
@@ -230,29 +125,16 @@ kable(as.data.frame(sym2CellOnto("FOXP3", cl, pr)))
 
 ## Adding terms to ontology_index structures to 'extend' Cell Ontology
 
-The task of extending an ontology is partly bureaucratic in
-nature and depends on a collection of endorsements and updates
-to centralized information structures.  In order to permit
-experimentation with interfaces and new content that may
-be quite speculative, we include an approach to combining new
-ontology 'terms' of structure similar to those endorsed in
-Cell Ontology, to ontologyIndex-based `ontology_index`
-instances.
+The task of extending an ontology is partly bureaucratic in nature and depends on a collection of endorsements and updates to centralized information structures. In order to permit experimentation with interfaces and new content that may be quite speculative, we include an approach to combining new ontology 'terms' of structure similar to those endorsed in Cell Ontology, to ontologyIndex-based `ontology_index` instances.
 
 ### Use case: a set of cell types defined by "diagonal expression"
 
-For a demonstration, we consider the discussion in
-@Bakken2017, of a 'diagonal' expression pattern
-defining a group of novel cell types.  A set of genes
-is identified and cells are distinguised by expressing
-exactly one gene from the set.
+For a demonstration, we consider the discussion in @Bakken2017, of a 'diagonal' expression pattern defining a group of novel cell types. A set of genes is identified and cells are distinguised by expressing exactly one gene from the set.
 
 ![Diagonal expression pattern.](usecaseCyclic.png)
 
-The necessary information is collected in a vector.
-The vector is the set of genes, the name of element i
-is the tag to be associated with the type of cell that expresses gene i
-and does not express any other gene in the set.
+The necessary information is collected in a vector. The vector is the set of genes, the name of element i is the tag to be associated with the type of cell that expresses gene i and does not express any other gene in the set.
+
 ```{r lksig}
 sigels = c("CL:X01"="GRIK3", "CL:X02"="NTNG1", "CL:X03"="BAGE2",
              "CL:X04"="MC4R", "CL:X05"="PAX6", "CL:X06"="TSPAN12", 
@@ -262,23 +144,21 @@ sigels = c("CL:X01"="GRIK3", "CL:X02"="NTNG1", "CL:X03"="BAGE2",
 
 ### A data.frame defining the cell types and their properties
 
-The `cyclicSigset` function produces a data.frame instance
-connecting cell types with the genes expressed or unexpressed.
+The `cyclicSigset` function produces a data.frame instance connecting cell types with the genes expressed or unexpressed.
+
 ```{r lkdfff}
 cs = cyclicSigset(sigels)
 dim(cs)
 cs[c(1:5,9:13),]
 table(cs$cond)
 ```
-It is expected that a tabular layout like this will suffice to 
-handle general situations of cell type definition.
+
+It is expected that a tabular layout like this will suffice to handle general situations of cell type definition.
 
 ### Translating the data.frame elements to OBO Term instances
 
-The most complicated aspect of novel OBO term construction is the
-proper specifications of relationships with existing ontology components.
-A prolog that is mostly shared by all terms is generated programmatically
-for the diagonal pattern task.
+The most complicated aspect of novel OBO term construction is the proper specifications of relationships with existing ontology components. A prolog that is mostly shared by all terms is generated programmatically for the diagonal pattern task.
+
 ```{r lklk1}
  makeIntnProlog = function(id, ...) {
  # make type-specific prologs as key-value pairs
@@ -290,23 +170,21 @@ for the diagonal pattern task.
        "intersection_of: CL:0000099 ! interneuron")
  }
 ```
-The `ldfToTerms` API uses this to create a set of strings that can be parsed
-as a term.
+
+The `ldfToTerms` API uses this to create a set of strings that can be parsed as a term.
+
 ```{r doterm}
 pmap = c("hasExp"="has_expression_of", lacksExp="lacks_expression_of")
 head(unlist(tms <- ldfToTerms(cs, pmap, sigels, makeIntnProlog)), 20)
 ```
 
-The content in tms can then be appended to the content of the Cell Ontology cl.obo as
-text for import with `ontologyIndex::get_OBO`.
+The content in tms can then be appended to the content of the Cell Ontology cl.obo as text for import with `ontologyIndex::get_OBO`.
 
 ## Subsetting SingleR resources using ontological mapping
 
 ### A data.frame mapping from informal to formal terms
 
-Aaron Lun has produced a mapping from informal terms used in the
-Human Primary Cell Atlas to Cell Ontology tags.  We provisionally
-include a copy of this mapping in ontoProc:
+Aaron Lun has produced a mapping from informal terms used in the Human Primary Cell Atlas to Cell Ontology tags. We provisionally include a copy of this mapping in ontoProc:
 
 ```{r lkmap}
 hpca_map = read.csv(system.file("extdata/hpca.csv", package="ontoProc"), strings=FALSE)
@@ -314,29 +192,33 @@ head(hpca_map)
 ```
 
 We will rename columns of this map for convenience of our `bind_formal_tags` method.
+
 ```{r doren}
 names(hpca_map) = c("informal", "formal")  # obligatory for now
 ```
 
 ### Binding formal tags to the HPCA data
 
-I am turning this code off for now because there is no
-standard approach to getting the mapping from the SummarizedExperment
-yet.  When SingleR merges the 'standardized' branch, this will come back.
+I am turning this code off for now because there is no standard approach to getting the mapping from the SummarizedExperment yet. When SingleR merges the 'standardized' branch, this will come back.
 
 Let's retrieve the HPCA data from SingleR:
+
 ```{r gethpca, eval=TRUE, message=FALSE}
 library(SummarizedExperiment)
 library(SingleCellExperiment)
 library(celldex)
 hpca_sce = HumanPrimaryCellAtlasData()
 ```
+
 Now bind the formal tags:
+
 ```{r dobind, eval=TRUE}
 hpca_sce = bind_formal_tags(hpca_sce, "label.fine", hpca_map)
 length(unique(hpca_sce$label.ont))
 ```
+
 We don't check for failed mappings:
+
 ```{r justna, eval=TRUE}
 length(xx <- which(is.na(hpca_sce$label.ont)))
 if (length(xx)>0) print(colData(hpca_sce)[xx,])
@@ -357,12 +239,22 @@ uu = unique(hpca_tcell$label.ont)
 onto_plot2(cell_onto, uu)
 ```
 
+### Visually identifying differences between ontology versions for a set of given terms
+
+Using the ontoDiff function, you can visually identify which related terms exist in the newest provided version of an ontology but not in the old version.
+
+```{r ontodiffex}
+cl = getOnto("diseaseOnto")
+cl2 = getOnto(ontoname = "diseaseOnto", year_added = "2021")
+cl3k = c("DOID:0040064","DOID:0040076","DOID:0081127","DOID:0081126","DOID:0081131","DOID:0060034")
+ontoDiff(cl,cl2,cl3k)
+```
+
+![](ontodiffimex.png)
+
 # Disease concept relationships
 
-The Experimental Factor Ontology
-is available and integrates information
-among diverse ontologies.  Here we
-check on terms likely related to asthma.
+The Experimental Factor Ontology is available and integrates information among diverse ontologies. Here we check on terms likely related to asthma.
 
 ```{r lkefo}
 ef = getOnto("efoOnto")
@@ -371,36 +263,23 @@ aa <- grep("obso", alla, invert=TRUE, value=TRUE)
 onto_plot2(ef, names(aa))
 ```
 
-However, the Human Disease Ontology seems more developed
-in terms of defining asthma subtypes.  We have not
-integrated that ontology into ontoProc yet, but it
-can be retrieved conveniently as follows:
+However, the Human Disease Ontology seems more developed in terms of defining asthma subtypes. We have not integrated that ontology into ontoProc yet, but it can be retrieved conveniently as follows:
+
 ```{r lkhdo,eval=FALSE}
 hdo_2022_09 = get_OBO(
   "https://github.com/DiseaseOntology/HumanDiseaseOntology/raw/main/src/ontology/HumanDO.obo", 
   extract_tags = "everything"
   )
 ```
+
 With this resource, we can see finer-grained handling of asthma subtyping:
 
 ![](hdoasth.png)
 
 # Related tools
 
-Inference on the identities of cells assayed in 
-a single cell transcriptomics experiment can be performed 
-using the Bioconductor `celaref` package.  This package includes 
-a number of reference data resources providing whole-transcriptome 
-profiles of cells of known and unknown type.
-An approach to systematically structuring data on cell-type
-signatures, and conducting inference on cell types in
-new experiments, is provided in the [Hancock package](https://github.com/kevinrue/Hancock),
-under development.
+Inference on the identities of cells assayed in a single cell transcriptomics experiment can be performed using the Bioconductor `celaref` package. This package includes a number of reference data resources providing whole-transcriptome profiles of cells of known and unknown type. An approach to systematically structuring data on cell-type signatures, and conducting inference on cell types in new experiments, is provided in the [Hancock package](https://github.com/kevinrue/Hancock), under development.
 
-A CRAN package that is very useful for
-R programming with ontologies is `ontologyIndex` @Westbury2015.  This
-provides easily used functions for parsing ontologies in
-the OBO format and for performing basic queries
-on text fields and list structures.
+A CRAN package that is very useful for R programming with ontologies is `ontologyIndex` @Westbury2015. This provides easily used functions for parsing ontologies in the OBO format and for performing basic queries on text fields and list structures.
 
 # References
