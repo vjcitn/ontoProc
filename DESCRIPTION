@@ -12,10 +12,11 @@ Description: Support harvesting of diverse bioinformatic ontologies,
 	analyze genome-scale experiments, particularly cell x compound 
         screens.  Another purpose is to strengthen development of 
 	compelling use cases for richer interfaces to emerging ontologies.
-Version: 1.27.4
+Version: 1.99.0
 Imports: Biobase, S4Vectors, methods, stats, utils, BiocFileCache,
 	shiny, graph, Rgraphviz, ontologyPlot, dplyr, magrittr, DT, igraph,
-	AnnotationHub, SummarizedExperiment, reticulate, R.utils, httr
+	AnnotationHub, SummarizedExperiment, reticulate, R.utils, httr,
+	basilisk
 Suggests: knitr, org.Hs.eg.db, org.Mm.eg.db, testthat, BiocStyle,
 	SingleCellExperiment, celldex, rmarkdown, AnnotationDbi, magick
 Depends: R (>= 4.0), ontologyIndex
@@ -30,7 +31,7 @@ Collate: bind_formal_tags.R  common_classes.R   data.R		      getOntos.R  seurTa
 	CLfeats.R	    countClasses.R     fastGrep.R	      mapNaive.R  subset_descendants.R
 	clfixer.R	    ctmarks.R	       findCommonAncestors.R  
 	roots.R	  sym2CellOnto.R termProc.R owl_ops.R get_ordo_owl_path.R owl2cache.R
-	plot.owlents.R zzz.R
+	plot.owlents.R setup_entities2.R zzz.R
 URL: https://github.com/vjcitn/ontoProc
 BugReports: https://github.com/vjcitn/ontoProc/issues
 Config/reticulate/autoconfigure:
