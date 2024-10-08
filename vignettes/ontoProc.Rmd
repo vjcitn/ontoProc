@@ -50,11 +50,8 @@ ontology objects.
 ```{r setup,echo=FALSE,results="hide",message=FALSE}
 library(knitr)
 library(ontoProc)
-library(ontologyPlot)
-library(BiocStyle)
-library(SingleCellExperiment)
-library(celldex)
 ```
+
 ```{r setup2, message=FALSE}
 library(ontoProc)
 library(ontologyPlot)
@@ -175,7 +172,7 @@ allows use of all Rgraphviz and igraph visualization facilities
 for graphs derived from ontology structures.
 
 Here we display the PBMC cell sets reported in the Seurat tutorial.
-```{r lklklk}
+```{r lklklk, message=FALSE}
 library(ontoProc)
 cl = getOnto("cellOnto", "2023")
 onto_plot2(cl, stab$tag)
@@ -314,7 +311,8 @@ standard approach to getting the mapping from the SummarizedExperment
 yet.  When SingleR merges the 'standardized' branch, this will come back.
 
 Let's retrieve the HPCA data from SingleR:
-```{r gethpca, eval=TRUE}
+```{r gethpca, eval=TRUE, message=FALSE}
+library(SummarizedExperiment)
 library(SingleCellExperiment)
 library(celldex)
 hpca_sce = HumanPrimaryCellAtlasData()

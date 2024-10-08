@@ -30,6 +30,7 @@ instance of S3 class `owlents`.
 
 ```{r getcl,message=FALSE}
 library(ontoProc)
+ontoProc:::install_owlready2()
 clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
 cle = setup_entities(clont_path)
 cle
@@ -49,12 +50,24 @@ plot(cle, sel)
 
 # Illustration with Human Phenotype ontology
 
+We'll obtain and ad hoc selection of
+15 UBERON term names and visualize
+the hierarchy.
+
 ```{r gethp}
+ontoProc:::install_owlready2()
 hpont_path = owl2cache(url="http://purl.obolibrary.org/obo/hp.owl")
 hpents = setup_entities(hpont_path)
-plot(hpents, hpents$clnames[550:570])
+kp = grep("UBER", hpents$clnames, value=TRUE)[21:35]
+plot(hpents, kp)
 ```
 
-Note that an attempt to plot with `tail(hpents$clnames)` failed
-in November 2023, as the parents of those classes could not
-be found in HPO at that time.  This could be evidence of an upstream error.
+The prefixes of class names in the ontology
+give a sense of its scope.
+```{r lkta}
+t(t(table(sapply(strsplit(hpents$clnames, "_"), "[", 1))))
+```
+
+To characterize human phenotypes ontologically, 
+CL, GO, CHEBI, and
+UBERON play significant roles.

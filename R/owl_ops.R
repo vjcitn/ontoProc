@@ -140,6 +140,8 @@ parents = function(oe) {
     pts = lapply(oe$allents, function(x) x$is_a)
 # must remove restrictions, only want actual entities
     isent = function(x) inherits(x, "owlready2.entity.EntityClass")
+    pts = lapply(pts, function(x)
+		 reticulate::import_builtins()$list(x))
     ok = lapply(pts, sapply, isent)
     for (i in seq_len(length(ok))) pts[[i]] = pts[[i]][which(ok[[i]])]
     ans = lapply(pts, sapply, function(x) x$name)
@@ -171,13 +173,64 @@ subclasses = function(oe) {
 #' retrieve labels with names
 #' @param object owlents instance
 #' @param \dots not used
-#' @note When multiple labels are present, only first is silently returned.
-#' To get ontology tags, use `names(labels(...))`.
+#' @note When multiple labels are present, only first is silently returned.  Note that reticulate 1.35.0 made a change that
+#' appears to imply that `[0]` can be used to retrieve the desired
+#' components.
+#' To get ontology tags, use `names(labels(...))`.  Note: This function was revised Jul 12 2024
+#' to allow terms that lack labels (like CHEBI references in cl.owl) to be processed, returning NA.
+#' The previous functionality which failed is available, not exported, as labelsOLD.owlents.
+#' @examples
+#' clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
+#' clont = setup_entities(clont_path)
+#' labels(clont[1:5])
+#' labels(clont[51:55])
 #' @export
-labels.owlents = function(object, ...) {
-  o2 = reticulate::import("owlready2")
-  ll = sapply(object$allents, function(x) x$label[1])
-  names(ll) = sapply(object$allents, function(x) x$name[1])
+labels.owlents = function (object, ...) 
+{
+    ll = sapply(object$allents, function(x) {
+      z = try(x$label[0], silent=TRUE)
+      if (inherits(z, "try-error")) return(NA)
+      z
+      })
+    names(ll) = sapply(object$allents, function(x) x$name)
+    unlist(ll)
+}
+
+labelsOLD.owlents = function(object, ...) {
+  #o2 = reticulate::import("owlready2")
+  ll = sapply(object$allents, function(x) x$label[0])
+  names(ll) = sapply(object$allents, function(x) x$name)
   unlist(ll)
 }
   
+
+#' use owlready2 ontology search facility on term labels
+#' @param oents owlents instance
+#' @param regexp character(1) simple regular expression
+#' @param case_sensitive logical(1) should case be respected in search?
+#' @return A named list: term labels are elements, tags are names of elements.
+#' Will return NULL if nothing is found.
+#' @examples
+#' pa = get_ordo_owl_path()
+#' orde = setup_entities(pa)
+#' ol = search_labels(orde, "*Immunog*")
+#' plot(orde, names(ol))
+#' @export
+search_labels = function (oents, regexp, case_sensitive=TRUE) 
+{
+#
+#search(_use_str_as_loc_str=True, _case_sensitive=True, _bm25=False, **kargs)
+#
+    stopifnot(inherits(oents, "owlents"))
+    thecall = match.call()
+    o2 = reticulate::import("owlready2")
+    ont = o2$get_ontology(oents$owlfn)$load()
+    ans = ont$search(`_case_sensitive`=case_sensitive, label = regexp)
+    lans = reticulate::iterate(ans, force)
+    if (length(lans)<=0) return(NULL)
+    allv = lapply(lans, function(x) x$label[0])
+    alln = lapply(lans, function(x) x$name)
+    names(allv) = unlist(alln)
+    allv
+}
+
