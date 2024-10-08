@@ -24,28 +24,25 @@ serializations of ontologies, via the
 The `owl2cache` function retrieves OWL from a URL or file
 and places it in a cache to avoid repetitious retrievals.  The
 default cache is the one defined by `BiocFileCache::BiocFileCache()`.
-Here we work with the cell ontology.  `setup_entities` will use
-owlready2 python modules to parse the OWL and produce an
-instance of S3 class `owlents`.
+Here we work with the cell ontology.  `setup_entities2` will use basilisk
+to acquire
+owlready2 python modules that parse the OWL and produce an `ontology_index` instance
+(defined in CRAN package ontologyIndex).
+
 
 ```{r getcl,message=FALSE}
 library(ontoProc)
-ontoProc:::install_owlready2()
 clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
-cle = setup_entities(clont_path)
+cle = setup_entities2(clont_path)
 cle
 ```
 
-A plot method is available.  Given a vector of tags
-as reported in OWL (no colons are used), the plot method produces
-an ontologyIndex instance and runs onto_plot2
-on the result.
-
+The usual plotting approach works.
 ```{r lkcl}
 sel = c("CL_0000492", "CL_0001054", "CL_0000236", 
 "CL_0000625", "CL_0000576", 
 "CL_0000623", "CL_0000451", "CL_0000556")
-plot(cle, sel)
+onto_plot2(cle, sel)
 ```
 
 # Illustration with Human Phenotype ontology
@@ -55,17 +52,16 @@ We'll obtain and ad hoc selection of
 the hierarchy.
 
 ```{r gethp}
-ontoProc:::install_owlready2()
 hpont_path = owl2cache(url="http://purl.obolibrary.org/obo/hp.owl")
-hpents = setup_entities(hpont_path)
-kp = grep("UBER", hpents$clnames, value=TRUE)[21:35]
-plot(hpents, kp)
+hpents = setup_entities2(hpont_path)
+kp = grep("UBER", names(hpents$name), value=TRUE)[21:30]
+onto_plot2(hpents, kp)
 ```
 
 The prefixes of class names in the ontology
 give a sense of its scope.
 ```{r lkta}
-t(t(table(sapply(strsplit(hpents$clnames, "_"), "[", 1))))
+t(t(table(sapply(strsplit(names(hpents$name), "_"), "[", 1))))
 ```
 
 To characterize human phenotypes ontologically, 

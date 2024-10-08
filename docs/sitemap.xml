@@ -1,198 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/ontoProc.html</loc>
-  </url>
-  <url>
-    <loc>/articles/owlents.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/CLfeats.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PROSYM.html</loc>
-  </url>
-  <url>
-    <loc>/reference/TermSet-class.html</loc>
-  </url>
-  <url>
-    <loc>/reference/allGOterms.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ancestors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ancestors_names.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bind_formal_tags.html</loc>
-  </url>
-  <url>
-    <loc>/reference/c-TermSet-method.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cellTypeToGO.html</loc>
-  </url>
-  <url>
-    <loc>/reference/children_names.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cleanCLOnames.html</loc>
-  </url>
-  <url>
-    <loc>/reference/common_classes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/connect_classes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ctmarks.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cyclicSigset.html</loc>
-  </url>
-  <url>
-    <loc>/reference/demoApp.html</loc>
-  </url>
-  <url>
-    <loc>/reference/dropStop.html</loc>
-  </url>
-  <url>
-    <loc>/reference/fastGrep.html</loc>
-  </url>
-  <url>
-    <loc>/reference/findCommonAncestors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getCellOnto.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getLeavesFromTerm.html</loc>
-  </url>
-  <url>
-    <loc>/reference/getOnto.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_classes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_ordo_owl_path.html</loc>
-  </url>
-  <url>
-    <loc>/reference/humrna.html</loc>
-  </url>
-  <url>
-    <loc>/reference/improveNodes.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/labels.owlents.html</loc>
-  </url>
-  <url>
-    <loc>/reference/ldfToTerms.html</loc>
-  </url>
-  <url>
-    <loc>/reference/liberalMap.html</loc>
-  </url>
-  <url>
-    <loc>/reference/makeSelectInput.html</loc>
-  </url>
-  <url>
-    <loc>/reference/make_graphNEL_from_ontology_plot.html</loc>
-  </url>
-  <url>
-    <loc>/reference/map2prose.html</loc>
-  </url>
-  <url>
-    <loc>/reference/mapOneNaive.html</loc>
-  </url>
-  <url>
-    <loc>/reference/minicorpus.html</loc>
-  </url>
-  <url>
-    <loc>/reference/nomenCheckup.html</loc>
-  </url>
-  <url>
-    <loc>/reference/onto_plot2.html</loc>
-  </url>
-  <url>
-    <loc>/reference/onto_roots.html</loc>
-  </url>
-  <url>
-    <loc>/reference/owl2cache.html</loc>
-  </url>
-  <url>
-    <loc>/reference/packDesc2019.html</loc>
-  </url>
-  <url>
-    <loc>/reference/packDesc2021.html</loc>
-  </url>
-  <url>
-    <loc>/reference/packDesc2022.html</loc>
-  </url>
-  <url>
-    <loc>/reference/packDesc2023.html</loc>
-  </url>
-  <url>
-    <loc>/reference/parents.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot.owlents.html</loc>
-  </url>
-  <url>
-    <loc>/reference/print.owlents.html</loc>
-  </url>
-  <url>
-    <loc>/reference/recognizedPredicates.html</loc>
-  </url>
-  <url>
-    <loc>/reference/secLevGen.html</loc>
-  </url>
-  <url>
-    <loc>/reference/selectFromMap.html</loc>
-  </url>
-  <url>
-    <loc>/reference/setup_entities.html</loc>
-  </url>
-  <url>
-    <loc>/reference/seur3kTab.html</loc>
-  </url>
-  <url>
-    <loc>/reference/siblings_TAG.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stopWords.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sub-.owlents.html</loc>
-  </url>
-  <url>
-    <loc>/reference/subclasses.html</loc>
-  </url>
-  <url>
-    <loc>/reference/subset_descendants.html</loc>
-  </url>
-  <url>
-    <loc>/reference/sym2CellOnto.html</loc>
-  </url>
-  <url>
-    <loc>/reference/url_ok.html</loc>
-  </url>
-  <url>
-    <loc>/reference/valid_ontonames.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/articles/index.html</loc></url>
+<url><loc>/articles/ontoProc.html</loc></url>
+<url><loc>/articles/owlents.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/CLfeats.html</loc></url>
+<url><loc>/reference/PROSYM.html</loc></url>
+<url><loc>/reference/TermSet-class.html</loc></url>
+<url><loc>/reference/allGOterms.html</loc></url>
+<url><loc>/reference/ancestors.html</loc></url>
+<url><loc>/reference/ancestors_names.html</loc></url>
+<url><loc>/reference/bind_formal_tags.html</loc></url>
+<url><loc>/reference/c-TermSet-method.html</loc></url>
+<url><loc>/reference/cellTypeToGO.html</loc></url>
+<url><loc>/reference/children_names.html</loc></url>
+<url><loc>/reference/cleanCLOnames.html</loc></url>
+<url><loc>/reference/common_classes.html</loc></url>
+<url><loc>/reference/connect_classes.html</loc></url>
+<url><loc>/reference/ctmarks.html</loc></url>
+<url><loc>/reference/cyclicSigset.html</loc></url>
+<url><loc>/reference/demoApp.html</loc></url>
+<url><loc>/reference/dropStop.html</loc></url>
+<url><loc>/reference/fastGrep.html</loc></url>
+<url><loc>/reference/findCommonAncestors.html</loc></url>
+<url><loc>/reference/getCellOnto.html</loc></url>
+<url><loc>/reference/getLeavesFromTerm.html</loc></url>
+<url><loc>/reference/getOnto.html</loc></url>
+<url><loc>/reference/get_classes.html</loc></url>
+<url><loc>/reference/get_ordo_owl_path.html</loc></url>
+<url><loc>/reference/humrna.html</loc></url>
+<url><loc>/reference/improveNodes.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/labels.owlents.html</loc></url>
+<url><loc>/reference/ldfToTerms.html</loc></url>
+<url><loc>/reference/liberalMap.html</loc></url>
+<url><loc>/reference/makeSelectInput.html</loc></url>
+<url><loc>/reference/make_graphNEL_from_ontology_plot.html</loc></url>
+<url><loc>/reference/map2prose.html</loc></url>
+<url><loc>/reference/mapOneNaive.html</loc></url>
+<url><loc>/reference/minicorpus.html</loc></url>
+<url><loc>/reference/nomenCheckup.html</loc></url>
+<url><loc>/reference/onto_plot2.html</loc></url>
+<url><loc>/reference/onto_roots.html</loc></url>
+<url><loc>/reference/owl2cache.html</loc></url>
+<url><loc>/reference/packDesc2019.html</loc></url>
+<url><loc>/reference/packDesc2021.html</loc></url>
+<url><loc>/reference/packDesc2022.html</loc></url>
+<url><loc>/reference/packDesc2023.html</loc></url>
+<url><loc>/reference/parents.html</loc></url>
+<url><loc>/reference/plot.owlents.html</loc></url>
+<url><loc>/reference/print.owlents.html</loc></url>
+<url><loc>/reference/recognizedPredicates.html</loc></url>
+<url><loc>/reference/search_labels.html</loc></url>
+<url><loc>/reference/secLevGen.html</loc></url>
+<url><loc>/reference/selectFromMap.html</loc></url>
+<url><loc>/reference/setup_entities.html</loc></url>
+<url><loc>/reference/setup_entities2.html</loc></url>
+<url><loc>/reference/seur3kTab.html</loc></url>
+<url><loc>/reference/siblings_TAG.html</loc></url>
+<url><loc>/reference/stopWords.html</loc></url>
+<url><loc>/reference/sub-.owlents.html</loc></url>
+<url><loc>/reference/subclasses.html</loc></url>
+<url><loc>/reference/subset_descendants.html</loc></url>
+<url><loc>/reference/sym2CellOnto.html</loc></url>
+<url><loc>/reference/url_ok.html</loc></url>
+<url><loc>/reference/valid_ontonames.html</loc></url>
 </urlset>
+

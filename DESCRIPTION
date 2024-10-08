@@ -34,10 +34,3 @@ Collate: bind_formal_tags.R  common_classes.R   data.R		      getOntos.R  seurTa
 	plot.owlents.R setup_entities2.R zzz.R
 URL: https://github.com/vjcitn/ontoProc
 BugReports: https://github.com/vjcitn/ontoProc/issues
-Config/reticulate/autoconfigure:
-  list(
-    packages = list(
-      list(package = "owlready2")
-    )
-  )
-SystemRequirements: owlready2
