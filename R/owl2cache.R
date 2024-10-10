@@ -14,9 +14,12 @@ url_ok = function(url) {
 #' matching record.  etags can be available for use with bfcneedsupdate.
 #' @examples
 #' ca = BiocFileCache::BiocFileCache()
-#' hppa = owl2cache(ca, 
-#'    url="http://purl.obolibrary.org/obo/hp/releases/2023-10-09/hp-base.owl")
-#' setup_entities(hppa)
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  hppa = owl2cache(ca, 
+#'     url="http://purl.obolibrary.org/obo/hp/releases/2023-10-09/hp-base.owl")
+#'  setup_entities(hppa)
+#' }
 #' @export
 owl2cache = function(cache = BiocFileCache::BiocFileCache(), url) {
    inf = BiocFileCache::bfcquery(cache, url)
