@@ -17,8 +17,11 @@ retrieve is_a
 }
 \examples{
 pa = get_ordo_owl_path()
-orde = setup_entities(pa)
-orde
-parents(orde[1000:1001])
-labels(orde[1000:1001])
+o2 = try(reticulate::import("owlready2"), silent=TRUE)
+if (!inherits(o2, "try-error")) {
+ orde = setup_entities(pa)
+ orde
+ parents(orde[1000:1001])
+ labels(orde[1000:1001])
+}
 }

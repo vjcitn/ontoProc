@@ -24,7 +24,10 @@ The previous functionality which failed is available, not exported, as labelsOLD
 }
 \examples{
 clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
-clont = setup_entities(clont_path)
-labels(clont[1:5])
-labels(clont[51:55])
+o2 = try(reticulate::import("owlready2"), silent=TRUE)
+if (!inherits(o2, "try-error")) {
+ clont = setup_entities(clont_path)
+ labels(clont[1:5])
+ labels(clont[51:55])
+}
 }

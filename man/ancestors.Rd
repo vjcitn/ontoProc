@@ -17,8 +17,11 @@ retrieve ancestor 'sets'
 }
 \examples{
 pa = get_ordo_owl_path()
-orde = setup_entities(pa)
-orde
-ancestors(orde[1:5])
-labels(orde[1:5])
+o2 = try(reticulate::import("owlready2"), silent=TRUE)
+if (!inherits(o2, "try-error")) {
+ orde = setup_entities(pa)
+ orde
+ ancestors(orde[1:5])
+ labels(orde[1:5])
+}
 }

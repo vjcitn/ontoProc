@@ -20,7 +20,10 @@ non-entities are removed and names are extracted
 }
 \examples{
 pa = get_ordo_owl_path()
-orde = setup_entities(pa)
-al = ancestors(orde[1001:1002])
-ancestors_names(al)
+o2 = try(reticulate::import("owlready2"), silent=TRUE)
+if (!inherits(o2, "try-error")) {
+ orde = setup_entities(pa)
+ al = ancestors(orde[1001:1002])
+ ancestors_names(al)
+}
 }

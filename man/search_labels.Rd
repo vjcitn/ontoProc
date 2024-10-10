@@ -4,10 +4,10 @@
 \alias{search_labels}
 \title{use owlready2 ontology search facility on term labels}
 \usage{
-search_labels(oents, regexp, case_sensitive = TRUE)
+search_labels(ontopath, regexp, case_sensitive = TRUE)
 }
 \arguments{
-\item{oents}{owlents instance}
+\item{ontopath}{character(1) path to owl file}
 
 \item{regexp}{character(1) simple regular expression}
 
@@ -22,7 +22,7 @@ use owlready2 ontology search facility on term labels
 }
 \examples{
 pa = get_ordo_owl_path()
-orde = setup_entities(pa)
-ol = search_labels(orde, "*Immunog*")
-plot(orde, names(ol))
+ol = search_labels(pa, "*Immunog*")
+orde = setup_entities2(pa)
+onto_plot2(orde, names(ol))
 }

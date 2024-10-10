@@ -19,10 +19,13 @@ get_classes = function(owlfile) {
 #' the entity.)
 #' @examples
 #' pa = get_ordo_owl_path()
-#' orde = setup_entities(pa)
-#' orde
-#' ancestors(orde[1000:1001])
-#' labels(orde[1000:1001])
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  orde = setup_entities(pa)
+#'  orde
+#'  ancestors(orde[1000:1001])
+#'  labels(orde[1000:1001])
+#' }
 #' @export 
 setup_entities = function(owlfn) {
   thecall = match.call()
@@ -71,13 +74,17 @@ print.owlents = function(x, ...) {
 #' @return a list of sets
 #' @examples
 #' pa = get_ordo_owl_path()
-#' orde = setup_entities(pa)
-#' orde
-#' ancestors(orde[1:5])
-#' labels(orde[1:5])
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  orde = setup_entities(pa)
+#'  orde
+#'  ancestors(orde[1:5])
+#'  labels(orde[1:5])
+#' }
 #' @export
 ancestors = function(oe) {
-  o2 = reticulate::import("owlready2")
+  o2 = try(reticulate::import("owlready2"))
+  if (inherits(o2, "try-error")) stop("ensure that reticulate can find owlready2")
   ans = lapply(oe$allents, o2$EntityClass$ancestors)
   names(ans) = oe$clnames
   ans
@@ -89,9 +96,12 @@ ancestors = function(oe) {
 #' @return list of vectors of character()
 #' @examples
 #' pa = get_ordo_owl_path()
-#' orde = setup_entities(pa)
-#' al = ancestors(orde[1001:1002])
-#' ancestors_names(al)
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  orde = setup_entities(pa)
+#'  al = ancestors(orde[1001:1002])
+#'  ancestors_names(al)
+#' }
 #' @export
 ancestors_names = function(anclist) {
   lapply(anclist, .ancestor_element_names)
@@ -103,9 +113,12 @@ ancestors_names = function(anclist) {
 #' @return list of vectors of character()
 #' @examples
 #' pa = get_ordo_owl_path()
-#' orde = setup_entities(pa)
-#' al = subclasses(orde[100:120])
-#' children_names(al)
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  orde = setup_entities(pa)
+#'  al = subclasses(orde[100:120])
+#'  children_names(al)
+#' }
 #' @export
 children_names = function(sclist) {
   lapply(sclist, .subclass_element_names)
@@ -131,10 +144,13 @@ children_names = function(sclist) {
 #' @return list of vectors of tags of parents
 #' @examples
 #' pa = get_ordo_owl_path()
-#' orde = setup_entities(pa)
-#' orde
-#' parents(orde[1000:1001])
-#' labels(orde[1000:1001])
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  orde = setup_entities(pa)
+#'  orde
+#'  parents(orde[1000:1001])
+#'  labels(orde[1000:1001])
+#' }
 #' @export
 parents = function(oe) {
     pts = lapply(oe$allents, function(x) x$is_a)
@@ -154,14 +170,17 @@ parents = function(oe) {
 #' @param oe owlents instance
 #' @examples
 #' pa = get_ordo_owl_path()
-#' orde = setup_entities(pa)
-#' orde
-#' sc <- subclasses(orde[1:5])
-#' labels(orde[3])
-#' o3 = reticulate::iterate(sc[[3]])
-#' print(length(o3))
-#' o3[[2]]
-#' labels(orde["Orphanet_100011"])
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  orde = setup_entities(pa)
+#'  orde
+#'  sc <- subclasses(orde[1:5])
+#'  labels(orde[3])
+#'  o3 = reticulate::iterate(sc[[3]])
+#'  print(length(o3))
+#'  o3[[2]]
+#'  labels(orde["Orphanet_100011"])
+#' }
 #' @export
 subclasses = function(oe) {
   o2 = reticulate::import("owlready2")
@@ -181,9 +200,12 @@ subclasses = function(oe) {
 #' The previous functionality which failed is available, not exported, as labelsOLD.owlents.
 #' @examples
 #' clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
-#' clont = setup_entities(clont_path)
-#' labels(clont[1:5])
-#' labels(clont[51:55])
+#' o2 = try(reticulate::import("owlready2"), silent=TRUE)
+#' if (!inherits(o2, "try-error")) {
+#'  clont = setup_entities(clont_path)
+#'  labels(clont[1:5])
+#'  labels(clont[51:55])
+#' }
 #' @export
 labels.owlents = function (object, ...) 
 {
@@ -205,32 +227,33 @@ labelsOLD.owlents = function(object, ...) {
   
 
 #' use owlready2 ontology search facility on term labels
-#' @param oents owlents instance
+#' @param ontopath character(1) path to owl file
 #' @param regexp character(1) simple regular expression
 #' @param case_sensitive logical(1) should case be respected in search?
 #' @return A named list: term labels are elements, tags are names of elements.
 #' Will return NULL if nothing is found.
 #' @examples
 #' pa = get_ordo_owl_path()
-#' orde = setup_entities(pa)
-#' ol = search_labels(orde, "*Immunog*")
-#' plot(orde, names(ol))
+#' ol = search_labels(pa, "*Immunog*")
+#' orde = setup_entities2(pa)
+#' onto_plot2(orde, names(ol))
 #' @export
-search_labels = function (oents, regexp, case_sensitive=TRUE) 
+search_labels = function (ontopath, regexp, case_sensitive=TRUE) 
 {
-#
-#search(_use_str_as_loc_str=True, _case_sensitive=True, _bm25=False, **kargs)
-#
-    stopifnot(inherits(oents, "owlents"))
+    stopifnot(inherits(ontopath, "character"))
     thecall = match.call()
-    o2 = reticulate::import("owlready2")
-    ont = o2$get_ontology(oents$owlfn)$load()
-    ans = ont$search(`_case_sensitive`=case_sensitive, label = regexp)
-    lans = reticulate::iterate(ans, force)
-    if (length(lans)<=0) return(NULL)
-    allv = lapply(lans, function(x) x$label[0])
-    alln = lapply(lans, function(x) x$name)
-    names(allv) = unlist(alln)
-    allv
+    proc = basilisk::basiliskStart(bsklenv, testload="owlready2") # avoid package-specific import
+    on.exit(basilisk::basiliskStop(proc))
+    basilisk::basiliskRun(proc, function(owlfn, thecall) {
+     o2 = reticulate::import("owlready2")
+     ont = o2$get_ontology(owlfn)$load()
+     ans = ont$search(`_case_sensitive`=case_sensitive, label = regexp)
+     lans = reticulate::iterate(ans, force)
+     if (length(lans)<=0) return(NULL)
+     allv = lapply(lans, function(x) x$label[0])
+     alln = lapply(lans, function(x) x$name)
+     names(allv) = unlist(alln)
+     allv
+     }, ontopath, thecall)
 }
 
