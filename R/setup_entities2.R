@@ -1,8 +1,3 @@
-# necessary for python module control
-bsklenv <- basilisk::BasiliskEnvironment(envname="bsklenv",
-    pkgname="ontoProc",
-    packages=c("h5py==3.6.0"), 
-    pip=c("owlready2==0.46", "bioregistry==0.11.18"))
 
 #' preparing for a small number of entry points to owlready2 mediated by
 #' basilisk, this setup function will ingest OWL, enumerate classes and their
@@ -10,6 +5,9 @@ bsklenv <- basilisk::BasiliskEnvironment(envname="bsklenv",
 #' to produce a functional ontology representation
 #' @param owlfn character(1) path to OWL file
 #' @param cache_object logical(1) if TRUE, cache the `ontology_index` instance in BiocFileCache::BiocFileCache()
+#' @note Production of an `ontology_index` instance will often throw a warning when "Thing" is
+#' part of the ontology.  suppressWarnings has been used in the code to suppress this.  This
+#' may be too aggressive an approach.
 #' @examples
 #' pa = get_ordo_owl_path()
 #' orde = setup_entities2(pa)
@@ -42,8 +40,8 @@ setup_entities2 = function (owlfn, cache_object=TRUE)
             return(NA_character_)
         z
         }, character(1))
-     theonto = ontologyIndex::ontology_index(parents=ontoProc::parents(ans),
-        name=thelabs)
+     theonto = suppressWarnings(ontologyIndex::ontology_index(parents=ontoProc::parents(ans),
+        name=thelabs)) # 'Thing' has no parent and will throw warning
      if (cache_object) {
 #
 # we always cache an owl file, but need to distinguish the serialized
