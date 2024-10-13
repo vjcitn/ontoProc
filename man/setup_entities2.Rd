@@ -7,10 +7,12 @@ basilisk, this setup function will ingest OWL, enumerate classes and their
 names, and produce the 'parents' list, which can then be used with ontology_index
 to produce a functional ontology representation}
 \usage{
-setup_entities2(owlfn)
+setup_entities2(owlfn, cache_object = TRUE)
 }
 \arguments{
 \item{owlfn}{character(1) path to OWL file}
+
+\item{cache_object}{logical(1) if TRUE, cache the `ontology_index` instance in BiocFileCache::BiocFileCache()}
 }
 \description{
 preparing for a small number of entry points to owlready2 mediated by

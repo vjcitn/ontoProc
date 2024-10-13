@@ -64,6 +64,51 @@ pr = getOnto("Pronto", "2021")  # important case change
 
 # Scope of package
 
+## OWL interface
+
+As of 1.99.0, facilities are present to import any valid OWL ontology.  We use
+basilisk to incorporate functionality from [owlready2](https://owlready2.readthedocs.io/en/v0.47/)
+and [bioregisty](https://bioregistry.io/).  One way of identifying a large number
+of ontologies available for ingestion is to query bioregistry.
+
+```{r lkbr}
+br = bioregistry_ols_resources()
+library(DT)
+datatable(br[,c(2,3)])
+```
+
+We can use the URLs given in this table to explore ontologies of interest.
+For example, the AEO (anatomical entity ontology) extends CARO (the common
+anatomy reference ontology).  What sorts of terms are regarded as extensions?
+```{r dodemo11}
+aeo = owl2cache(url="http://purl.obolibrary.org/obo/aeo.owl") # localize OWL
+aeoinr = setup_entities2(aeo)
+set.seed(1234)
+suppressWarnings({ # zero-length angle
+onto_plot2(aeoinr, sample(grep("AEO", names(aeoinr$name), value=TRUE),12))
+})
+```
+
+So CARO is already using some of the extensions.
+
+Use a search facility in owlready2 to check the UBERON
+ontology (check the table above for references) for terms
+involving the substring 'vein':
+
+```{r lkor2srch}
+ub = owl2cache(url="http://purl.obolibrary.org/obo/uberon.owl")
+allv = search_labels(ub, "*vein*")
+length(allv)
+head(unlist(allv))
+```
+
+It is interesting to note that owlready2 includes
+the ability to provide [relevance measurement](https://owlready2.readthedocs.io/en/v0.47/annotations.html#full-text-search-fts) for
+search results using the [BM25 index](https://en.wikipedia.org/wiki/Okapi_BM25).  We need to add
+some code to capitalize on this in ontoProc.
+
+## Legacy approaches
+
 The following table describes the most up-to-date resources available with `getOnto`.
 <!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
 ```{r lksco}

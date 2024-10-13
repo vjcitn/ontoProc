@@ -1,3 +1,8 @@
+CHANGES IN VERSION 1.99.4
+------------------------
+   o caching the RDS version of ontology_index so setup_entities2() is fast after first call
+   o exploring role for bioregistry from pypi -- added a bioregistry_ols_resources function
+
 CHANGES IN VERSION 1.27.1
 ------------------------
    o added search_labels(), to use owlready2 search facility on term labels
