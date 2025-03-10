@@ -23,6 +23,9 @@ onto_plot2 style plot with version differences highlighted
 \description{
 Highlights in green the terms that are present in the new ontology but not the old one
 }
+\note{
+Credit to ontoPlot for the use of some of its functions.
+}
 \examples{
 cl = getOnto("diseaseOnto")
 cl2 = getOnto(ontoname = "diseaseOnto", year_added = "2021")

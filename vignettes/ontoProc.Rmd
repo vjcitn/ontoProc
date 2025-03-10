@@ -15,6 +15,11 @@ output:
     toc: yes
 ---
 
+```{r setup,echo=FALSE,results="hide",message=FALSE}
+library(knitr)
+library(ontoProc)
+```
+
 # Introduction
 
 The ambitions of collaborative single cell biology will only be achieved through the coordinated efforts of many groups, to help clarify cell types and dynamics in an array of functional and environmental contexts. The use of formal ontology in this pursuit is well-motivated and research progress has already been substantial.
@@ -22,22 +27,6 @@ The ambitions of collaborative single cell biology will only be achieved through
 @Bakken2017 discuss "strategies for standardized cell type representations based on the data outputs from [high-content flow cytometry and single cell RNA sequencing], including 'context annotations' in the form of standardized experiment metadata about the specimen source analyzed and marker genes that serve as the most useful features in machine learning-based cell type classification models." @Aevermann2018 describe how the FAIR principles can be implemented using statistical identification of necessary and sufficient conditions for determining cell class membership. They propose that Cell Ontology can be transformed to a broadly usable knowledgebase through the incorporation of accurate marker gene signatures for cell classes.
 
 In this vignette, we review key concepts and tasks required to make progress in the adoption and application of ontological discipline in Bioconductor-oriented data analysis.
-
-We'll start by setting up some package attachments and ontology objects.
-
-```{r setup,echo=FALSE,results="hide",message=FALSE}
-library(knitr)
-library(ontoProc)
-```
-
-```{r setup2, message=FALSE}
-library(ontoProc)
-library(ontologyPlot)
-library(BiocStyle)  # for package references
-cl = getOnto("cellOnto", "2021") # for continuity -- 	has_high_plasma_membrane_amount: list
-go = getOnto("goOnto", "2021")  # if updated, some assertions will fail...
-pr = getOnto("Pronto", "2021")  # important case change
-```
 
 # Scope of package
 
@@ -84,17 +73,6 @@ the ability to provide [relevance measurement](https://owlready2.readthedocs.io/
 search results using the [BM25 index](https://en.wikipedia.org/wiki/Okapi_BM25).  We need to add
 some code to capitalize on this in ontoProc.
 
-## Legacy approaches
-
-The following table describes the most up-to-date resources available with `getOnto`.
-<!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
-
-```{r lksco}
-data(packDesc2023)
-kable(packDesc2023[,-c(1,7)])
-```
-
-Other resources are listed in `packDesc202x` and `packDesc2019`.
 
 # Methods
 
@@ -122,7 +100,8 @@ kable(stab <- seur3kTab())
 
 Given the informally selected tags in the table above, we can sketch the Cell Ontology graph connecting the associated cell types. The ontoProc package adds functionality to ontologyPlot with `make_graphNEL_from_ontology_plot`. This allows use of all Rgraphviz and igraph visualization facilities for graphs derived from ontology structures.
 
-Here we display the PBMC cell sets reported in the Seurat tutorial.
+Here we display the PBMC cell sets reported in the Seurat tutorial,
+annotated using the cached 2023 version of Cell Ontology.
 
 ```{r lklklk, message=FALSE}
 library(ontoProc)
@@ -130,86 +109,20 @@ cl = getOnto("cellOnto", "2023")
 onto_plot2(cl, stab$tag)
 ```
 
-### Molecular features asserted in the Cell Ontology
+It is of interest to compare to a current version of Cell Ontology.
+This version is imported from OWL using owl2ready, and the tags
+have underscore instead of colon.  Here we use quickOnto which will
+look in the cache for a version of the OWL file that has been
+ingested and transformed to ontologyIndex format and tagged
+with suffix "OIRDS"; if no OIRDS file is found but the owl file
+is found it will ingest and transform and cache the RDS format
+of the ontologyIndex representation.
 
-The `CLfeats` function traces relationships and properties from a given Cell Ontology class. Briefly, each class can assert that it is the `intersection_of` other classes, and `has_part`, `lacks_part`, `has_plasma_membrane_part`, `lacks_plasma_membrane_part` can be asserted as relationships holding between cell type instances and cell components. The components are often cross-referenced to Protein Ontology or Gene Ontology. When the Protein Ontology component has a synonym for which an HGNC symbol is provided, that symbol is retrieved by `CLfeats`. Here we obtain the listing for a mature CD1a-positive dermal dendritic cell.
-
-```{r lkfa}
-suppressMessages({
-kable(CLfeats(cl, "CL:0002531", pr=pr, go=go))
-})
+```{r donew}
+cl = quickOnto("cl.owl")
+onto_plot2(cl, gsub(":", "_", stab$tag))
 ```
 
-The `ctmarks` function starts a shiny app that generates tables of this sort for selected cell types.
-
-![ctmarks snapshot](ctmarks.png)
-
-### Mapping from gene 'presence/role' to cell type
-
-The `sym2CellOnto` function helps find mention of given gene symbols in properties or parts of cell types.
-
-```{r lksy}
-kable(sdf <- as.data.frame(sym2CellOnto("ITGAM", cl, pr)))
-table(sdf$cond)
-kable(as.data.frame(sym2CellOnto("FOXP3", cl, pr)))
-```
-
-## Adding terms to ontology_index structures to 'extend' Cell Ontology
-
-The task of extending an ontology is partly bureaucratic in nature and depends on a collection of endorsements and updates to centralized information structures. In order to permit experimentation with interfaces and new content that may be quite speculative, we include an approach to combining new ontology 'terms' of structure similar to those endorsed in Cell Ontology, to ontologyIndex-based `ontology_index` instances.
-
-### Use case: a set of cell types defined by "diagonal expression"
-
-For a demonstration, we consider the discussion in @Bakken2017, of a 'diagonal' expression pattern defining a group of novel cell types. A set of genes is identified and cells are distinguised by expressing exactly one gene from the set.
-
-![Diagonal expression pattern.](usecaseCyclic.png)
-
-The necessary information is collected in a vector. The vector is the set of genes, the name of element i is the tag to be associated with the type of cell that expresses gene i and does not express any other gene in the set.
-
-```{r lksig}
-sigels = c("CL:X01"="GRIK3", "CL:X02"="NTNG1", "CL:X03"="BAGE2",
-             "CL:X04"="MC4R", "CL:X05"="PAX6", "CL:X06"="TSPAN12", 
-             "CL:X07"="hSHISA8", "CL:X08"="SNCG", "CL:X09"="ARHGEF28", 
-             "CL:X10"="EGF")
-```
-
-### A data.frame defining the cell types and their properties
-
-The `cyclicSigset` function produces a data.frame instance connecting cell types with the genes expressed or unexpressed.
-
-```{r lkdfff}
-cs = cyclicSigset(sigels)
-dim(cs)
-cs[c(1:5,9:13),]
-table(cs$cond)
-```
-
-It is expected that a tabular layout like this will suffice to handle general situations of cell type definition.
-
-### Translating the data.frame elements to OBO Term instances
-
-The most complicated aspect of novel OBO term construction is the proper specifications of relationships with existing ontology components. A prolog that is mostly shared by all terms is generated programmatically for the diagonal pattern task.
-
-```{r lklk1}
- makeIntnProlog = function(id, ...) {
- # make type-specific prologs as key-value pairs
-     c(  
-       sprintf("id: %s", id),
-       sprintf("name: %s-expressing cortical layer 1 interneuron, human", ...),
-       sprintf("def: '%s-expressing cortical layer 1 interneuron, human described via RNA-seq observations' [PMID 29322913]", ...),
-       "is_a: CL:0000099 ! interneuron",
-       "intersection_of: CL:0000099 ! interneuron")
- }
-```
-
-The `ldfToTerms` API uses this to create a set of strings that can be parsed as a term.
-
-```{r doterm}
-pmap = c("hasExp"="has_expression_of", lacksExp="lacks_expression_of")
-head(unlist(tms <- ldfToTerms(cs, pmap, sigels, makeIntnProlog)), 20)
-```
-
-The content in tms can then be appended to the content of the Cell Ontology cl.obo as text for import with `ontologyIndex::get_OBO`.
 
 ## Subsetting SingleR resources using ontological mapping
 
@@ -275,10 +188,10 @@ onto_plot2(cell_onto, uu)
 Using the ontoDiff function, you can visually identify which related terms exist in the newest provided version of an ontology but not in the old version.
 
 ```{r ontodiffex}
-cl = getOnto("diseaseOnto")
-cl2 = getOnto(ontoname = "diseaseOnto", year_added = "2021")
+dO = getOnto("diseaseOnto")
+dO2 = getOnto(ontoname = "diseaseOnto", year_added = "2021")
 cl3k = c("DOID:0040064","DOID:0040076","DOID:0081127","DOID:0081126","DOID:0081131","DOID:0060034")
-ontoDiff(cl,cl2,cl3k)
+ontoDiff(dO,dO2,cl3k)
 ```
 
 ![](ontodiffimex.png)
@@ -314,3 +227,4 @@ Inference on the identities of cells assayed in a single cell transcriptomics ex
 A CRAN package that is very useful for R programming with ontologies is `ontologyIndex` @Westbury2015. This provides easily used functions for parsing ontologies in the OBO format and for performing basic queries on text fields and list structures.
 
 # References
+

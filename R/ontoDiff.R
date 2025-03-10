@@ -15,8 +15,8 @@
 #' cl2 = getOnto(ontoname = "diseaseOnto", year_added = "2021")
 #' cl3k = c("DOID:0040064","DOID:0040076","DOID:0081127","DOID:0081126","DOID:0081131","DOID:0060034")
 #' ontoDiff(cl,cl2,cl3k)
+#' @note Credit to ontoPlot for the use of some of its functions.
 #' @export
-#Credit to ontoPlot for the use of some of it's functions
 ontoDiff <- function (newonto,oldonto,terms2use, cex = 0.8, ...)
   
 {
