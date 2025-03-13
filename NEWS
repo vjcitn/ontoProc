@@ -1,3 +1,8 @@
+CHANGES IN VERSION 2.1.7
+------------------------
+   o update the module dependencies in basilisk.R
+   o add quickOnto() for convenient retrieval of OIRDS serialized ontologyIndex instances in cache
+
 CHANGES IN VERSION 1.99.4
 ------------------------
    o caching the RDS version of ontology_index so setup_entities2() is fast after first call
