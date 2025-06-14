@@ -20,7 +20,7 @@ Imports: Biobase, S4Vectors, methods, stats, utils, BiocFileCache,
 	basilisk, jsonlite, RBGL
 Suggests: knitr, org.Hs.eg.db, org.Mm.eg.db, testthat, BiocStyle,
 	SingleCellExperiment, celldex, rmarkdown, AnnotationDbi, magick
-Depends: R (>= 4.0), ontologyIndex
+Depends: R (>= 4.1), ontologyIndex
 License: Artistic-2.0
 LazyLoad: yes
 biocViews: Infrastructure, GO

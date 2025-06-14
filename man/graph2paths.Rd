@@ -7,11 +7,11 @@
 graph2paths(gr, root = "http://www.ifomis.org/bfo/1.1#Entity", excise = NULL)
 }
 \arguments{
+\item{gr}{graphNEL (package graph) instance representing an ontology}
+
 \item{root}{character(1) node from which to produce paths}
 
 \item{excise}{character() or NULL, path steps to exclude}
-
-\item{graphNEL}{instance representing an ontology}
 }
 \description{
 produce list of vectors of (shortest) paths from root to all nodes in gr

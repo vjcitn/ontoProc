@@ -1,3 +1,32 @@
+
+#ex = "Stereotyped_Restricted_and_Repetitive_Behavior"
+#ex2 = "Stereotyped_Restricted"
+
+munge = function(z) {
+  pda = function(x) paste(x, collapse=" ")
+  if (length(z)>3) return(paste(pda(z[1:3]), "\\n", pda(z[-c(1:3)]), collapse="", sep=""))
+  if (length(z)==1) return(z)
+  paste(z[1], "\\n", z[-1], collapse="", sep="")
+}
+
+munge2 = function(z) {
+  pda = function(x) paste(x, collapse=" ")
+  if (length(z)>3) return(paste(pda(z[1:3]), " ", pda(z[-c(1:3)]), collapse="", sep=""))
+  if (length(z)==1) return(z)
+  paste(z[1], " ", z[-1], collapse="", sep="")
+}
+
+schk = function(x) {
+  ss = strsplit(x, "_")
+  unlist(lapply(ss, munge))
+}
+
+schk2 = function(x) {
+  ss = strsplit(x, "_")
+  unlist(lapply(ss, munge2))
+}
+
+#schk(c(ex, ex2))
 # autism_details.R -- operations to work conveniently with an NCBO autism ontology called autism-merged.
 
 # convert autism-rules.owl to json using robot
@@ -22,12 +51,22 @@ jowl2classgraph = function(jsonpath,
   dropstrings = c("http://www.ifomis.org/bfo/1.1/snap#", "http://purl.org/autism-ontology/1.0/autism-rules.owl#")) {
  aut1 = fromJSON(jsonpath)
  # extract class hierarchy
- nodedf  = (aut1[[1]]$nodes[[1]])
- iscl = which(nodedf$type == "CLASS")
- clids = nodedf$id[iscl]
+ nodedf  = (aut1[[1]]$nodes[[1]])  # this has lbl values for AUTISMC tags
+ #iscl = which(nodedf$type == "CLASS")
+# build map for AUTISMC entries
+ needslab = grep("AUTISMC", nodedf$id)
+ labmap = nodedf$lbl[needslab]
+ names(labmap) = nodedf$id[needslab]
+# end build
  edgedf  = (aut1[[1]]$edges[[1]])
  isas = which(edgedf$pred == "is_a")
  iedges = edgedf[isas,]
+# remap AUTISMC entries
+ edmc_sub = grep("AUTISMC", iedges$sub)
+ iedges$sub[edmc_sub] = labmap[iedges$sub[edmc_sub]]
+ edmc_obj = grep("AUTISMC", iedges$obj)
+ iedges$obj[edmc_obj] = labmap[iedges$obj[edmc_obj]]
+# end remap
  utoks = unique(c(iedges$sub, iedges$obj))
  # remove undesirable namespace prefixes (would be nice to stash them... when we design an object)
  cl = force  # default is to do nothing if no dropstrings given
@@ -39,8 +78,11 @@ jowl2classgraph = function(jsonpath,
        }
     }
  # drop strings when used ... could be moved up in workstream
- autg = new("graphNEL", nodes=cl(utoks, dropstrings), edgemode="directed")
- addEdge(cl(iedges$obj, dropstrings), cl(iedges$sub, dropstrings), autg)
+# following lines try to break long tags but fail 14 june 2025
+ #autg = new("graphNEL", nodes=schk(cl(utoks, dropstrings)), edgemode="directed")
+ #addEdge(schk(cl(iedges$obj, dropstrings)), schk(cl(iedges$sub, dropstrings)), autg)
+ autg = new("graphNEL", nodes=schk2(cl(utoks, dropstrings)), edgemode="directed")
+ addEdge(schk2(cl(iedges$obj, dropstrings)), schk2(cl(iedges$sub, dropstrings)), autg)
 }
 
 #debug(jowl2classgraph)
@@ -62,7 +104,7 @@ pad2 = function (x, targ = 13)
 
 #' produce list of vectors of (shortest) paths from root to all nodes in gr
 #' @importFrom RBGL sp.between
-#' @param graphNEL instance representing an ontology
+#' @param gr graphNEL (package graph) instance representing an ontology
 #' @param root character(1) node from which to produce paths
 #' @param excise character() or NULL, path steps to exclude
 #' @examples
