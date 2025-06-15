@@ -38,7 +38,6 @@ jowl2classgraph_nio = function(jsonpath,
  if (length(dr)>0) iedges = iedges[-dr,]
  utoks = unique(c(iedges$sub, iedges$obj))
  # remove undesirable namespace prefixes (would be nice to stash them... when we design an object)
- cl = force  # default is to do nothing if no dropstrings given
  if (length(dropstrings)>0) {
      cl = function(x, dropstrings) {
        for (i in seq_len(length(dropstrings)))
@@ -46,6 +45,7 @@ jowl2classgraph_nio = function(jsonpath,
        x
        }
     }
+ else cl = function(x, dropstrings) force(x)
  # drop strings when used ... could be moved up in workstream
  autg = new("graphNEL", nodes=schk2(cl(utoks, dropstrings)), edgemode="directed")
  addEdge(schk2(cl(iedges$obj, dropstrings)), schk2(cl(iedges$sub, dropstrings)), autg)
