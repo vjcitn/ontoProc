@@ -13,7 +13,7 @@ Description: Support harvesting of diverse bioinformatic ontologies,
 	analyze genome-scale experiments, particularly cell x compound 
         screens.  Another purpose is to strengthen development of 
 	compelling use cases for richer interfaces to emerging ontologies.
-Version: 2.3.1
+Version: 2.3.2
 Imports: Biobase, S4Vectors, methods, stats, utils, BiocFileCache,
 	shiny, graph, Rgraphviz, ontologyPlot, dplyr, magrittr, DT, igraph,
 	AnnotationHub, SummarizedExperiment, reticulate, R.utils, httr,
@@ -48,6 +48,7 @@ Collate:
     'get_ordo_owl_path.R'
     'graphNEL.R'
     'mapNaive.R'
+    'nio_details.R'
     'ontoDiff.R'
     'owl2cache.R'
     'owl_ops.R'

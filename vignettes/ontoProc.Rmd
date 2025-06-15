@@ -119,6 +119,7 @@ is found it will ingest and transform and cache the RDS format
 of the ontologyIndex representation.
 
 ```{r donew}
+tmp = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl") # ensure presence
 cl = quickOnto("cl.owl")
 onto_plot2(cl, gsub(":", "_", stab$tag))
 ```
