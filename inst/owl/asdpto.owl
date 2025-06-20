@@ -1,0 +1,2612 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:asd="http://cbmi.med.harvard.edu/asdphenotype#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="file:/C:/autism_ontology_svn/trunk/ontologies/manual/ASDPhenotypeOntology_Public.owl">
+  <owl:Ontology rdf:about="http://cbmi.med.harvard.edu/asdphenotype"/>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_634">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obstetric Delivery Procedures</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D036861"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Delivery of the fetus and placenta under the care of an obstetrician or a health worker. Obstetric deliveries may involve physical, psychological, medical, or surgical interventions.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_464">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A behavior disorder originating in childhood in which the essential features are signs of developmentally inappropriate inattention, impulsivity, and hyperactivity. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_455"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001289"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Attention Deficit Disorder with Hyperactivity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_689">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_138"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Psychiatric Hospitalization</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0748061"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Having been hospitalized in a psychiatric institution.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_152">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The distinguishing qualities, or characteristics, belonging to an individual. The qualities that have been shown to be important for the autism spectrum disorder phenotype include, for example, language and other cognitive abilities, restricted, repetitive and stereotyped behaviors, aspects of executive functioning, and a range of emotional traits.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_301"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Personal Traits</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_777">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Severe distortions in the development of many basic psychological functions that are not normal for any stage in development. These distortions are manifested in sustained social impairment, speech abnormalities, and peculiar motor movements.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D002659"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pervasive Child Development Disorders</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_163"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_356">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_253"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1821397"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ability to Convey Feelings</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to understand and accurately express information regarding one's own thoughts, opinions, and feelings.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_34">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_753"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0678858"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Skills that involve the large muscle groups, including movements of the arms, legs, feet, or the entire body.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gross Motor Skills</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_310">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_60"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Recognition and Responsiveness to Voice</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d3100"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Awareness of someone's voice when another individual begins speaking, and ability to turn, locate and focus on voice, including responding when name is called.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_424">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_422"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D006566"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Herpesviridae Infections</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Virus diseases caused by the herpesviridae. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_376">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Disorders that are characterized by the production of antibodies that react with host tissues or immune effector cells that are autoreactive to endogenous peptides.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Autoimmune Diseases</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001327"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_212">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012818"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Respiratory Indications</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_406"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Manifestations of diseases of the respiratory tract.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_386">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0747864"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D018811"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1531967"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Being subject during pregnancy or infancy to agents and other environmental factors, such as medications or other substances that could affect the development of the fetus or infant.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Perinatal Exposures</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_166">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_152"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stereotyped, Restricted, and Repetitive Behavior</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Behaviors, interests, movements, or vocalizations that are repetitive and lack clear function and purpose.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_324">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b2304"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Receptive Phonology</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to recognize and understand language sounds.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_176"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_49">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_538"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Carrying out domestic and everyday actions and tasks, including adhering to household rules, caring for one's self and one's possessions, and performing household tasks.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d6"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Home Life Skills</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_20">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reading and Writing</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performing activities involved in the comprehension and production of written language for the purpose of obtaining general knowledge or specific information.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_156"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d345"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_112">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A group of autosomal recessive disorders marked by a deficiency of the hepatic enzyme phenylalanine hydroxylase, or less frequently by reduced activity of dihydropteridine reductase (i.e., atypical phenylketonuria). </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_517"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Phenylketonurias</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D010661"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_357">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_30"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Engaging in any form of play, recreational, or leisure activity.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Use of Free Time</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0517871"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_153">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Social Competence</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_301"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to function in social situations. Children and adults with autism spectrum disorder demonstrate some delays, deficits, or atypical characteristics in the frequency, type, and quality of social interactions and social relationships with other individuals. Research suggests that differences in social development characterize children with autism spectrum disorder from the earliest months, and that delays, deficits, or atypical characteristics in this domain may be a "core feature" of autism spectrum disorder.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_126">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_110"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d7202"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The inability to control and appropriately manage intensity of behavior, including excessive silliness, laughing, and loudness.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Immoderate Behavior</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_35">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Body Temperature Changes</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001832"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Significant alterations in temperature of the human body, above or below 98.6 degrees Fahrenheit or 37 degrees Celsius when taken orally.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_406"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_737">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Smoking</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012907"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inhaling and exhaling the smoke of tobacco.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_384"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_84">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Depression</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_245"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0011570"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A mood state characterized by sadness, despair, or discouragement, and melancholic feelings of grief or unhappiness.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_387">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gastroesophageal Reflux</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Retrograde flow of gastric juice and/or duodenal contents into the distal esophagus, commonly due to incompetence of the lower esophageal sphincter. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_527"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D005764"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_437">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An acute infectious disease caused by rubulavirus, spread by direct contact, airborne droplet nuclei, fomites contaminated by infectious saliva, and perhaps urine, and usually seen in children under the age of 15, although adults may also be affected.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mumps</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D009107"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_422"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_466">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D020817"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A childhood disorder predominately affecting boys. It is characterized by severe, sustained, clinically significant impairment of social interaction, and restricted repetitive and stereotyped patterns of behavior. There are no clinically significant delays in language or cognitive development. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Asperger Syndrome</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_163"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_164">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Skill with numbers and mathematics, such as counting, ordering sequences, and telling time.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Numeracy</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_165"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d150"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d172"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_368">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_529"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to change strategies, or shift mental sets, when involved in problem-solving.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Flexibility in Problem Solving</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1643"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_125">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reaction to Unexpected Change</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Response to changes in situations or surroundings.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d2500"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_6"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_154">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Medical History</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0262926"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A record of a patient's background regarding health and the occurrence of disease events. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_301"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_99">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_283"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0424166"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Apprehension or fear of social interaction or social situations in general.  </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Social Anxiety</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_522">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_386"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Potentially detrimental effects or harmful conditions to which a newborn is exposed.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Newborn Exposures</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0920206"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_549">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pregnancy Complications</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D011248"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conditions or pathological processes associated with pregnancy. They can occur during or after pregnancy, and range from minor discomforts to serious diseases that require medical interventions. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_200">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d640"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance of Chores</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_532"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Doing housework such as cleaning the house, tidying rooms, washing clothes, storing food and disposing of garbage.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_312">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d2503"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to understand obligations and accountability assumed in formal and informal relationships with others.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_284"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Understanding Others' Expectations</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_85">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Initiating and Responding to Social Overtures</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Showing interest in making social advances to initiate friendly interactions as well as positive responses to the social advances of others.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d7104"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_67"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_322">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_49"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Understanding and obeying rules that have been determined for appropriate behavior within the household. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0562410"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0562415"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Adherence to Rules in the Home</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_210">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_42"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Absence of subjective feeling that one has transgressed a moral, social or ethical principle. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0018379"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lack of Appropriate Guilt</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_734">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_384"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ingesting alcoholic beverages on a regular basis.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Alcohol Drinking</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D000428"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0085762"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_165">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d175"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_158"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Analytic Capability</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Skill in reasoning, including problem solving and numeracy.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_579">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Using Language Appropriately</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0582167"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Using language according to the social conventions that govern conversational interactions, including being able to interpret speakers' intended meanings across a variety of social contexts.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_304"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_394">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_393"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Thyroid Diseases</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013959"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pathological processes involving the thyroid gland.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_22">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_156"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0392185"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004454"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233647"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Idiosyncratic and Routinized Speech</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unusual speech, including formulaic speech, overreliance on a restricted range of expressions, echolalia, and idiosyncratic sound-meaning associations.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_32">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The small movements of the hands, wrists, fingers, feet, toes, lips, and tongue. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fine Motor Skills</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_753"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0678857"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_249">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d571"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Awareness and Avoidance of Danger</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_30"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Avoiding risks and potentially hazardous situations that can lead to injury or harm. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_155">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_152"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A set of cognitive functions that controls complex, goal-directed thought and behavior. Executive function involves multiple domains, such as concept formation, goal management, cognitive flexibility, inhibition control, impulse control, and working memory.  Executive function in autism spectrum disorder is a subject of continuing research.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D056344"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Executive Function</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_494">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hereditary and sporadic conditions which are characterized by progressive nervous system dysfunction. These disorders are often associated with atrophy of the affected central or peripheral nervous system structures.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_216"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D019636"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Neurodegenerative Diseases</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_523">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D008881"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A class of disabling primary headache disorders, characterized by recurrent unilateral pulsatile headaches. The two major subtypes are common migraine (without aura) and classic migraine (with aura or neurological symptoms). </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_517"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Migraine Disorders</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_86">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Limiting the quantity and quality of food intake.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004035"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dietary Restrictions</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_538">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0085880"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Adaptive Life Skills</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_153"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Everyday skills that are needed at home and in the community.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_229">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to recognize the communication situation, including the mood, opinions and comprehension level of other participants, and to modify one's language and responses accordingly.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_15"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0566112"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Understanding Context</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_389">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_376"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D006967"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Allergies</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Altered reactivity to an antigen, which can result in pathologic reactions upon subsequent exposure to that particular antigen.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_638">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The position or orientation of the fetus at near term or during obstetric labor, determined by its relation to the spine of the mother and the birth canal.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007746"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Labor Presentation</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_97">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003933"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diagnosis</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_154"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The determination of the nature of a disease or condition, or the distinguishing of one disease or condition from another. Assessment may be made through physical examination, laboratory tests, or the like. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_192">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0870558"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Skill in Understanding Non-Literal Meaning</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to recognize and comprehend figurative and metaphorical meanings.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_229"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_123">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_235"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unusual Sensory Interests</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Atypical degree of interest in sensory stimuli, such as flashing lights, textures, or sounds.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_58">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D016728"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Behavior in which persons intentionally hurt or harm themselves. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_162"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Self-Injurious Behavior</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_8">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Thinking that is coherent and logical, involving ability to follow instructions as well as problem solving ability.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_165"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0684328"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reasoning</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_348">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Job Performance</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Quality of the work conducted at one's place of employment.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d845"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_54"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_685">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Muscle Weakness</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A vague complaint of debility, fatigue, or exhaustion attributable to weakness of various muscles. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_665"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D018908"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_393">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004700"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pathological processes of the endocrine glands, and diseases resulting from abnormal level of available hormones. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Endocrine System Diseases</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_162">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Emotional Regulation and Control</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Directing or governing one`s own emotions. Individuals with autism spectrum disorder can react negatively to their environment and at times may engage in emotional outbursts. </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_155"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_268">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_54"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performing activities involved in obtaining an education.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance in School</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d820"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_43">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_168"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tics and Mannerisms</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D020323"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Habitual, repeated, rapid contraction of certain muscles, resulting in stereotyped individualized actions that can be voluntarily suppressed for only brief periods. They tend to be aggravated by emotional stress.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_460">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A class of traumatic stress disorders with symptoms that last more than one month. There are various forms of post-traumatic stress disorder, depending on the time of onset and the duration of these stress symptoms. In the acute form, the duration of the symptoms is between 1 to 3 months. In the chronic form, symptoms last more than 3 months. With delayed onset, symptoms develop more than 6 months after the traumatic event.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Post-Traumatic Stress Disorders</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_457"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013313"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_665">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_406"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D009461"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Symptoms related to the nervous system.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Neurologic Indications</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_142">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D006330"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Congenital Heart Defects</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_516"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Developmental abnormalities involving structures of the heart. These defects are present at birth but may be discovered later in life.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_87">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Planning, organizing, cooking and serving simple and complex meals for oneself and others. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_532"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Preparation of Food</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d630"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_19">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_287"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Being aware of and maintaining a distance between oneself and others that is contextually, socially and culturally appropriate.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d7204"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Awareness of Social and Personal Space</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_103">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0749051"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233637"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Expression of abnormal or nonsensical thoughts.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Strange or Illogical Ideas</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_138"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_753">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Motor Skills</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The performance of complex motor acts that involve the movement of muscles in the body.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D009048"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_152"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_454">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An inherited neurological developmental disorder that is associated with X-linked inheritance and may be lethal in utero to hemizygous males. The affected female is normal until the age of 6-25 months when progressive loss of voluntary control of hand movements and communication skills, ataxia, seizures, autistic behavior, intermittent hyperventilation, and hyperammonemia appear.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D015518"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rett Syndrome</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_163"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_38">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_406"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D008659"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Metabolic Indications</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abnormal processes that involve the physical and chemical processes that convert or use energy within the body.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_742">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Problems in sexual desire or behavior.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sexual Issues</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D020018"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_138"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_328">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intense Interests</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Extremely strong interest in specific objects or topics.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_235"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_7">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_386"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Being subject during pregnancy to substance use that could affect the development of the fetus and the well-being of the mother.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0749115"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Substance Abuse During Pregnancy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_782">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_455"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D019967"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Marked disorders of thought (delusions, hallucinations, or other thought disorder accompanied by disordered affect or behavior), and deterioration from a previous level of functioning.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Schizophrenia and Disorders with Psychotic Features</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_413">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A neuropsychological disorder related to alterations in dopamine metabolism and neurotransmission involving frontal-subcortical neuronal circuits. Both multiple motor and one or more vocal tics are present, with tics occurring many times a day, nearly daily, over a period of more than one year. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tourette Syndrome</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_517"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D005879"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_163">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Presence of a diagnosis of autism spectrum disorder.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Primary Diagnosis</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_97"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0332137"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_183">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d2105"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d2104"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_293"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Finishing a task.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Task Completion</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_45">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_189"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Loss of language ability after some language has already been acquired.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1843016"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Regression of Language Skills</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_392">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_376"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Asthma</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001249"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A form of bronchial disorder with three distinct components: airway hyper-responsiveness, airway inflammation, and intermittent airway obstruction. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_433">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012409"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Rubella</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_422"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An acute, usually benign, infectious disease caused by the rubella virus, and most often affecting children and non-immune young adults, in which the virus enters the respiratory tract via droplet nuclei and spreads to the lymphatic system. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_18">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Integrated Verbal and NonVerbal Communication</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Matching non-verbal communication, such as gestures and facial expressions, with meaning conveyed through verbal communication.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_156"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_88">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Visual Thinking</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Apprehending some aspect of an object or situation, through primarily visual-spatial mental functions.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_11"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_250">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Interactions with Friends and Family</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d760"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d750"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Relationships, including conversations and joint activities, with family members and friends.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_67"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_308">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A condition characterized genotypically by mutation of the distal end of the long arm of the X chromosome (at gene loci FRAXA or FRAXE) and phenotypically by cognitive impairment, hyperactivity, seizures, language delay, and enlargement of the ears, head, and testes. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fragile X Syndrome</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D005600"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_452"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_240">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Participating in and enjoying interactions with others where the purpose is to be friendly or social, rather than expressing explicit information or needs.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_67"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Engaging in Social Conversation</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d71041"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_102">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_138"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D010258"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Unwarranted mistrust of others. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Suspicious of Others</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_700">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007232"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Complications in Infancy</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abnormal clinical manifestations that occur in infancy.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_329">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_140"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Showing Emotion</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Showing outward display of emotions that can be perceived by others.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0455212"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_39">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to perceive new relationships and to derive new ideas and solve problems by pursuing nontraditional patterns of thinking.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Imagination</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0010297"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_11"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_56">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Toileting</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Planning and carrying out the appropriate elimination of human waste and cleaning oneself afterwards.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_174"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d530"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_180">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0277793"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Onset of Symptoms</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Â When symptoms of autism spectrum disorder first appear.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_97"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_111">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1470"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abnormal Activity or Energy Level</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Poor ability to regulate the speed of behavior or response time that involves both motor and psychological components. </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_665"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_160">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Emotional Traits</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_152"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233451"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The characteristics of a person's emotional makeup. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_724">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Laterality</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Behavioral manifestations of cerebral dominance in which there is preferential use and superior functioning of either the left or the right side, as in the preferred use of the right hand or right foot.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007839"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_753"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_17">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007804"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The gradual expansion in complexity and meaning of symbols and sounds as perceived and interpreted by the individual through a maturational and learning process. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Language Development</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_189"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_251">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d6403"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_49"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Use of Everyday Household Items</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Using items in the household such as cookware, washing machines, irons, and vacuum cleaners.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_442">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bacterial Infections</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Infections caused by bacteria.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001424"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_140">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conveying meaning by movements of the body, such as facial gestures, arm and hand movements, and postures.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d3350"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_160"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Affect</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_307">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Expressive Phonology</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to produce sounds according to the sound patterns of language.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013061"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013065"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_177"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_121">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_96"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0679475"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An extreme, violent display of emotion, often in response to frustration, including temper tantrums.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Emotional Outbursts</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_378">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ulcerative Colitis</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003093"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inflammation of the colon that is predominantly confined to the mucosa. Its major symptoms include diarrhea, rectal bleeding, the passage of mucus, and abdominal pain. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_372"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_226">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The sensory discrimination of a pattern shape or outline.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_755"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Form Perception</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D005556"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_677">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pain</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_665"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Physical suffering or discomfort. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D010146"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_75">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to produce the appropriate rhythm, stress, and intonation of speech. </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_307"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013065"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Prosody</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_130">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Smith-Lemli-Opitz Syndrome</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D019082"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_516"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An autosomal recessive disorder of cholesterol metabolism. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_422">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Virus Diseases</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A general term for diseases produced by viruses.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D006566"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_452">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_455"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D008607"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Subnormal intellectual functioning which originates during the developmental period. This has multiple potential etiologies, including genetic defects and perinatal insults. Intelligence quotient (IQ) scores are commonly used to determine whether an individual is mentally retarded. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mental Retardation</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_279">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vocalizations</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0564182"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_307"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Speech-like and non-speech sounds.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_57">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Extreme sensitivity to external stimuli such as noises, bright lights, smells and textures.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_168"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reaction to Sensory Stimuli</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012684"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0854080"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_96">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Control of Emotional Reactions</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0871727"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1521"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_162"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to control and appropriately manage the experience and display of emotions in response to external stimuli.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_181">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004314"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Down Syndrome</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A chromosome disorder associated either with an extra chromosome 21 or an effective trisomy for chromosome 21. Clinical manifestations include hypotonia, short stature, brachycephaly, upslanting palpebral fissures, epicanthus, Brushfield spots on the iris, protruding tongue, small ears, short, broad hands, fifth finger clinodactyly, Simian crease, and moderate to severe mental retardation.  </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_452"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_47">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1837653"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Adherence to Rituals and Routines</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_6"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intolerance for deviation from routine, or Insistence on a specific order.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_365">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D015897"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The presence of co-existing or additional diseases with reference to an initial diagnosis.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_154"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Comorbidities</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_9">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233630"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_8"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Understanding how logically connected events relate to each other, such as understanding connections and order in a sequence.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Understanding Logical Progression</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_161">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_755"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D010364"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pattern Recognition and Rendering</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The analysis of a critical number of sensory stimuli or facts (the pattern) by processes such as vision, touch, or hearing, and the ability to produce patterns through drawing and other means.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_306">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ability to Convey Correct Information</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to understand and express accurate and relevant information during conversations, such as correctly answering questions of others.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_253"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_110">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mental functions that regulate and resist sudden intense urges to do something.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_162"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Impulse Control and Regulation</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1304"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_27">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Anxiety</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Feeling unreasonably or excessively afraid of impending actual or imagined danger; including feelings of panic and phobias.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001008"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_245"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_239">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Insistence on Order</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Insistence on an extreme degree of order in the surrounding environment, including placement and arrangement of specific objects.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_47"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233850"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_327">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Possessing a narrow range of interests in objects or topics.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Restricted Range of Interests</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_235"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_471">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_468"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An affective disorder manifested by either a dysphoric mood or loss of interest or pleasure in usual activities. The mood disturbance is prominent and relatively persistent.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003866"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Depressive Disorder</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_508">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A marked regression in multiple areas of functioning following a period of apparently normal development. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_455"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Childhood Disintegrative Disorder</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0236791"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_120">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_516"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cri-du-Chat Syndrome</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An infantile syndrome characterized by a cat-like cry, failure to thrive, microcephaly, mental retardation, spastic quadriparesis, micro- and retrognathia, glossoptosis, bilateral epicanthus, hypertelorism, and tiny external genitalia. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003410"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_76">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d860-d879"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_54"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Money Management</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Using and saving money responsibly.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_37">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_250"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d9200"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Participating in and enjoying structured and unstructured games and spontaneous recreation.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Engaging in Social Play</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_100">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D014611"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vaccination</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Administration of vaccines to stimulate the host's immune response. This includes any preparation intended for active immunological prophylaxis.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_421">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013276"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ulceration of the gastric mucosa due to contact with gastric juice.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Stomach Ulcer</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_527"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_131">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_216"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003389"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Disorders of one or more of the twelve cranial nerves. With the exception of the optic and olfactory nerves, this includes disorders of the brain stem nuclei from which the cranial nerves originate or terminate.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cranial Nerve Diseases</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_66">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Recognition of Social Norms</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0237750"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_153"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Awareness of rules for social conduct, or standards which comprise a cultural definition of desirable or acceptable behavior. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_457">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Anxiety Disorders</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_455"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Persistent and disabling anxiety.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001008"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_132">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_160"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A person's view of himself, including confidence in one's personal traits and abilities.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Self Concept</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012649"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_470">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001714"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_468"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bipolar Disorder</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A major affective disorder marked by severe mood swings (manic or major depressive episodes) and a tendency to remission and recurrence.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_274">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Receptive Morphology</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_176"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to understand the structure and constituent parts of a word.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0517141"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_219">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007175"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Acting Before Thinking</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_110"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Taking action before considering the consequences or impact of such action.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_15">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_66"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conversational Skills</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abilities needed to start, sustain and end an interchange of thoughts and ideas, carried out by means of spoken, written, sign or other forms of language, with one or more people one knows or who are strangers, in formal or casual settings. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0871703"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_28">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Generally remaining isolated; avoiding interactions; preferring to be alone rather than with others.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Keeps to Self</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_67"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0037421"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_233">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performing the same action repeatedly.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_47"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Repetitive Actions</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1827547"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_682">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012877"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Skin Indications</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_406"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dermatologic problems.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_253">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ability to Convey Information</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_15"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to understand and express a variety of types of information in conversation, including reporting of events, answering questions of others, and expressing one's own thoughts and feelings.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_52">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Eating Ability</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d550"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d560"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_174"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Indicating need for, and carrying out the coordinated tasks and actions of eating food that has been served or taking hold of a drink, bringing it to the mouth and consuming it in culturally acceptable ways. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_757">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003118"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_755"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Color Perception</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mental processing of chromatic signals from the eye by the visual cortex where they are converted into symbolic representations. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_284">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Consciousness of contextually and socially appropriate manner, such as by showing consideration and esteem when appropriate, or responding to the feelings of others. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_283"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d710"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Interpersonal Awareness</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_146">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intentional Cruelty</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Deliberately taking actions that cause physical or psychological pain for others.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233515"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_42"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_5">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1142240"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Medications During Pregnancy</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Being subject during pregnancy to medications that could affect the development of the fetus and the well-being of the mother.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_386"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_171">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Congenital Kidney Defect</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_516"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A kidney abnormality that is present from birth.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D014564"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_175">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007855"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >History of exposure and possible poisoning due to absorption or ingestion of lead.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lead Exposure</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_185">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Initiating Social Interaction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_85"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Starting interactions with others, including introducing oneself and actively trying to make friends.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d71040"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_629">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Dietary Supplements</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D019587"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Products in capsule, tablet or liquid form that provide essential nutrients, such as a vitamin, an essential mineral, a protein, an herb, or similar nutritional substance.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_67">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Social Interest</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_283"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Actively seeking out interactions with others. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_331">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013513"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diagnostic and treatment techniques including surgery, hospitalization, etc. that occur during pregnancy or labor and delivery.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Procedures During Pregnancy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_500">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_452"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An autosomal dominant disorder caused by deletion of the proximal long arm of the paternal chromosome 15 (15q11-q13) or by inheritance of both of the pair of chromosomes 15 from the mother which are imprinted and hence silenced. Clinical manifestations include mental retardation, muscular hypotonia, hyperphagia, obesity, short stature hypogonadism, strabismus, and hypersomnolence. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D011218"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Prader-Willi Syndrome</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_243">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The inability to conduct oneself with ease in social situations. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_283"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Social Awkwardness</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_93">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_250"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0237876"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Offering and allowing others to use possessions, such as letting another child play with one's own toys.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sharing</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_519">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004827"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_517"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A disorder characterized by recurrent episodes of paroxysmal brain dysfunction due to a sudden, disorderly, and excessive neuronal discharge. Epilepsy classification systems are generally based upon: (1) clinical features of the seizure episodes, (2) etiology, (3) anatomic site of seizure origin, (4) tendency to spread to other structures in the brain, and (5) temporal patterns. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Epilepsy</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_304">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d350"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ability to Converse in Social Settings</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to participate in and contribute to friendly and casual conversations with others in a contextually and socially appropriate manner, including asking questions relevant to the conversational topic.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_15"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_458">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An anxiety disorder characterized by recurrent, persistent obsessions or compulsions. Obsessions are the intrusive ideas, thoughts, or images that are experienced as senseless or repugnant. Compulsions are repetitive and seemingly purposeful behavior which the individual generally recognizes as senseless and from which the individual does not derive pleasure although it may provide a release from tension.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obsessive-Compulsive Disorder</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D009771"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_457"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_756">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_755"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D013028"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The awareness of the spatial properties of objects; including physical space.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Space Perception</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_273">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The vocabulary that an individual can produce.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_177"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Expressive Lexicon</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D014825"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_206">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Disturbances of usual sleep patterns or behaviors. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sleeping Problems</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012893"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_665"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_319">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Distant or Preoccupied Affect</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233484"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Appearing unemotional, unresponsive, or disconnected from one's physical environment.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_140"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_529">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to shift to a different thought or action according to a change in situation.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_155"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1643"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mental Flexibility</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_263">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Engagement in Social Activities</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_54"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Participating in informal or casual gatherings or groups with others who have common interests. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d9205"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_254">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2183469"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to produce phrases and sentences according to the rules of grammar.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Expressive Syntax</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_177"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_283">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_153"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Interpersonal Interactions</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007398"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The reciprocal interaction of two or more persons.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_344">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_96"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to control and appropriately manage emotional responses when under stress.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Managing Internal Emotions</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1521"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_174">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_49"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Self-Care</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d5"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Caring for oneself, including washing and drying oneself, caring for one's body and body parts, proper use of the bathroom as needed, dressing, eating and drinking.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_170">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Arranging one's own possessions, including returning possessions to proper arrangement after use and finding possessions when needed.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_49"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Maintenance and Organization of Possessions</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d650"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_6">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2675334"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Restricted and Repetitive Behavior</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Atypical behavior that involves both display of unusual or intense interests, and atypical movements such as hand flapping, finger movements, rocking or twirling.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_166"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_184">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Preparing and arranging the time and space for performance of a task with one or more components and undertaking execution of the task.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Task Initiation</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d2101"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_293"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_293">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d210"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Task Performance</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_270"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Carrying out simple or complex and coordinated actions related to the mental and physical components of a single task, such as initiating a task, organizing time, space and materials for a task, pacing task performance, and carrying out, completing, and sustaining a task.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_244">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sharing in Interests of Others</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_250"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Showing interest in participating in or learning about activities or topics that others express enjoyment in.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d7101"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_455">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Psychiatric illness or diseases manifested by breakdowns in the adaptational process expressed primarily as abnormalities of thought, feeling, and behavior producing either distress or impairment of function.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001523"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mental Disorders</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_581">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_263"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Engaging in competitive and informal or formally organized games or athletic events, performed alone or in a group.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d9201"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Participation in Athletic Activities</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_516">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Malformations of organs or body parts during development in utero.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D000013"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Congenital Abnormalities</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_64">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ability to Engage in Casual Conversation</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to maintain casual interactions with others such as chatting and small talk, in a contextually and socially appropriate manner.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d3501"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_304"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_755">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Visual Perception</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mental functions involved in discriminating shape, size, color and other ocular stimuli. Many individuals with autism spectrum disorder show superior perceptual skills relative to the general population.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_158"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0042830"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_241">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to recognize how one's own behavior affects others, including recognizing when one's behavior bothers others, or when one's behavior hurts another individual.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Understanding the Effect of One's Actions</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d7100"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_284"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_104">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_174"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Poor Eating Behavior</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Behavior related to feeding which negatively affects the quality or amount of food eaten and digested.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0015745"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_531">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The interference with or prevention of a behavioral or verbal response even though the stimulus for that response is present.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Response Inhibition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_155"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007266"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_360">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to produce phrases, sentences, or sets of sentences that successfully convey meaning.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Expressive Semantics</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0564246"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_177"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_656">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_384"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0013146"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Overuse or misuse of medications or other drugs.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Drug Abuse</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_54">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_538"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Skills that allow successful engagement in all aspects of community social life, such as engaging in organized groups, recreation, and citizenship. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Community Life Skills</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d8"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d9"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_235">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Restricted and Unusual Interests</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2675334"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Atypical or highly limited interest in specific objects or topics.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_6"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_217">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Being active to an abnormal degree.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D011595"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_111"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Overactivity</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_262">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_156"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d3350"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D009633"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Transmission of emotions, ideas, and attitudes between individuals in ways other than the spoken language.  </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Non-Verbal Communication</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_207">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0424347"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_42"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Disobedience</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intentionally violating rules, commands or prohibitions.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_487">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ear Diseases</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004427"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pathological processes of the ear, the hearing, and the equilibrium system of the body.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_173">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_529"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Transitioning Ability</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to shift attention from one activity or focus to another when required to do so.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1401"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_3">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to successfully manage arranging materials, space, or time as needed to facilitate performance of tasks.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_30"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Preparing for Tasks</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d2100"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d2101"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_406">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_154"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Complaints and Indications</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Symptoms or features that signal the presence of a disease or condition. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012816"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_601">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007744"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0269815"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Obstetric Delivery Complications</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The occurrence of a pregnancy complication during childbirth, which includes both labor (the process of childbirth) and delivery (the birth itself).</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_255">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to comprehend phrases and sentences according to the rules of grammar.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2183464"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_176"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Receptive Syntax</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_502">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D017204"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Angelman Syndrome</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A syndrome characterized by multiple abnormalities, mental retardation, and movement disorders. Present usually are skull and other abnormalities, frequent infantile spasms easily provoked and prolonged paroxysms of laughter, jerky puppet-like movements, continuous tongue protrusion; motor retardation; ataxia, muscle hypotonia, and a peculiar facies. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_517"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_134">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Eye Contact</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Meeting the eyes of another individual in an effort to communicate or in response to communication by the other individual, and integrating eye contact with verbal interaction, including looking at the individual speaking or being addressed.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0870532"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_60"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_187">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d7200"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Relating to Others</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Beginning and maintaining interactions with others for a short or long period of time, in a contextually and socially appropriate manner.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_60"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_276">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The persistent eating of nonnutritive substances.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_665"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D010842"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pica</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_218">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The inability to wait calmly without feelings of agitation.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Impatience</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_110"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0564566"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_275">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D014825"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Receptive Lexicon</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_176"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The vocabulary that an individual is able to understand.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_517">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Central Nervous System Diseases</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diseases of any component of the brain (including the cerebral hemispheres, diencephalon, brain stem, and cerebellum) or the spinal cord.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D002493"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_216"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_741">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A general term for the complete or partial loss of the ability to hear from one or both ears.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D034381"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hearing Loss</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_487"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_63">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D052776"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D052801"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pathological processes of the female or male urinary tract and the reproductive system (genitalia). In females this includes disorders related to pregnancy.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Urogenital Diseases</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_53">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hygiene</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d510"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Maintaining personal cleanliness.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_174"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_261">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pregnancy Outcome</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Results of conception and ensuing pregnancy. The outcome may follow natural or artificial insemination or any assisted reproductive technique. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D011256"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_716">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_455"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Learning Disorders</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Conditions characterized by a significant discrepancy between an individual's perceived level of intellect and their ability to acquire new language and other cognitive skills. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007859"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_488">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_487"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inflammation of the ear, which may be marked by pain, fever, hearing disorders, and vertigo. Inflammation of the external ear is otitis externa; of the middle ear, otitis media; of the inner ear, labyrinthitis. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D010031"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Otitis</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_11">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The conceptual process of creating ideas and generalizations that are distinct from concrete realities, specific objects, or actual instances.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d163"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Thinking</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_158"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_381">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A malabsorption syndrome that is precipitated by the ingestion of gluten-containing foods, such as wheat, rye, and barley. It is characterized by inflammation of the small intestine, loss of microvilli structure, failed intestinal absorption, and malnutrition. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Celiac Disease</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_527"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D002446"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_4">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0456149"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D007360"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_158"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to learn and to deal with new situations and to deal effectively with tasks involving abstractions. The relative intelligence of an individual is expressed as a score on a standardized test of intelligence.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IQ</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_172">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D006259"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Head Injury</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Traumatic injury involving the cranium and intracranial structures, including the brain, cranial nerves, or meninges.  </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_256">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A general state of sluggishness, listlessness, or tiredness, and having difficulty concentrating and doing simple tasks. </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_111"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Lethargy</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D053609"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_145">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_42"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233520"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Destructive Behavior</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intentionally damaging one's own or others' belongings.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_92">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Attention and Focus</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to focus on an external stimulus or internal experience for the required period of time, including intentionally focusing on specific stimuli, such as by filtering out distracting noises.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_270"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d160"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b140"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_332">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D005149"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_262"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Facial Expressions</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Observable changes of expression in the face in response to emotional stimuli.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_503">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hydrocephalus</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D006849"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Excessive accumulation of cerebrospinal fluid within the cranium that may be associated with dilation of cerebral ventricles, intracranial hypertension, headache, lethargy, urinary incontinence, and ataxia (and in infants macrocephaly). </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_517"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_321">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Adherence to Rules in the Community</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_54"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0562410"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0562415"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Understanding and obeying rules and laws when in the broader community.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_547">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_67"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Requiring a high degree of attention from others, including being unable to act appropriately when left alone by caregiver.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0011548"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Social Dependence on Others</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_288">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Movement of a part of the body for the purpose of communication.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_262"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D005868"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gestures</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_270">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The temporary storage and manipulation of the information necessary for such complex cognitive tasks as language comprehension, learning, and reasoning. Working memory has been found to require the simultaneous storage and processing of information.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_155"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0025265"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Working Memory</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_201">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The degree of excellence with which a task is performed.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0557391"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_293"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Quality of Performed Task</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_524">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012640"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Seizures</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_519"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Clinical or subclinical disturbances of cortical function due to a sudden, abnormal, excessive, and disorganized discharge of brain cells. Clinical manifestations include abnormal motor, sensory and psychic phenomena. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_156">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_152"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to use and comprehend the complex system of human communication. Individuals with autism spectrum disorder often have a range of receptive and expressive language impairments. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Language Ability</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d3"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_189">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Development or Regression of Language Skills</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The acquisition or loss of the ability to communicate using language.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_156"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0023013"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1843016"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_62">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sharing attentional focus with others between objects or events.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1403"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_60"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Joint Attention</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_301">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Autism Phenotype</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Severe distortions in the development of many basic psychological functions that are not normal for any stage in development. These distortions are manifested in sustained social impairment, speech abnormalities, and peculiar motor movements.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D002659"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_42">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Intentional Bad Behavior</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_66"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0474416"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Deliberate engagement in disruptive or improper behavior. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_372">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Chronic, non-specific inflammation of the gastrointestinal tract. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inflammatory Bowel Diseases</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D015212"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_527"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_136">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0085633"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_245"/>
+    </rdfs:subClassOf>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Emotional Swings</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tendency to display unpredictable, extreme, and rapidly changing emotions or moods.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_257">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Empathy</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_284"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004645"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An individual's objective and insightful awareness of the feelings and behavior of others, including demonstration of an awareness of and a concern for the good of others.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_1">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Problem Solving Ability</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Finding solutions to questions or situations by identifying and analyzing issues, developing options and solutions, evaluating potential effects of solutions, and executing a chosen solution.  </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0033211"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_8"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_10">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D006760"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hospitalizations</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The confinement of a patient in a hospital.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_467">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A disorder beginning in childhood. It is marked by the presence of markedly abnormal or impaired development in social interaction and communication and a markedly restricted repertoire of activity and interest. </skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Autistic Disorder</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001321"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_163"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_116">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Motor Perseveration</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Persistent repetition of a response to stimuli.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D019956"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b7653"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_168"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_178">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cardiovascular Diseases</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D002318"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pathological conditions involving the cardiovascular system including the heart, the blood vessels, or the pericardium. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_216">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Nervous System Diseases</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D009422"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diseases of the central and peripheral nervous system. This includes disorders of the brain, spinal cord, cranial nerves, peripheral nerves, nerve roots, autonomic nervous system, neuromuscular junction, and muscle.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_287">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Awareness of Social Cues</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_66"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2371537"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Giving and reacting appropriately to signs and hints that occur in social interactions. This ability can be compromised in individuals with autism spectrum disorder.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_532">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performance of Household Tasks</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_49"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d630-d649"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performing tasks necessary for the general management and upkeep of a household, including completing chores and preparing food.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_61">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d130"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Imitation</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_60"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mimicking or copying the movements of other individuals as a means of interaction and play as well as to learn by modeling the actions and behaviors of others.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_188">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_253"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ability to Convey Appropriate Level of Detail</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to recognize and express the appropriate amount of information required during conversation on a given topic, such as sharing details that will interest another without including unnecessary information.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_248">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1821431"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Recognizing when being treated poorly or unfairly by others.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_287"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Awareness of Harmful Social Situations</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_373">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_372"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Crohn Disease</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A chronic transmural inflammation that may involve any part of the digestive tract from mouth to anus, mostly found in the ileum, the cecum, and the colon. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003424"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_496">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D014402"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An autosomal dominant disorder which is generally classified as a phacomatosis. The condition is characterized by glial cell tumors which arise in the cerebral hemispheres and retina. There is an increased incidence of benign rhabdomyomas of the heart and angiomyolipomas of kidney, liver, lungs, thyroid, and testes. </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_494"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Tuberous Sclerosis</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_137">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_516"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012410"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Congenital Rubella Syndrome</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Transplacental infection of the fetus with rubella usually in the first trimester of pregnancy, as a consequence of maternal infection, resulting in various developmental abnormalities in the newborn infant. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_41">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Behavior which may be manifested by destructive and attacking action which is verbal or physical, by covert attitudes of hostility or by obstructionism.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D000374"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_42"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aggressive Behavior</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_297">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Compulsive Behavior</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_6"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003192"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Performing an act persistently and repetitively without it leading to reward or pleasure. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_505">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_517"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cerebral Palsy</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A heterogeneous group of nonprogressive motor disorders caused by chronic brain injuries that originate in the prenatal period, perinatal period, or first few years of life. The four major subtypes are spastic, athetoid, ataxic, and mixed cerebral palsy, with spastic forms being the most common. The motor disorder may range from difficulties with fine motor control to severe spasticity in all limbs. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D002547"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_2">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Isolated Cognitive Skills</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_158"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Showing extreme proficiency in certain areas with special abilities, for example, in memory, music, drawing, reading and computational skills.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_407">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D012817"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Symptoms related to the gastrointestinal system.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Digestive Complaints</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_406"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_90">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Responsiveness to Social Advances</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reacting positively by attempts of others to initial social interaction.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2111895"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_85"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_468">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mood Disorders</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D019964"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Those disorders that have a disturbance in mood as their predominant feature.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_455"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_230">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_229"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0566220"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to recognize and enjoy humorous statements, including jokes, irony, and sarcasm.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Skill in Understanding Humor</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_545">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Loss or decline of abilities or skills that have already been learned.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2748611"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Regression of General Skills</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_538"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_50">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Clothing Self</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_174"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Carrying out the coordinated actions and tasks of putting on and taking off clothes and footwear in sequence and in keeping with climatic and social conditions. </skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d540"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_177">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_156"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d330"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to produce and use language in an accurate and meaningful way.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Expressive Language</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_168">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Non-intentional, non-purposive behaviors, including perseveration, habitual repeated movements, and extreme sensitivity to stimuli.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Involuntary Behaviors</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_166"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b765"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_60">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mutual actions and communicative exchanges among people in social settings.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reciprocal Social Interaction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_283"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d730"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_272">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0517141"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Expressive Morphology</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to produce accurate forms of words, including the inflections that indicate the grammatical role of a word.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_177"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_535">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Receptive Semantics</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_176"/>
+    </rdfs:subClassOf>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to understand language meaning.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C2183464"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_158">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0392334"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cognitive Ability</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >General mental function required to understand and integrate the various mental functions, including all cognitive functions and their development over the life span.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_152"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_449">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Landau-Kleffner Syndrome</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A syndrome characterized by the onset of isolated language dysfunction in otherwise normal children (age of onset 4-7 years) and epileptiform discharges on electroencephalography. Seizures, including atypical absence, complex partial, and other types may occur.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D018887"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_519"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_245">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Mood</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b126"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A temporary state of mind or being.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_160"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_370">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_529"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0237886"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to sort objects in different ways as instructed, including sorting the same objects multiple times by different rules.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sorting Ability</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_128">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A method to evaluate a newborn's adjustment to extrauterine life. Five items - heart rate, respiratory effort, muscle tone, reflex irritability, and color - are evaluated.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Apgar Score</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D001034"/>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_138">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Atypical thoughts, feelings, or behaviors that cause distress or impairment of function.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Psychologic Indications</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0233401"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_406"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_585">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Drugs intended for treatment of physical or mental disorders. </skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    </rdfs:subClassOf>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0489536"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Medications</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_497">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Neurofibromatoses</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D017253"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A group of disorders characterized by an autosomal dominant pattern of inheritance with high rates of spontaneous mutation and multiple neurofibromas or neurilemmomas. </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_494"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_148">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_154"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D019966"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D004781"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Environmental or other conditions that may have an impact on the etiology or course of a disorder.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Exposures</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_231">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Insistence on Routine</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Insistence on a specific sequence of ordered events and actions and intolerance of deviation from such routines.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0424246"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C1976715"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_47"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_30">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_155"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=b1641"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A complex operation in which a sequence of actions must be constantly monitored, re-evaluated and updated.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Planning</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_384">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_148"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Overuse or misuse of a drug, alcohol, or tobacco.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Substance Abuse</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0237123"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_506">
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D008180"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A chronic, relapsing, inflammatory, and often febrile multisystemic disorder of connective tissue, characterized principally by involvement of the skin, joints, kidneys, and serosal membranes. </skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_376"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Systemic Lupus Erythematosus</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_398">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_393"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diabetes Mellitus Type 1</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D003922"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A subtype of diabetes mellitus that is characterized by insulin deficiency. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_527">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_365"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gastrointestinal Diseases</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D005767"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Diseases in any segment of the gastrointestinal tract from the esophagus to the rectum. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_82">
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d7203"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Regard for Customs and Manners</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_66"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Recognizing and adhering to social conventions governing oneself and one's behavior in public and around others. </skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_429">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_527"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >A disorder with chronic or recurrent colonic symptoms without a clear-cut etiology. This condition is characterized by chronic or recurrent abdominal pain, bloating, mucus in feces, and an erratic disturbance of defecation.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D043183"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Irritable Bowel Syndrome</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_534">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Observant of other participant in conversation, such as recognizing if other participant appears bored, not changing the topic of conversation if others are not interested, and not interrupting others in conversation.</skos:definition>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d3503"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_15"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Sensitivity to Conversant</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_299">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Making a choice among options, implementing the choice, and evaluating the effects of the choice, or deciding to undertake and undertaking one task from among several tasks that need to be done.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Decision Making Ability</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_30"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d177"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_271">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Engaging in games and other recreation.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_263"/>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d920"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Participation in Play Activities</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_119">
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_96"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0002957"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Anger Control</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to control and appropriately manage a strong emotional feeling of displeasure aroused by being interfered with, injured or threatened.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_385">
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0270075"/>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0178795"/>
+    <rdfs:seeAlso rdf:resource="http://purl.bioontology.org/ontology/MSH/D018743"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Perinatal History</rdfs:label>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Circumstances, procedures and processes associated with pregnancy and infancy, including procedures and processes such as labor and delivery, as well as complications that emerge prior to or immediately after birth.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_154"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_149">
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Poor Treatment by Others in Social Settings</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.nlm.nih.gov/research/umls?cui=C0730514"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_250"/>
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Being treated poorly by others in public, such as being frequently laughed at, made fun of, or bullied.</skos:definition>
+  </owl:Class>
+  <owl:Class rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_176">
+    <skos:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >The ability to understand language.</skos:definition>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Receptive Language</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://bioportal.bioontology.org/ontologies/45578?p=terms&amp;conceptid=d310"/>
+    <rdfs:subClassOf rdf:resource="http://cbmi.med.harvard.edu/asdphenotype#Class_156"/>
+  </owl:Class>
+  <rdf:Description rdf:about="http://cbmi.med.harvard.edu/asdphenotype#Class_21">
+    <asd:question_id rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >4500069</asd:question_id>
+  </rdf:Description>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

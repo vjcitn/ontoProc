@@ -227,5 +227,17 @@ Inference on the identities of cells assayed in a single cell transcriptomics ex
 
 A CRAN package that is very useful for R programming with ontologies is `ontologyIndex` @Westbury2015. This provides easily used functions for parsing ontologies in the OBO format and for performing basic queries on text fields and list structures.
 
+# Illustration with a phenotype ontology
+
+An OWL serialization of an [ontology of conditions in Autism Spectrum Disorder](https://bioportal.bioontology.org/ontologies/ASDPTO)
+was retrieved from National Center of Biomedical Ontologies and stored in the package.
+A subset of the terminologic hierarchy is:
+
+```{r lkasd}
+asdo = setup_entities2(system.file("owl", "asdpto.owl", package="ontoProc"))
+onto_plot2(asdo, unique(c( "Class_777", "Class_466", "Class_454", "Class_467", 
+    names(head(asdo$name,15)))), cex=.5)
+```
+
 # References
 
