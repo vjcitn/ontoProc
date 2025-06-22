@@ -1,10 +1,10 @@
 pandoc: '2.13'
-pkgdown: 2.1.1.9000
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   ontoProc: ontoProc.html
   owlents: owlents.html
-last_built: 2024-10-13T18:01Z
+last_built: 2025-06-22T16:09Z
 urls:
   reference: https://github.com/vjcitn/ontoProc/reference
   article: https://github.com/vjcitn/ontoProc/articles

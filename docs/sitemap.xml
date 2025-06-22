@@ -11,8 +11,10 @@
 <url><loc>https://github.com/vjcitn/ontoProc/reference/allGOterms.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/ancestors.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/ancestors_names.html</loc></url>
+<url><loc>https://github.com/vjcitn/ontoProc/reference/available_ontos.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/bind_formal_tags.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/bioregistry_ols_resources.html</loc></url>
+<url><loc>https://github.com/vjcitn/ontoProc/reference/browse_ontos.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/c-TermSet-method.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/cellTypeToGO.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/children_names.html</loc></url>
@@ -30,9 +32,12 @@
 <url><loc>https://github.com/vjcitn/ontoProc/reference/getOnto.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/get_classes.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/get_ordo_owl_path.html</loc></url>
+<url><loc>https://github.com/vjcitn/ontoProc/reference/graph2paths.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/humrna.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/improveNodes.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/index.html</loc></url>
+<url><loc>https://github.com/vjcitn/ontoProc/reference/jowl2classgraph.html</loc></url>
+<url><loc>https://github.com/vjcitn/ontoProc/reference/jowl2classgraph_nio.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/labels.owlents.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/ldfToTerms.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/liberalMap.html</loc></url>
@@ -42,6 +47,7 @@
 <url><loc>https://github.com/vjcitn/ontoProc/reference/mapOneNaive.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/minicorpus.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/nomenCheckup.html</loc></url>
+<url><loc>https://github.com/vjcitn/ontoProc/reference/ontoDiff.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/onto_plot2.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/onto_roots.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/owl2cache.html</loc></url>
@@ -52,6 +58,7 @@
 <url><loc>https://github.com/vjcitn/ontoProc/reference/parents.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/plot.owlents.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/print.owlents.html</loc></url>
+<url><loc>https://github.com/vjcitn/ontoProc/reference/quickOnto.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/recognizedPredicates.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/search_labels.html</loc></url>
 <url><loc>https://github.com/vjcitn/ontoProc/reference/secLevGen.html</loc></url>

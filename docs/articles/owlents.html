@@ -8,8 +8,8 @@
 <title>owlents: using OWL directly in ontoProc • ontoProc</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="owlents: using OWL directly in ontoProc">
 </head>
 <body>
@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ontoProc</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.99.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2.3.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
       <h1>owlents: using OWL directly in ontoProc</h1>
                         <h4 data-toc-skip class="author">Vincent J. Carey, stvjc at channing.harvard.edu</h4>
             
-            <h4 data-toc-skip class="date">October 13, 2024</h4>
+            <h4 data-toc-skip class="date">June 22, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/vjcitn/ontoProc/blob/HEAD/vignettes/owlents.Rmd"><code>vignettes/owlents.Rmd</code></a></small>
       <div class="d-none name"><code>owlents.Rmd</code></div>
@@ -77,7 +77,7 @@
 <span><span class="va">clont_path</span> <span class="op">=</span> <span class="fu"><a href="../reference/owl2cache.html">owl2cache</a></span><span class="op">(</span>url<span class="op">=</span><span class="st">"http://purl.obolibrary.org/obo/cl.owl"</span><span class="op">)</span></span>
 <span><span class="va">cle</span> <span class="op">=</span> <span class="fu"><a href="../reference/setup_entities2.html">setup_entities2</a></span><span class="op">(</span><span class="va">clont_path</span><span class="op">)</span></span>
 <span><span class="va">cle</span></span></code></pre></div>
-<pre><code><span><span class="co">## Ontology with 16430 terms</span></span>
+<pre><code><span><span class="co">## Ontology with 17107 terms</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Properties:</span></span>
 <span><span class="co">##  id: character</span></span>
@@ -87,17 +87,17 @@
 <span><span class="co">##  ancestors: list</span></span>
 <span><span class="co">##  obsolete: logical</span></span>
 <span><span class="co">## Roots:</span></span>
-<span><span class="co">##  BFO_0000003 - NA</span></span>
-<span><span class="co">##  BFO_0000002 - NA</span></span>
-<span><span class="co">##  BFO_0000004 - NA</span></span>
-<span><span class="co">##  GO_0050878 - regulation of body fluid levels</span></span>
-<span><span class="co">##  BFO_0000040 - NA</span></span>
-<span><span class="co">##  GO_0010817 - regulation of hormone levels</span></span>
-<span><span class="co">##  BFO_0000015 - NA</span></span>
-<span><span class="co">##  UBERON_0001062 - anatomical entity</span></span>
-<span><span class="co">##  UBERON_0000000 - processual entity</span></span>
-<span><span class="co">##  BFO_0000020 - NA</span></span>
-<span><span class="co">##  ... 400 more</span></span></code></pre>
+<span><span class="co">##  BFO_0000002 - continuant</span></span>
+<span><span class="co">##  BFO_0000003 - occurrent</span></span>
+<span><span class="co">##  SO_0000704 - NA</span></span>
+<span><span class="co">##  SO_0001260 - sequence_collection</span></span>
+<span><span class="co">##  CHEBI_18059 - lipid</span></span>
+<span><span class="co">##  CHEBI_25905 - peptide hormone</span></span>
+<span><span class="co">##  CHEBI_16646 - carbohydrate</span></span>
+<span><span class="co">##  CHEBI_33696 - nucleic acid</span></span>
+<span><span class="co">##  CHEBI_63299 - carbohydrate derivative</span></span>
+<span><span class="co">##  CHEBI_33694 - biomacromolecule</span></span>
+<span><span class="co">##  ... 333 more</span></span></code></pre>
 <p>The usual plotting approach works.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sel</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CL_0000492"</span>, <span class="st">"CL_0001054"</span>, <span class="st">"CL_0000236"</span>, </span>
@@ -148,7 +148,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
