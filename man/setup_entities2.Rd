@@ -20,6 +20,11 @@ basilisk, this setup function will ingest OWL, enumerate classes and their
 names, and produce the 'parents' list, which can then be used with ontology_index
 to produce a functional ontology representation
 }
+\note{
+Production of an `ontology_index` instance will often throw a warning when "Thing" is
+part of the ontology.  suppressWarnings has been used in the code to suppress this.  This
+may be too aggressive an approach.
+}
 \examples{
 pa = get_ordo_owl_path()
 orde = setup_entities2(pa)

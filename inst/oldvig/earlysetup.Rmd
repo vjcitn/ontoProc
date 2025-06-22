@@ -1,0 +1,34 @@
+We'll start by setting up some package attachments and ontology objects.
+These examples use legacy versions of ontologies because certain
+terms and relationships were removed in more modern versions, and
+our tooling has not kept up with the changes.
+
+```{r setup,echo=FALSE,results="hide",message=FALSE}
+library(knitr)
+library(ontoProc)
+```
+
+```{r setup2, message=FALSE}
+library(ontoProc)
+library(ontologyPlot)
+library(BiocStyle)  # for package references
+cl = getOnto("cellOnto", "2021") # for continuity -- 	has_high_plasma_membrane_amount: list
+go = getOnto("goOnto", "2021")  # if updated, some assertions will fail...
+pr = getOnto("Pronto", "2021")  # important case change
+str(cl)
+```
+
+
+## Legacy approaches
+  
+The following table describes the most up-to-date resources available with `getOnto`.
+<!-- use inst/scripts/desc.R to generate all but the 'purpose' which is added by hand -->
+
+```{r lksco}
+data(packDesc2023)
+kable(packDesc2023[,-c(1,7)])
+``` 
+    
+Other resources are listed in `packDesc202x` and `packDesc2019`.
+
+
