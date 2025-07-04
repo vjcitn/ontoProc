@@ -4,8 +4,13 @@
 #' @param informal_terms  character() vector of terms not necessarily found in ontology
 #' @param ontology_terms character() vector of ontology terms
 #' @param ontology_tags character() vector of tags for ontology terms, must be of same length as ontology_terms
-#' @param llm_model character(1) used with chat_openai in ellmer, defaults to "gpt-4.1-2025-04-14"
-#' @note expects to have OPENAI_API_KEY set
+#' @param ellmer_chatfun function available in ellmer to connect to chatbot
+#' @param llm_model character(1) used with chat_openai in ellmer, defaults to "gpt-4.1-2025-04-14",
+#' or other models for other providers available through ellmer.
+#' @note Expects to have OPENAI_API_KEY set if an openai chatfun is used, or GOOGLE_API_KEY
+#' if, e.g., a gemini chatfun is used.
+#' @return A data.frame with columns informal_term, formal_term, similarity_score, and tag.
+#' Invisible attributes chat_tokens, chat_cost, and chat_provider are also present.
 #' @examples
 #' if (interactive()) {
 #'  ctypes = c("tPlasma cells", "tMoMacDC", "tT cells",   # from Zilionis
@@ -22,11 +27,12 @@
 #'  otags = names(oname[actual])
 #'  octy = formalize(ctypes, oterms, otags)
 #'  head(octy)
+#'  attr(octy, "chat_tokens")
 #'  onto_plot2(cloi, unique(na.omit(octy$tag)))
 #' }
 #' @export 
 formalize = function(informal_terms, ontology_terms, ontology_tags,
-   llm_model = "gpt-4.1-2025-04-14") {
+   ellmer_chatfun = ellmer::chat_openai, llm_model = "gpt-4.1-2025-04-14") {
 #
 # most of the code was produced using perplexity, asking it to use ellmer
 #
@@ -40,7 +46,8 @@ formalize = function(informal_terms, ontology_terms, ontology_tags,
     "For each informal term, return the closest matching formal ontology term, do not
        create any new terms.  For example, RBC matches erythrocyte.",
     "Return the results as a table with columns: informal_term, formal_term, similarity_score (0-1, optional).",
-    "Do not create any terms that are not in the formal ontology term list."
+    "Do not create any terms that are not in the formal ontology term list.",
+    "Return only the original input values of the informal terms, do not change them in any way."
   )
   
   # Define the expected structured output type
@@ -54,7 +61,7 @@ formalize = function(informal_terms, ontology_terms, ontology_tags,
   )
   
   # Create a chat object (using OpenAI as an example)
-  chat <- ellmer::chat_openai(model = llm_model)
+  chat <- ellmer_chatfun(model = llm_model)
   
   # Get structured matches
   matches <- chat$chat_structured(prompt, type = type_match)
@@ -62,5 +69,9 @@ formalize = function(informal_terms, ontology_terms, ontology_tags,
   # Convert to data frame for display
   ans = as.data.frame(matches)
   tagdf = data.frame(formal_term=ontology_terms, tag=ontology_tags)
-  dplyr::left_join(ans, tagdf, by="formal_term")
+  ans = dplyr::left_join(ans, tagdf, by="formal_term")
+  attr(ans, "chat_tokens") = invisible(chat$get_tokens())
+  attr(ans, "chat_cost") = invisible(chat$get_cost())
+  attr(ans, "chat_model") = invisible(chat$get_model())
+  ans
 }

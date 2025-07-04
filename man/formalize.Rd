@@ -8,6 +8,7 @@ formalize(
   informal_terms,
   ontology_terms,
   ontology_tags,
+  ellmer_chatfun = ellmer::chat_openai,
   llm_model = "gpt-4.1-2025-04-14"
 )
 }
@@ -18,13 +19,21 @@ formalize(
 
 \item{ontology_tags}{character() vector of tags for ontology terms, must be of same length as ontology_terms}
 
-\item{llm_model}{character(1) used with chat_openai in ellmer, defaults to "gpt-4.1-2025-04-14"}
+\item{ellmer_chatfun}{function available in ellmer to connect to chatbot}
+
+\item{llm_model}{character(1) used with chat_openai in ellmer, defaults to "gpt-4.1-2025-04-14",
+or other models for other providers available through ellmer.}
+}
+\value{
+A data.frame with columns informal_term, formal_term, similarity_score, and tag.
+Invisible attributes chat_tokens, chat_cost, and chat_provider are also present.
 }
 \description{
 use an LLM to match informal terms to terms in an ontology
 }
 \note{
-expects to have OPENAI_API_KEY set
+Expects to have OPENAI_API_KEY set if an openai chatfun is used, or GOOGLE_API_KEY
+if, e.g., a gemini chatfun is used.
 }
 \examples{
 if (interactive()) {
@@ -42,6 +51,7 @@ if (interactive()) {
  otags = names(oname[actual])
  octy = formalize(ctypes, oterms, otags)
  head(octy)
+ attr(octy, "chat_tokens")
  onto_plot2(cloi, unique(na.omit(octy$tag)))
 }
 }
