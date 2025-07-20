@@ -28,7 +28,7 @@
 #'  octy = formalize(ctypes, oterms, otags)
 #'  head(octy)
 #'  attr(octy, "chat_tokens")
-#'  onto_plot2(cloi, unique(na.omit(octy$tag)))
+#'  onto_plot2(cloi, unique(na.omit(octy$tag)), cex=.55)
 #' }
 #' @export 
 formalize = function(informal_terms, ontology_terms, ontology_tags,
