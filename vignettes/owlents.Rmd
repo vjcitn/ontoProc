@@ -33,7 +33,15 @@ owlready2 python modules that parse the OWL and produce an `ontology_index` inst
 ```{r getcl,message=FALSE}
 library(ontoProc)
 clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
-cle = setup_entities2(clont_path)
+tmp = readLines(clont_path)
+bad = grep("STATO_0000416", tmp)[1:2]  # see https://github.com/obophenotype/cell-ontology/issues/3237
+tmp = tmp[-bad]
+bad = grep("STATO_0000663", tmp)[1:2]  # see https://github.com/obophenotype/cell-ontology/issues/3237
+tmp = tmp[-bad]
+tf = tempfile()
+writeLines(tmp, tf)
+cle = setup_entities(tf)
+#cle = setup_entities2(clont_path)
 cle
 ```
 
