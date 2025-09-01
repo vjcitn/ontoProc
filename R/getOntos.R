@@ -113,24 +113,21 @@ dmsg = function(x) .Deprecated(x, msg = sprintf("%s is deprecated: getOnto('%s')
 #' @aliases getChebiLite
 #' @export
 getChebiLite = function() {
- dmsg("chebi_lite")
- get_onto("chebi_lite")
+ .Defunct(msg = "getChebiLite is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 #' @rdname getCellOnto
 #' @aliases getCellosaurusOnto
 #' @export
 getCellosaurusOnto = function() {
- dmsg("cellosaurus")
- get_onto("cellosaurusOnto")
+ .Defunct(msg = "getCellosaurusOnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 #' @rdname getCellOnto
 #' @aliases getUBERON_NE
 #' @export
 getUBERON_NE = function() {
- dmsg("uberon")
- get_onto("uberon")
+ .Defunct(msg = "getUBERON_NE is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 #' @rdname getCellOnto
@@ -138,8 +135,7 @@ getUBERON_NE = function() {
 #' @note getChebiOnto loads ontoRda/chebi_full.rda
 #' @export
 getChebiOnto = function() {
- dmsg("chebi_full")
- get_onto("chebi_full")
+ .Defunct(msg = "getChebiOnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 
@@ -156,8 +152,7 @@ getOncotreeOnto = function() {
 #' @aliases getDiseaseOnto
 #' @export
 getDiseaseOnto = function() {
- dmsg("diseaseOnto")
- get_onto("diseaseOnto")
+ .Defunct(msg = "getDiseaseOnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 
@@ -166,8 +161,7 @@ getDiseaseOnto = function() {
 #' @note getDiseaseOnto loads ontoRda/diseaseOnto.rda
 #' @export
 getGeneOnto = function() {
- dmsg("goOnto")
- get_onto("goOnto")
+ .Defunct(msg = "getGeneOnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 #' @rdname getCellOnto
@@ -176,8 +170,7 @@ getGeneOnto = function() {
 #' python pronto was used to convert OWL to OBO.
 #' @export
 getHCAOnto = function() {
- dmsg("hcaOnto")
- get_onto("hcaOnto")
+ .Defunct(msg = "getHCAOnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 #' @rdname getCellOnto
@@ -187,8 +180,7 @@ getHCAOnto = function() {
 #' `extract_tags='minimal'`.
 #' @export
 getPROnto = function() {
- dmsg("PROonto")
- get_onto("PROonto")
+ .Defunct(msg = "getPROnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 
@@ -197,16 +189,14 @@ getPROnto = function() {
 #' @note getPATOnto loads ontoRda/patoOnto.rda, produced from https://raw.githubusercontent.com/pato-ontology/pato/master/pato.obo from OBO foundry, 02-08-2019.
 #' @export
 getPATOnto = function() {
- dmsg("patoOnto")
- get_onto("patoOnto")
+ .Defunct(msg = "getPATOnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 #' @rdname getCellOnto
 #' @aliases getMondoOnto
 #' @export
 getMondoOnto = function() {
- dmsg("mondo")
- get_onto("mondo_2021_04_07")
+ .Defunct(msg = "getMondoOnto is defunct: owl2cache() with a specific URL for a version of the desired ontology in OWL format should be used.")
 }
 
 #' @rdname getCellOnto
