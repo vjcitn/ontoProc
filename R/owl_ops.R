@@ -199,6 +199,7 @@ subclasses = function(oe) {
 #' to allow terms that lack labels (like CHEBI references in cl.owl) to be processed, returning NA.
 #' The previous functionality which failed is available, not exported, as labelsOLD.owlents.
 #' @examples
+#' \dontrun{
 #' clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
 #' o2 = try(reticulate::import("owlready2"), silent=TRUE)
 #' if (!inherits(o2, "try-error")) {
@@ -206,6 +207,7 @@ subclasses = function(oe) {
 #'  labels(clont[1:5])
 #'  labels(clont[51:55])
 #' }
+#' } # dontrun introduced because of ambiguity in STATO term usage; see vignettes for repaired example
 #' @export
 labels.owlents = function (object, ...) 
 {

@@ -40,8 +40,7 @@ bad = grep("STATO_0000663", tmp)[1:2]  # see https://github.com/obophenotype/cel
 tmp = tmp[-bad]
 tf = tempfile()
 writeLines(tmp, tf)
-cle = setup_entities(tf)
-#cle = setup_entities2(clont_path)
+cle = setup_entities2(tf)
 cle
 ```
 

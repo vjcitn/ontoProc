@@ -118,10 +118,26 @@ with suffix "OIRDS"; if no OIRDS file is found but the owl file
 is found it will ingest and transform and cache the RDS format
 of the ontologyIndex representation.
 
+NB: Sept 2025.  We were notified that new features of
+OWL representation of Cell Ontology permit tags to be used
+for both classes and properties.  We have one fixup required
+to accommodate this.
 ```{r donew}
-tmp = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl") # ensure presence
-cl = quickOnto("cl.owl")
-onto_plot2(cl, gsub(":", "_", stab$tag))
+#tmp = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl") # ensure presence
+#cl = quickOnto("cl.owl")
+#onto_plot2(cl, gsub(":", "_", stab$tag))
+#library(ontoProc)
+clont_path = owl2cache(url="http://purl.obolibrary.org/obo/cl.owl")
+tmp = readLines(clont_path)
+bad = grep("STATO_0000416", tmp)[1:2]  # see https://github.com/obophenotype/cell-ontology/issues/3237
+tmp = tmp[-bad]
+bad = grep("STATO_0000663", tmp)[1:2]  # see https://github.com/obophenotype/cell-ontology/issues/3237
+tmp = tmp[-bad]
+tf = tempfile()
+writeLines(tmp, tf)
+cle = setup_entities2(tf)
+ntag = gsub(":", "_", stab$tag)
+onto_plot2(cle, ntag)
 ```
 
 
